@@ -1,0 +1,24 @@
+set adblocker-filterlist /home/joecool/.config/dwb/adblock_lists
+set load-on-focus false
+set load-on-focus true
+show_quickmarks
+show_bookmarks
+{ 0x0 , 0x0 , 0x0 , 0x1 } 
+requestpolicyUnblockAll
+adblock_subscribe
+show_settings
+mplayer %u
+adblock_subscribe 
+y coltrane
+cmdSubscribe
+requestpolicyUnblockCurrent
+monospace
+`Ô
+pwd
+{ 0x0 , 0x0 , 0x0 , 0x1 } 
+adblock_unsubsribe
+s where?
+s hallo
+sa
+s
+show_keys
