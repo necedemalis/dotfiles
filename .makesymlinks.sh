@@ -18,4 +18,5 @@ for file in $files; do
 done
 
 ln -s ~/dotfiles/vifmrc ~/.vifm/vifmrc
-ln -s ~/dotfiles/dwb/ ~/.config/dwb
+ln -s ~/dotfiles/dwb/ ~/.config/
+ln -s ~/dotfiles/bin/ ~/
