@@ -1,4 +1,4 @@
-! Last updated : Mon Jun 24 2013 10:26:01 GMT+0200 (CEST)
+! Last updated : Tue Jun 25 2013 17:20:37 GMT+0200 (CEST)
 &werbemittel=
 -werb_hori.
 -werb_vert.
@@ -350,6 +350,7 @@ comedycentral.de,viva.tv#@##bannerad
 wunsch-otr.de#@##block_advert
 amsel.de#@##container_ad
 go-windows.de#@##goads
+eosd-forum.de#@##headerAd
 der-postillon.com#@##middleads
 campusboard.at#@##my-ads
 prad.de#@##p-links-werbung
@@ -1194,6 +1195,7 @@ netzkino.de#@#.contentAdBox
 ||sorgenlos.de^*/banner/
 ||space4free.net/images/banner/$third-party
 ||spambog.com/outsource/$third-party
+||spar-city.de/promo/$third-party
 ||spieleprinz.com/?$subdocument,third-party
 ||spieleprinz.de/?$subdocument,third-party
 ||spieletipps.de/img/cheatzpartner.gif$third-party

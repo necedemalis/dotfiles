@@ -101,6 +101,8 @@ endif
         nmap <leader>fd :call FoldDigest ()<cr>
         "tl -> :TaskList
         map <leader>tl :TaskList<cr> 
+        "tb -> :Tagbar
+        map <leader>tb :Tagbar<cr> 
         "nt -> :NerdTree
         nmap <leader>nt :NERDTree<cr>
         "pr -> :Prose
