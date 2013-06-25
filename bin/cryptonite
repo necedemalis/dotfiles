@@ -1,0 +1,53 @@
+#!/bin/bash
+
+if [ -z $1 ] ; then
+        echo "usage: cryptonite [command] [optional:filename]"
+        echo ""
+        echo "Valid commands are:"
+        echo " -m, --mount <file>"
+        echo "        Mounts a TrueCrypt container."
+        echo " -u, --umount"
+        echo "        Unmounts currently mounted TrueCrypt container."
+        echo " -h, --help"
+        echo "        Shows this help text."
+elif [ -n $1 ] ; then
+        eingabe=$1
+        loopback=`losetup -f`
+fi
+
+
+case $eingabe in
+        "-m"|"--mount")
+                if [ ! -f $2 -o $2 == 0 ] ; then
+                        echo " $2 isn't a valid file."
+                elif [ -f $2 ] ; then
+                        verzeichnis=`dirname $2`
+                        datei=`basename $2`
+
+                        cd $verzeichnis
+                        sudo losetup $loopback $datei
+                        sudo tcplay -m $datei -d $loopback
+                        sudo mount -o  nosuid,uid=1000,gid=100 /dev/mapper/$datei /media/Truecrypt
+                        cd - &>/dev/null
+                fi;;
+
+        "-u"|"--umount")
+                name=`sudo dmsetup ls | sed -e 's:[0-9]::g' | sed -e 's:(\:)::g' | sed -e 's:\ ::g'`
+                usedloop=`losetup -a | grep $name | sed -e 's:\:\ \[\]\:\ \(([^)]*)\)::g'`
+
+                sudo umount /media/Truecrypt
+                sudo dmsetup remove $name
+                sudo losetup -d $usedloop;;
+
+        "-h"|"--help") echo "usage: cryptonite [command] [optional:filename]"
+                echo ""
+                echo "Valid commands are:"
+                echo " -m, --mount <file>"
+                echo "        Mounts a TrueCrypt container."
+                echo " -u, --umount"
+                echo "        Unmounts currently mounted TrueCrypt container."
+                echo " -h, --help"
+                echo "        Shows this help text.";;
+
+        *) echo " This is no valid command.";;
+esac

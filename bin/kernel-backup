@@ -1,0 +1,20 @@
+#!/bin/bash
+ver=`uname -r`
+sudo cp -Rv /usr/src/linux-$ver /usr/src/linux-$ver-old
+sudo cp -Rv /usr/lib/modules/$ver /usr/lib/modules/$ver-old
+
+sudo rm -v /boot/vmlinuz-linux-old
+sudo cp -v /boot/vmlinuz-linux /boot/vmlinuz-linux-old
+sudo rm -v /boot/initramfs-linux-old.img
+sudo cp -v /boot/initramfs-linux.img /boot/initramfs-linux-old.img
+sudo rm -v /boot/initramfs-linux-fallback-old.img
+sudo cp -v /boot/initramfs-linux-fallback.img /boot/initramfs-linux-fallback-old.img
+
+sudo pacman -S linux linux-headers
+
+sudo mv -v /usr/lib/modules/$ver-old /usr/lib/modules/$ver
+sudo mv -v /usr/src/linux-$ver-old /usr/src/linux-$ver
+ls /usr/src/ | egrep 'old$' | sed -e 's/\(.*\)/\/usr\/src\/\1/g' | sudo xargs rm -Rv
+ls /usr/lib/modules/ | egrep 'old$' | sed -e 's/\(.*\)/\/usr\/lib\/modules\/\1/g' | sudo xargs rm -Rv
+sudo aticonfig --sync-video=on
+sudo aticonfig --sync-vsync=on
