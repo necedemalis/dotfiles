@@ -56,6 +56,7 @@ endif
         set autoindent "Copy indent from current line when starting a new line 
         set go+=c "No Popup-Dialogs
         set shortmess+=I "Keine Startup-Message
+        set formatprg=par\ -w96 "Par für Umbruchformatierung mit Q/gq (ohne par = mit gw!)
         "Pathogen
         call pathogen#infect()
         "Save/Load manual made Folds
@@ -132,7 +133,7 @@ endif
         vmap <C-x> "+c
         "vmap <C-v> c<ESC>"+p
         imap <C-v> <C-r><C-o>+
-        " Use Q for formatting the current paragraph (or selection)
+        "Use Q for formatting the current paragraph (or selection)
         vmap Q gq
         nmap Q gqap
         "jj/jk fur Esc
@@ -253,6 +254,21 @@ endif
         command RemoveMultipleBlankLines %s/^\(\s*\n\)\+/\r
         ":w!! um schreibgeschÃ¼tze Datei mit sudo zu speichern
         cmap w!! w !sudo tee % >/dev/null
+
+
+        "function ToggleJust()
+        "  if set formatprg? == 'par\ -w96'
+        "    set formatprg=par\ -w96j    
+        "    set fo=t1 
+        "    echo "Justify an!"
+        "  else
+        "    set formatprg=par\ -w96
+        "    echo "Justify aus!"
+        "  endif
+        "endfunction
+
+        "map <leader>pj  :call ToggleJust()<CR>
+
         "Pydir -> Change Directory ~/lib/python
         command Pydir cd ~/lib/python/ | :NERDTree
         "Dip/Dipdir -> Change Directory ~/lib/python

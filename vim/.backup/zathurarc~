@@ -1,0 +1,9 @@
+set window-height 1008
+set window-width 838
+set adjust-open width
+
+map p navigate previous
+map h navigate previous
+
+
+set pages-per-row 2

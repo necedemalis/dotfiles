@@ -1,0 +1,19 @@
+! The following line will prevent styles from setting the background.
+
+! background: none
+
+! background: fullscreen
+! background.pixmap: /home/joecool/.fluxbox/backgrounds/Firefox_wallpaper2.png
+! background.color: black
+
+! menu.title.font: ubuntu-8:bold
+
+
+! Fontsize
+*font:   			Lucida Grande-7.5
+menu.title.font: AvantGarde LT Medium-8
+window.font: AvantGarde LT Medium-8
+toolbar.clock.font: AvantGarde LT Medium-8
+toolbar.workspace.font: AvantGarde LT Medium-8
+toolbar.iconbar.focused.font: AvantGarde LT Medium-8
+toolbar.iconbar.unfocused.font: AvantGarde LT Medium-8

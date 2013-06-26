@@ -1,0 +1,21 @@
+CHIP Foo3 {
+    IN in[16];
+    OUT i,a,c[6],d[3],j[3];
+
+    PARTS:
+    And(a=in[0],b=true,out=j[0]);
+    And(a=in[1],b=true,out=j[1]);
+    And(a=in[2],b=true,out=j[0]);
+    And(a=in[3],b=true,out=d[1]);
+    And(a=in[4],b=true,out=d[2]);
+    And(a=in[5],b=true,out=d[3]);
+    And(a=in[6],b=true,out=c[4]);
+    And(a=in[7],b=true,out=c[5]);
+    And(a=in[8],b=true,out=c[6]);
+    And(a=in[9],b=true,out=c[7]);
+    And(a=in[10],b=true,out=c[8]);
+    And(a=in[11],b=true,out=c[9]);
+    And(a=in[12],b=true,out=a);
+    And(a=in[15],b=true,out=i);
+}
+

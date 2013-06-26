@@ -1,0 +1,61 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Mux4Way16.hdl
+
+/**
+ * 4-way 16-bit multiplexor.  
+ * out = a if sel == 00
+ *       b if sel == 01
+ *       c if sel == 10
+ *       d if sel == 11
+ */
+
+
+CHIP Mux8 {
+
+
+    IN a, b, c, d, e, f, g, h, sel[3];
+
+    OUT out;
+
+    PARTS:
+    Not(in=sel[0],out=notsel0);
+    Not(in=sel[1],out=notsel1);
+    Not(in=sel[2],out=notsel2);
+
+    And(a=notsel0,b=notsel1,out=siga1);
+    And(a=siga1,b=notsel2,out=siga);
+    And(a=sel[0],b=notsel1,out=sigb1);
+    And(a=sigb1,b=notsel2,out=sigb);
+    And(a=notsel0,b=sel[1],out=sigc1);
+    And(a=sigc1,b=notsel2,out=sigc);
+    And(a=sel[0],b=sel[1],out=sigd1);
+    And(a=sigd1,b=notsel2,out=sigd);
+    And(a=notsel0,b=notsel1,out=sige1);
+    And(a=sige1,b=sel[2],out=sige);
+    And(a=sel[0],b=notsel1,out=sigf1);
+    And(a=sigf1,b=sel[2],out=sigf);
+    And(a=notsel0,b=sel[1],out=sigg1);
+    And(a=sigg1,b=sel[2],out=sigg);
+    And(a=sel[0],b=sel[1],out=sigh1);
+    And(a=sigh1,b=sel[2],out=sigh);
+
+    And(a=a,b=siga,out=w1);
+    And(a=b,b=sigb,out=w2);
+    And(a=c,b=sigc,out=w3);
+    And(a=d,b=sigd,out=w4);
+    And(a=e,b=sige,out=w5);
+    And(a=f,b=sigf,out=w6);
+    And(a=g,b=sigg,out=w7);
+    And(a=h,b=sigh,out=w8);
+
+
+    Or(a=w1,b=w2,out=out1);
+    Or(a=out1,b=w3,out=out2);
+    Or(a=out2,b=w4,out=out3);
+    Or(a=out3,b=w5,out=out4);
+    Or(a=out4,b=w6,out=out5);
+    Or(a=out5,b=w7,out=out6);
+    Or(a=out6,b=w8,out=out);
+}

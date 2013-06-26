@@ -1,0 +1,53 @@
+\documentclass[12pt,ngerman]{article}
+
+
+%Packages
+\usepackage{ae,aecompl}
+%\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\usepackage{verbatim}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{booktabs}
+%%\usepackage{hyperref}
+%%\usepackage{metre}
+\usepackage{multicol}
+\date{}
+\usepackage{setspace} %Zeilenabstand (\begin{singlespace...}
+\usepackage{graphicx}
+%Sprachen
+\usepackage[ngerman]{babel}
+
+% Schusterjungen&Hurenkinder
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty = 10000
+
+
+% Seitenränder
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2.5cm,rmargin=2cm}
+
+%Absatz
+
+\begin{document}
+\pagestyle{empty}
+
+Liebe \hspace{5cm}       , Lieber
+\parskip 24pt
+
+Es tut mir leid für die Anschuldigungen, die ich Euch am 9.5.2013 im Stölzelpark Maxglan
+gegenüber geäußert habe. Ich hab leider an diesem Tag zu viel Alkohol konsumiert, weswegen ich
+aus mir unbekannten Gründen meine Geldbörse und mein Mobiltelefon verloren habe.  \\Ich weiß nun,
+dass Ihr zu diesem Zeitpunkt nur mein Wohlwollen berücksichtigt habt. Trotzdem tätigte ich die
+falsche Annahme, dass einer von Euch beiden mich bestohlen hätte. Ich lag mit dieser
+Beschuldigung ganz klar falsch und war in diesem Moment durch meinen alkoholisierten Zustand
+nicht zur Gänze bei mir. Ich möchte mich hiermit ganz offiziell für meine falschen
+Anschuldigungen bei Euch entschuldigen und hoffe, dass ich niemand verletzt habe.
+
+Mit freundlichen Grüßen,
+\parskip 12pt
+
+Markus Klein \hfill (Salzburg, am 9.5.2013)
+\end{document}

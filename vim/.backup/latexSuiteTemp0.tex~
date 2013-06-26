@@ -1,0 +1,40 @@
+\documentclass[12pt,ngerman]{scrlttr2}
+
+
+%Packages
+\usepackage{ae,aecompl}
+%\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\usepackage{verbatim}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{booktabs}
+%%\usepackage{hyperref}
+%%\usepackage{metre}
+\usepackage{multicol}
+\date{}
+\usepackage{setspace} %Zeilenabstand (\begin{singlespace...}
+\usepackage{graphicx}
+%Sprachen
+\usepackage[ngerman]{babel}
+
+% Schusterjungen&Hurenkinder
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty = 10000
+
+
+% Seitenränder
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2.5cm,rmargin=2cm}
+\parskip12pt
+\parindent0pt
+
+\setkomavar{fromname}{Markus Klein}
+\setkomavar{fromaddress}{Bindergasse 5A\\ 5020 Salzburg}
+\setkomavar{fromphone}{0650/4551551}
+\setkomavar{yourmail}{Markus.Klein@stud.sbg.ac.at}
+
+\begin{document}
+
