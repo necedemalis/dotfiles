@@ -1,0 +1,13 @@
+# ~/.tmuxinator/hallo.yml
+# you can make as many tabs as you wish...
+
+project_name: hallo
+project_root: ~/octopress/
+tabs:
+        - vim: vim
+        - preview: bundle exec rake preview
+        - hallo:
+                layout: even-horizontal
+                panes:
+                  - #empty
+                  - #empty

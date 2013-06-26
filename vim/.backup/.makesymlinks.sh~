@@ -20,5 +20,3 @@ done
 ln -s ~/dotfiles/vifmrc ~/.vifm/vifmrc
 ln -s ~/dotfiles/dwb/ ~/.config/
 ln -s ~/dotfiles/bin/ ~/
-ln -s ~/dotfiles/vim_view/ ~/.vim/view
-ln -s ~/dotfiles/vim_pathogen_update ~/.vim/pathogen_update

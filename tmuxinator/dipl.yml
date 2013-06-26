@@ -1,0 +1,13 @@
+# ~/.tmuxinator/dipl.yml
+# you can make as many tabs as you wish...
+
+project_name: Diplomarbeit
+project_root: ~/Dropbox/Diplomarbeit/
+tabs:
+  - Diplomarbeit:
+      layout: main-vertical
+      panes:
+        - vim ~/Dropbox/Diplomarbeit/Diplomarbeit/Diplomarbeit.tex
+        - vifm
+        - #empty
+  - ncmpcpp: ncmpcpp

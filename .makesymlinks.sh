@@ -5,7 +5,7 @@
 ############################
 
 dir=~/dotfiles                    # dotfiles directory
-files="vimrc vim zshrc wyrdrc tmux.conf tmux-powerlinerc tmux-powerline"    # list of files/folders to symlink in homedir
+files="vimrc vim zshrc wyrdrc tmux.conf tmux-powerlinerc tmux-powerline tmuxinator"    # list of files/folders to symlink in homedir
 
 for file in $files; do
     #if [ file -f == "vifmrc" ] ; then
