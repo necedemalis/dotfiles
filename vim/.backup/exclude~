@@ -7,3 +7,4 @@
 bin/dbgl/
 .git
 /dwb/default/session
+/dwb/default/session*
