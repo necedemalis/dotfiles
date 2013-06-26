@@ -1,0 +1,15 @@
+cd ~
+git clone http://github.com/necedemalis/dotvim.git ~/dotfiles
+sh ~/dotfiles/.makesymlinks.sh
+
+cd ~/dotfiles/
+git pull
+git submodule init
+git submodule update
+
+
+# Upgrading all bundled plugins
+git submodule foreach git pull origin master
+
+# Delete added file
+git rm --cache %f
