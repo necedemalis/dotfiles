@@ -4,7 +4,7 @@ sh ~/dotfiles/.makesymlinks.sh
 
 cd ~/dotfiles/
 git pull
-git submodule update --init
+git submodule update --init --recursive
 
 
 # Upgrading all bundled plugins
