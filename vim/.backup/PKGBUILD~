@@ -1,41 +1,45 @@
-# $Id$
-# Maintainer: Jan de Groot <jgc@archlinux.org>
-# Contributor: dorphell <dorphell@archlinux.org>
-# Contributor: Travis Willard <travis@archlinux.org>
-# Contributor: Douglas Soares de Andrade <douglas@archlinux.org>
+# Maintainer: Sam S. <smls75@gmail.com>
 
-pkgname=libpng
-pkgver=1.6.2-2
-_apngver=1.6.2-2
+pkgname=rochard-hib
+pkgver=1.42+h20130620
 pkgrel=1
-pkgdesc="A collection of routines used to create PNG format graphics files"
+pkgdesc='A sci-fi action platformer that centers around manipulating gravity (Humble Bundle version)'
+url='http://www.rochardthegame.com'
 arch=('i686' 'x86_64')
-url="http://www.libpng.org/pub/png/libpng.html"
-license=('custom')
-depends=('zlib' 'sh')
-options=('!libtool')
-source=("http://downloads.sourceforge.net/sourceforge/$pkgname/$pkgname-$pkgver.tar.xz"
-        "http://downloads.sourceforge.net/sourceforge/libpng-apng/libpng-$_apngver-apng.patch.gz")
-md5sums=('e3122e7b5b5c36c034a4624c65f8a9d8'
-         '3ae9ea7e4bd201f0b25e25cd6049b094')
+license=('custom:commercial')
+depends=('mesa' 'libgl' 'glu')
+options=("!upx")
+PKGEXT='.pkg.tar'
+DLAGENTS+=('hib::/usr/bin/echo "Could not find %u. Manually download it to \"$(pwd)\", or set up a hib:// DLAGENT in /etc/makepkg.conf."; exit 1')
 
-build() {
-  cd $pkgname-$pkgver
-
-  # Add animated PNG (apng) support
-  # see http://sourceforge.net/projects/libpng-apng/
-  patch -p1 -i ../libpng-$_apngver-apng.patch
-
-  ./configure --prefix=/usr
-  make
-}
+if [ $CARCH == i686 ]
+then _arch=32; _build='1371746493'; _md5='bf1939c719eccef9cb04745aec5c0387';
+else _arch=64; _build='1371746492'; _md5='94944c149291287900d3face338d1b4b';
+fi
+source=("hib://Rochard_v1.42_Linux_x${_arch}_${_build}.tar.gz"
+        'rochard-hib.desktop')
+md5sums=("$_md5"
+         'a84ba958254ba229f5f9d66d5c6672ea')
 
 package() {
-  cd $pkgname-$pkgver
-  make DESTDIR="$pkgdir" install
+  cd $srcdir
 
-  cd contrib/pngminus
-  make PNGLIB="-L$pkgdir/usr/lib -lpng" -f makefile.std png2pnm pnm2png
-  install -m755 png2pnm pnm2png "$pkgdir/usr/bin/"
-  install -D -m644 ../../LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  # Install game files
+  install -d "$pkgdir/opt/"
+  mv -T Rochard_x$_arch "$pkgdir/opt/Rochard"
+
+  # Install launcher script
+  echo -e "#!/bin/sh\ncd /opt/Rochard && ./Rochard" > "launcher.sh"
+  install -Dm755 "launcher.sh" "$pkgdir/usr/bin/rochard"
+
+  # Install icon
+  install -Dm644 "$pkgdir/opt/Rochard/Rochard_Data/Resources/UnityPlayer.png" \
+                 "$pkgdir/usr/share/pixmaps/rochard.png"
+
+  # Install desktop entry
+  install -Dm644 "$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
+  
+  # Install license
+  install -d "$pkgdir/usr/share/licenses/$pkgname/"
+  mv "$pkgdir/opt/Rochard/EULA.rtf" "$pkgdir/usr/share/licenses/$pkgname/"
 }
