@@ -237,7 +237,7 @@
         filetype *.epub ebook-viewer %f
 
 " PostScript
-        filextype *.dvi zathura %f "evince %c
+        filextype *.dvi zathura %f 
         filextype *.ps,*.ps.gz gv %c %i &
 
 " Djvu

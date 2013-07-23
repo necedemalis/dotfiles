@@ -194,7 +194,7 @@
         command run !! ./%f
         command make !!make
         command vgrep vim "+grep %a"
-        command mplayer mplayer ./%f
+        command mplayer mplayer -really-quiet ./%f
         command smplayer smplayer ./%f &<cr>l
         command ln !ln -s %d/%f %D
         command move sudo mv -R %d/%f %D

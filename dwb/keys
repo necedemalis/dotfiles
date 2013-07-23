@@ -166,8 +166,8 @@ winopen_url= wO
 winopen= wo
 tabdo= 
 
-adblock_reload_rules= 
-visual_mode= v
+adblock_reload_rules=
+visual_mode=v
 
 [joecool]
 save_search_field=gs

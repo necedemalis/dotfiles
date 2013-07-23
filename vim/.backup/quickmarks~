@@ -1,7 +1,0 @@
-rs http://127.0.0.1/rss/ Tiny Tiny RSS (2230)
-ho https://dub116.mail.live.com/default.aspx?id=64855&owa=1&owasuffix=owa%2f Outlook - chief_wiggum44@hotmail.com
-bm javascript:x=document;a=encodeURIComponent(x.location.href);t=encodeURIComponent(x.title);d=encodeURIComponent(window.getSelection());location.href='http://127.0.0.1/bookmarks/bookmarks.php/markus_klein?action=add&address='+a+'&title='+t+'&description='+d;void%200;
-ttrss javascript:{if(confirm('Subscribe to %s in Tiny Tiny RSS?'.replace('%s',window.location.href)))window.location.href='http://127.0.0.1/rss/public.php?op=subscribe&feed_url='+window.location.href}
-uni https://sso.sbg.ac.at/idp/Authn/UserPassword University of Salzburg SSO - Login Page
-ss http://127.0.0.1/bookmarks/bookmarks.php/markus_klein SemanticScuttle » Meine Lesezeichen
-vifm split open http://vifm.sourceforge.net/docs.html#:set options (null)

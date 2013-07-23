@@ -1,9 +1,0 @@
-[Unit]
-Description=Deluge Web UI
-After=deluged.service
-
-[Service]
-Exec=/usr/bin/deluge-web --ssl
-
-[Install]
-WantedBy=default.target

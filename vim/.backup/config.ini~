@@ -1,0 +1,60 @@
+# FULLSCREEN = {yes|no}
+# yes - starts the game in fullscreen
+# no - starts the game in a window
+FULLSCREEN = no
+#
+# RESOLUTION = {Auto|Desktop|Game}
+# Auto - wide-screen support is activated if a wide-screen display is detected
+# Desktop - current desktop resolution is used when game is started in full screen mode
+# Game - game is initialized with the resolution specified in the game
+RESOLUTION = 1600x1024
+#
+# UseTextureForWidescreen = {yes|no}
+# yes - use OpenGL viewport transformations. Offers better compability for old graphic accelerators
+# no - use OpenGL framebuffer
+UseTextureForWidescreen = yes
+#
+# UseTextureCompression = {Enabled|Disabled}
+# Enabled - use texture compression
+# Disabled - disables textures compression
+UseTextureCompression = Disabled
+#
+# UseTextureCompressionQuality = {Low|Medium|High}
+# Low - use a fast but low quality colour compressor
+# Medium - use a slow but high quality colour compressor
+# High - use a very slow but very high quality colour compressor
+UseTextureCompressionQuality = Low
+#
+# MaxColorDepth = {32|20|16}
+# 32 - 32 Bit color mode using 8 Bit per channel
+# 20 - 20 Bit color mode using 5 Bit per channel
+# 16 - 16 Bit color mode using 4 Bit per channel
+MaxColorDepth = 32
+#
+# UseHighResVideo = {yes|no}
+# yes - use high resolution videos
+# no - use lower resolution videos for better performance
+UseHighResVideo = yes
+#
+# UseAdditionalEffects = {Low|Medium|High}
+# Low - hide many special effects and animations for better performance
+# Medium - hide some special effects and animations
+# High - show additional special effects and animations
+UseAdditionalEffects = High
+#
+# UseSubtitles = {yes|no}
+# yes - show subtitles during the game and videos
+# no - don't show subtitles during the game and videos
+UseSubtitles = yes
+#
+# UseInventoryClick = {yes|no}
+# yes - open the inventory with a click
+# no - open the inventory by touching the screen border
+UseInventoryClick = no
+#
+# LOGLEVEL = {Info|Warning|Error}
+LOGLEVEL = Error
+#
+MusicVolume = 50
+SoundVolume = 75
+SpeechVolume = 95

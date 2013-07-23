@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/usr/share/kbd/keymaps/i386/qwerty'
-let g:netrw_dirhist_2='/home/joecool/.fluxbox'
-let g:netrw_dirhist_3='/home/joecool/.fluxbox/styles/Fawn'
-let g:netrw_dirhist_4='/media/SSD/Dokumente/Scripte'
-let g:netrw_dirhist_5='/home/joecool/.mpd'
-let g:netrw_dirhist_6='/home/joecool/.ncmpcpp'
-let g:netrw_dirhist_7='/home/joecool/.config/zathura'

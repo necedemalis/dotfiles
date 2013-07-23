@@ -17,10 +17,8 @@
 \date{}
 \usepackage{setspace} %Zeilenabstand (\begin{singlespace...}
 \usepackage{graphicx}
-\usepackage{wrapfig}
 %Sprachen
 \usepackage[ngerman]{babel}
-\usepackage{enumitem}
 
 % Schusterjungen&Hurenkinder
 \widowpenalty=10000
@@ -29,94 +27,82 @@
 
 
 % Seitenränder
-\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
 
 %Fußnote
 \usepackage[automark]{scrpage2}
 \pagestyle{scrheadings}
 \clearscrheadfoot
-\ifoot[]{Lebenslauf: Markus Klein}
-\ofoot[]{Seite \pagemark}
+%\ifoot[]{Lebenslauf: Markus Klein}
+%\ofoot[]{Seite \pagemark}
+
+%Tabelle
+\usepackage{tabularx}
 
 \begin{document}
 \centering{\bf{\section*{\underline{Lebenslauf}}}}
 \flushleft{}
 \parskip 20pt
 
-\textbf{\underline{Persönliche Daten}}
-\parskip 5pt
-\begin{description}[font=\itshape]
-  \item{\textbf{Name:}} Markus Klein
-  \item{\textbf{Adresse:}} Bindergasse 5A, 5020 Salzburg
-    
-  \item{\textbf{Telefon:}} 0650/4551551 
-  \item{\textbf{E-Mail:}} Markus.Klein@stud.sbg.ac.at
-  
-  \item{\textbf{Geburtsdatum:}} 09.08.1986
-  \item{\textbf{Geburtsort:}} Salzburg
-  \item{\textbf{Familienstand:}} ledig, keine Kinder
-  \item{\textbf{Staatsbürgerschaft:}} Österreich
-\end{description}
+\begin{tabularx}{\textwidth}{lX}
+\medskip
+\textbf{\underline{Persönliche Daten}}\\
+  \textbf{Name:} & Markus Klein\\ 
+  \textbf{Adresse:} & Bindergasse 5A, 5020 Salzburg\\
+  \textbf{Telefon:} & 0650/4551551\\ 
+  \textbf{E-Mail:} & Markus.Klein@stud.sbg.ac.at\\
+  \textbf{Geburtsdatum:} & 09.08.1986\\
+  \textbf{Geburtsort:} & Salzburg\\
+  \textbf{Familienstand:} & ledig, keine Kinder\\
+  \textbf{Staatsbürgerschaft:} & Österreich\\
 
-\parskip 12pt
+\\
 
-\textbf{\underline{Schulische Ausbildung:}}
-\parskip 5pt
-\begin{description}
-  \item{\textbf{1996–2004}} \ Bundesgymnasium Zaunergasse
-  \item{\textbf{1992–1996}} \ Volksschule Maxglan I
-\end{description}
+\medskip
+\textbf{\underline{Schulische Ausbildung:}}\\
+  \textbf{1996–2004} & Bundesgymnasium Zaunergasse\\
+  \textbf{1992–1996} & Volksschule Maxglan I\\
 
-\parskip 12pt
+\\
 
-\textbf{\underline{Studienverlauf:}}
-\parskip 5pt
-\begin {description}
-  \item{\textbf{WS 2012}} \ Beginn Lehramtsstudium Mathematik
-  \item{\textbf{WS 2008}} \ Beginn Lehramtsstudium Latein / Geschichte
-  \item{\textbf{SS 2007}} \ \ Abschluss des Bakkalaureatsstudium Antike Literatur-, Geistes- und Rezeptionsgeschichte; Beginn des Magisterstudium 
-  \item{\textbf{WS 2005}} \ Beginn des Diplomstudium Geschichte
-  \item{\textbf{WS 2004}} \ Beginn des Bakkalaureatsstudium Antike Literatur-, Geistes- und Rezeptionsgeschichte
-(Klassische Philologie) 
-\end{description}
+\medskip
+\textbf{\underline{Studienverlauf:}}\\
+  \textbf{WS 2012} &  Beginn Lehramtsstudium Mathematik\\
+  \textbf{WS 2008} &  Beginn Lehramtsstudium Latein / Geschichte\\
+  \textbf{SS 2007} &  Abschluss des Bakkalaureatsstudium Antike Literatur-, Geistes- und Rezeptionsgeschichte; Beginn des Magisterstudium \\
+  \textbf{WS 2005} &  Beginn des Diplomstudium Geschichte\\
+  \textbf{WS 2004} &  Beginn des Bakkalaureatsstudium Antike Literatur-, Geistes- und
+  Rezeptionsgeschichte (Klassische Philologie)\\
 
-\parskip 12pt
+\\
 
-\textbf{\underline{Berufliche Erfahrung:}}
-\parskip 5pt
-%\setlength{\leftmargini}{1pt}
-\begin{description}
-  \item{\textbf{05/2009–09/2012}}  \ Mitarbeit im Nachhilfeinstitut ``Wiff-Zack'' (Leitung: Mag.
-    Brigitte Priester)\\
-  \item{\textbf{01/2006–02/2007}} \ Mitarbeit an der Universitätsbibliothek Salzburg, Fakultätsbibliothek der Klassischen Philologie
-  \item{\textbf{08/2002–09/2010}} \ Mitarbeit im Familienbetrieb ``Gummitechnik Josef Klein Ges.m.b.H''
-\end{description}
+\medskip
+\textbf{\underline{Berufliche Erfahrung:}}\\
+  \textbf{05/2009–09/2012} &  Mitarbeit im Nachhilfeinstitut ``Wiff-Zack'' (Leitung: Mag.  Brigitte Priester)\\
+  \textbf{01/2006–02/2007} &  Mitarbeit an der Universitätsbibliothek Salzburg, Fakultätsbibliothek der Klassischen Philologie\\
+  \textbf{08/2002–09/2010} &  Mitarbeit im Familienbetrieb ``Gummitechnik Josef Klein Ges.m.b.H''\\
 
-\parskip 12pt
+\\
 
-\textbf{\underline{Computerkenntnisse:}}
-\parskip 5pt
-\begin {description}
-  \item{\textbf{Textverarbeitung:}} MS Word, LibreOffice Writer, LaTeX, Vim
-  \item{\textbf{Tabellenkalkulation:}} MS Excel, LibreOffice Calc
-  \item{\textbf{Programmiersprachen:}} Grundkenntnisse in Python, C++, PHP
-  \item{\textbf{Sonstiges:}} ALEPH-Kenntnisse, HTML, MySQL
-\end{description}
+\medskip
+\textbf{\underline{Computerkenntnisse:}}\\
+  \textbf{Textverarbeitung:} & MS Word, LibreOffice Writer, LaTeX, Vim\\
+  \textbf{Tabellenkalkulation:} & MS Excel, LibreOffice Calc\\
+  \textbf{Programmiersprachen:} & Grundkenntnisse in Python, C++, SQL\\
+  \textbf{Sonstiges:} & ALEPH-Kenntnisse, HTML\\
 
-\parskip 12pt
+\\
 
-\textbf{\underline{Sprachkenntnisse:}}
-\parskip 5pt
-\begin {description}
+\medskip
+\textbf{\underline{Sprachkenntnisse:}}\\
+  \textbf{Englisch} & fließend in Wort und Schrift\\
+  \textbf{Französisch} & gute Kenntnisse in Wort und Schrift\\
+  \textbf{Latinum}\\
+  \textbf{Graecum}\\
 
-  \item{\textbf{Englisch:}} fließend in Wort und Schrift\\
-  \item{\textbf{Französisch:}} gute Kenntnisse in Wort und Schrift
-  \item{\textbf{Latinum}}
-  \item{\textbf{Graecum}}
-\end{description}
+\end{tabularx}
 
-\vspace {9cm}
-\flushright {Salzburg, am 19.4.2013}
+\vfill
+\flushright {Salzburg, am 20. Juli 2013}
 
 \end{document}
-

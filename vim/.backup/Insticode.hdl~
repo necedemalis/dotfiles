@@ -1,8 +1,0 @@
-CHIP Insticode {
-    IN in[16];
-    OUT i;
-
-    PARTS:
-    And(a=in[15],b=true,out=i);
-}
-

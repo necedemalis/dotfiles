@@ -27,26 +27,64 @@
 
 
 % Seitenränder
-\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2.5cm,rmargin=2cm}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2.7cm,rmargin=2cm}
+\parindent0pt
 
-%Absatz
 
 \begin{document}
 \pagestyle{empty}
-\parskip12pt
-\parindent0pt
-Liebe \hspace{5cm}  , Lieber
-\vspace{1cm}
+\small
 
-Es tut mir leid für die Anschuldigung, die ich Euch am 9.5.2013 im Stölzelpark Maxglan gegenüber
-geäußert habe. Ich bin mir dessen bewusst, dass für Euch an diesem Tag nur mein Wohlwollen im
-Vordergrund stand. Da ich leider zu diesem Zeitpunkt zu viel Alkohol konsumiert hatte, verlor
-ich auf eine mir unbekannte Weise meine Geldbörse und mein Mobiltelefon. Aufgrund dessen tätigte
-ich die falsche Annahme, dass einer von Euch beiden mich bestohlen hätte.  Ich lag mit dieser
-Beschuldigung ganz klar im Unrecht und war in diesem Moment durch meinen alkoholisierten Zustand
-nicht zur Gänze bei mir. Ich möchte mich hiermit offiziell für meine falschen Anschuldigungen
-entschuldigen und hoffe, dass ich niemand verletzt habe.
+Markus Klein\\
+Bindergasse 5A\\ 
+5020 Salzburg\\
+Tel.: 0650/4551551\\
+E-Mail: Markus.Klein@stud.sbg.ac.at\\
+\parskip 28pt
 
-Mit freundlichen Grüßen,
-\\Markus Klein
+Serviceeinrichtung Personal\\
+Univ.-Prof. Dr. Heinrich Schmidinger\\
+Kapitelgasse 4\\
+5020 Salzburg \hfill Salzburg, am 20. Juli 2013\\
+\normalsize
+\parskip 44pt
+
+\textbf{Bewerbung als Mitarbeiter an der Universitätsbibliothek (GZ A 0093/1-2013)}
+\parskip 24pt
+
+Sehr geehrter Univ.-Prof. Dr. Heinrich Schmidinger, 
+\parskip 12pt
+
+Mit diesem Schreiben bewerbe ich mich um die Stelle als Mitarbeiter an der
+Universitätsbibliothek Salzburg, Fakultätsbibliothek der Gesellschaftswissenschaften, die Sie am
+03. Juli 2013 online ausgeschrieben haben (GZ A 0093/1-2013).
+
+Mein Interesse für die Strukturen und Entwicklungen des Bibliothekswesens ergab sich durch das
+Studium der Geschichtswissenschaften und der Klassischen Philologie, aufgrund dessen ich in
+häufigem Kontakt mit der Universitätsbibliothek stehe.
+
+Infolge meiner Mitarbeit an der Fakultätsbibliothek der Klassischen Philologie Salzburg in den
+Jahren 2006 und 2007 war es mir möglich sowohl im Servicebereich (Bücher-Entlehnung und
+-Rücknahme, Informationsauskunft) als auch im Bereich der Datenaufnahme und Katalogisierung
+Erfahrungen zu sammeln. Hierbei konnte ich einen versierten Umgang mit der
+Bibliotheksverwaltungssoftware ALEPH erlernen.
+
+Zusätzlich verfüge ich aufgrund meiner mehrjährigen Anstellung im Familienbetrieb “Gummitechnik
+Josef Klein G.m.b.H” über Kompetenzen in den Feldern Fakturierung, Kommissionierung und
+Kundenbetreuung, über Fähigkeiten in der Zusammenarbeit mit mehreren Mitarbeitern sowie über
+Kenntnisse im Umgang mit Unternehmens-EDV.
+
+Ich würde mich über ein persönliches Gespräch sehr freuen.
+
+Mit freundlichen Grüßen, 
+
+Markus Klein
+
+\vfill
+\textbf{Beilagen:}
+Lichtbild,
+Lebenslauf,
+Zeugniskopien
+
 \end{document}
+

@@ -1,82 +1,0 @@
-<D20Rules game-system="D&amp;D4E">
-
-   <RulesElement name="The Deck of Many Things +3" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_68700" source="Player&apos;s Handbook" revision-date="9/1/2010 10:30 AM" > 
-	<Flavor> This ornate deck of twenty-two cards is a tool of the forces of chaos and anarchy. It frequently appears when the world has grown too calm, or when someone has grown too powerful, and it sows chaos wherever it lands. </Flavor>
-	<specific name="Level" />  
-	<specific name="Gold" />     
-	<specific name="Implement"> Tome </specific>
-        <specific name="Magic Item Type"> Artifact </specific>
-	<specific name="Tier"> Heroic </specific>
-	<specific name="_Item_Set_ID" />
-	<specific name="Armor" />
-	<specific name="Weapon" />   
-	<specific name="Item Slot" > Off-hand </specific>
-	<specific name="Requirement" />
-	<specific name="Critical"> +3d12 damage </specific>
-	<specific name="Special" />
-	<specific name="Power"> Power (Encounter): Free Action. You alter the fortunes of your enemies, forcing an enemy to reroll one attack roll, skill check, or saving throw it just made, taking the result you choose.Power (Daily): Free Action. Roll a d20. Once before the end of the encounter, you can replace any d20 roll made by an ally or an enemy within 5 squares of you with your d20 roll. </specific>
-	<specific name="_Rarity"> Uncommon </specific> 
-	<specific name="Enhancement"> +3 attack rolls and damage rolls </specific>
-	<specific name="Granted Powers" />
-	<specific name="Property"> You cannot be dominated. </specific>
-        <specific name="_ImplementEquiv"> Tome </specific>      
-        <specific name="_ImplementForClass"> ID_FMP_CLASS_128(Chaos Power) </specific>      
-        <rules>         
-                <modify name="this" Field="_ImplementEquiv" value="Tome" />         
-                <modify name="this" Field="Item Slot" value="Off-hand" />         
-                <modify name="this" Field="_ImplementForClass" value="ID_FMP_CLASS_128(Chaos Power)" />     
-        </rules>
-   </RulesElement>
-
-   <RulesElement name="Ice Scepter" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_68701" source="Player&apos;s Handbook" revision-date="9/1/2010 10:30 AM" >
-	<Flavor> This regal scepter seems made of ice and is set with sapphires. Though the scepter is cold to the touch, its wielder nevertheless feels warm and comfortable in the coldest wind. </Flavor>
-	<specific name="Level"> 6 </specific>  
-	<specific name="Gold"> 1800 </specific>     
-	<specific name="Implement"> Staff </specific>
-        <specific name="Magic Item Type"> Staff </specific>
-	<specific name="Tier" /> 
-	<specific name="_Item_Set_ID" /> 
-	<specific name="Armor" /> 
-	<specific name="Weapon" />   
-	<specific name="Item Slot" > Main-hand </specific> 
-	<specific name="Requirement" /> 
-	<specific name="Critical"> +2d8 cold damage </specific> 
-	<specific name="Special" /> 
-	<specific name="Power"> Power (Encounter): Standard Action. You use freezing burst (wizard 1). You can use Intelligence, Wisdom, or Charisma for the attack rolls and the damage roll.Power (Daily): Free Action. Trigger: You hit an enemy with a cold power using this implement. Effect: Every target hit by the power is immobilized (save ends) </specific> 
-	<specific name="Power">  </specific> 
-	<specific name="_Rarity"> Rare </specific> 
-	<specific name="Enhancement"> +2 attack rolls and damage rolls </specific> 
-	<specific name="Granted Powers" /> 
-	<specific name="Property">  You gain a +2 item bonus to the damage rolls of cold attacks made with this implement.You also gain resist 5 cold. </specific>
-        <specific name="_ImplementEquiv"> Staff </specific>      
-        <rules>         
-                <modify name="this" Field="_ImplementEquiv" value="Staff" />         
-                <modify name="this" Field="Item Slot" value="Main-hand" />         
-	        <statadd name="resist:cold" value="+5" /> 
-                <statadd name="cold:damage" value="+2" type="Item" /> 
-        </rules>
-   </RulesElement>
-
-   <RulesElement name="Crown of Winter" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_68702" source="Player&apos;s Handbook" revision-date="9/1/2010 10:30:26 AM" >
-      	<Flavor>  This imposing crown appears to be made of ice and is chilly to the touch. </Flavor> 
-	<specific name="Level"> 18  </specific> 
-        <specific name="Gold"> 3400 </specific> 
-	<specific name="Magic Item Type"> Head Slot Item </specific> 
-	<specific name="Tier" /> 
-	<specific name="_Item_Set_ID" /> 
-	<specific name="Armor" /> 
-	<specific name="Weapon" /> 
-	<specific name="Item Slot"> Head </specific> 
-	<specific name="Requirement" /> 
-	<specific name="Critical" /> 
-	<specific name="Special" /> 
-	<specific name="Power"> Power (Encounter, Cold, Psychic): Immediate Reaction. Trigger: An enemy damages you. Effect: The triggering enemy takes 5 cold and psychic damage, and is immobilized until the end of its next turn.Power (Daily): Free Action. Trigger: You make an attack roll for a cold power and dislike the result. Effect: You reroll the attack roll and use the new result.</specific> 
-	<specific name="_Rarity"> Rare </specific> 
-	<specific name="Granted Powers" /> 
-	<specific name="Property">  You gain resist 5 cold. </specific> 
-	<rules> 
-	        <statadd name="resist:cold" value="+5" /> 
-	</rules> 
-   </RulesElement>
-
-</D20Rules>
