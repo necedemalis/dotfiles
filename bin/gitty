@@ -10,7 +10,7 @@ case $1 in
         "-c"|"--commit"|"--push")
                 cd ~/dotfiles/
                 git add --all
-                echo "Input commit info:"
+                echo "Input commit info: (optional)"
                 read inputline
                 if [ -z "$inputfile" ] ; then
                         git commit -m "Changed dotfiles"
@@ -20,7 +20,7 @@ case $1 in
                 git push
                 ;;
 
-        "-h"|"--help") echo "usage: cryptonite [command] [optional:filename]"
+        "-h"|"--help") echo "usage: gitty [command]"
                 echo ""
                 echo "Valid commands are:"
                 echo " -u, --update, --pull"
