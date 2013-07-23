@@ -12,6 +12,7 @@ case $1 in
                 git add --all
                 echo "Input commit info:"
                 read inputline
+                echo "$inputline"
                 git commit -m "$inputline"
                 git push
                 ;;
