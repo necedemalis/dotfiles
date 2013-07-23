@@ -12,7 +12,11 @@ case $1 in
                 git add --all
                 echo "Input commit info:"
                 read inputline
-                git commit -m "inputline"
+                if [ -z "$inputfile" ] ; then
+                        git commit -m "Changed dotfiles"
+                else
+                        git commit -m "$inputline"
+                fi
                 git push
                 ;;
 
