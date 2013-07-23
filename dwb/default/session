@@ -28,6 +28,8 @@ g:*default
 -2 https://github.com/ GitHub
 -1 https://github.com/necedemalis necedemalis
 0|0 https://github.com/necedemalis/dotfiles necedemalis/dotfiles
+-1 https://startpage.com/do/search?query=git%20fatale%20error%20you%20can%27t%20push%20to git fatale error you can t push to - Startpage Web Search
+0|0 http://stackoverflow.com/questions/7548661/git-github-cant-push-to-master Git/github can't push to master - Stack Overflow
 -2 https://startpage.com/do/search?query=shell%20script%20string%20as%20input shell script string as input - Startpage Web Search
 -1 https://startpage.com/do/search? shell script input - Startpage Web Search
 0|0 http://unixhelp.ed.ac.uk/scrpt/scrpt2.3.html Reading user input
