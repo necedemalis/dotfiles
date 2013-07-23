@@ -1,0 +1,31 @@
+#!/bin/bash
+
+case $1 in
+        "-u"|"--update"|"--pull")
+                cd ~/dotfiles/
+                git pull
+                git submodule update --init --recursive
+                ;;
+
+        "-c"|"--commit"|"--push")
+                git add --all
+                echo "   Input commit info:"
+                read inputline
+                co="$inputline"
+                git commit -m $co
+                git push
+                ;;
+
+        "-h"|"--help") echo "usage: cryptonite [command] [optional:filename]"
+                echo ""
+                echo "Valid commands are:"
+                echo " -u, --update, --pull"
+                echo "        Update repository."
+                echo " -c, --commit, --push"
+                echo "        Commit files."
+                echo " -h, --help"
+                echo "        Shows this help text.";;
+
+        *) echo " This is no valid command.";;
+esac
+
