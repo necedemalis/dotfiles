@@ -263,7 +263,7 @@ endif
         command Dipdir cd ~/Dropbox/Diplomarbeit/Diplomarbeit/ | :NERDTree
         command Dip :e ~/Dropbox/Diplomarbeit/Diplomarbeit/Diplomarbeit.tex | cd ~/Dropbox/Diplomarbeit/
 
-        " Qwertz/Neo2 remappings
+        " Neo2 remappings
         command Neo2 noremap s h  |
                         \ noremap n gj |
                         \ noremap r gk |
@@ -276,18 +276,6 @@ endif
                         \ noremap h r |
                         " lookup
                         \ noremap l t |
-        command Qwertz noremap s h  |
-                        \ noremap gj n |
-                        \ noremap gk r |
-                        \ noremap l t |
-                        " kill
-                        \ noremap s k |
-                        " jump
-                        \ noremap n j |
-                        " hide
-                        \ noremap r h |
-                        " lookup
-                        \ noremap t l |
         "Umschalten Prosa und Code
         command! Prose colorscheme ChocolateLiquor |
                      \ inoremap <buffer> . .<C-G>u|
