@@ -14,16 +14,20 @@ g:*default
 -1 http://www.diveinto.org/python3/generators.html#generators Closures & Generators - Dive Into Python 3
 0|0 http://www.diveinto.org/python3/iterators.html Classes & Iterators - Dive Into Python 3
 1 http://www.diveinto.org/python3/examples/fibonacci2.py 500 Internal Server Error
--9 https://startpage.com/do/search?query=2%20byte%2016%20bit 2 byte 16 bit - Startpage Web Search
--8 https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=11&ct=1374506975&rver=6.1.6206.0&wp=MBI_SSL_SHARED&wreply=https:%2F%2Fmail.live.com%2Fdefault.aspx%3Fid%3D64855%26owa%3D1%26owasuffix%3Dowa%252f&lc=1033&id=64855&mkt=en-US&cbcxt=mai Sign In
--7 https://login.live.com/ppsecure/post.srf?wa=wsignin1.0&rpsnv=11&ct=1374506975&rver=6.1.6206.0&wp=MBI_SSL_SHARED&wreply=https:%2F%2Fmail.live.com%2Fdefault.aspx%3Fid%3D64855%26owa%3D1%26owasuffix%3Dowa%252f&lc=1033&id=64855&mkt=en-US&cbcxt=mai&bk=1374506977 Sign In
--6 https://dub116.mail.live.com/default.aspx?id=64855&owa=1&owasuffix=owa%2f Outlook - chief_wiggum44@hotmail.com
--5 https://dub116.mail.live.com/default.aspx?n=1433294639&fid=1&mid=c9e39b2d-f2e0-11e2-8e04-00215ad6a64a&fv=1 Outlook - chief_wiggum44@hotmail.com
--4 https://dub116.mail.live.com/default.aspx?n=1433294639&fid=1&mid=c9e39b2d-f2e0-11e2-8e04-00215ad6a64a&fv=1#n=192822957&fid=1 Outlook - chief_wiggum44@hotmail.com
+-13 https://startpage.com/do/search?query=2%20byte%2016%20bit 2 byte 16 bit - Startpage Web Search
+-12 https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=11&ct=1374506975&rver=6.1.6206.0&wp=MBI_SSL_SHARED&wreply=https:%2F%2Fmail.live.com%2Fdefault.aspx%3Fid%3D64855%26owa%3D1%26owasuffix%3Dowa%252f&lc=1033&id=64855&mkt=en-US&cbcxt=mai Sign In
+-11 https://login.live.com/ppsecure/post.srf?wa=wsignin1.0&rpsnv=11&ct=1374506975&rver=6.1.6206.0&wp=MBI_SSL_SHARED&wreply=https:%2F%2Fmail.live.com%2Fdefault.aspx%3Fid%3D64855%26owa%3D1%26owasuffix%3Dowa%252f&lc=1033&id=64855&mkt=en-US&cbcxt=mai&bk=1374506977 Sign In
+-10 https://dub116.mail.live.com/default.aspx?id=64855&owa=1&owasuffix=owa%2f Outlook - chief_wiggum44@hotmail.com
+-9 https://dub116.mail.live.com/default.aspx?n=1433294639&fid=1&mid=c9e39b2d-f2e0-11e2-8e04-00215ad6a64a&fv=1 Outlook - chief_wiggum44@hotmail.com
+-8 https://dub116.mail.live.com/default.aspx?n=1433294639&fid=1&mid=c9e39b2d-f2e0-11e2-8e04-00215ad6a64a&fv=1#n=192822957&fid=1 Outlook - chief_wiggum44@hotmail.com
+-7 https://github.com/necedemalis necedemalis · GitHub
+-6 https://github.com/necedemalis/dotfiles necedemalis/dotfiles · GitHub
+-5 https://github.com/necedemalis/dotfiles/tree/master/dwb dotfiles/dwb at master · necedemalis/dotfiles · GitHub
+-4 https://github.com/necedemalis/dotfiles necedemalis/dotfiles · GitHub
 -3 https://github.com/necedemalis necedemalis · GitHub
--2 https://github.com/necedemalis/dotfiles necedemalis/dotfiles · GitHub
--1 https://github.com/necedemalis/dotfiles/tree/master/dwb dotfiles/dwb at master · necedemalis/dotfiles · GitHub
-0|0 https://github.com/necedemalis/dotfiles necedemalis/dotfiles · GitHub
+-2 https://github.com/login?return_to=%2Fnecedemalis Sign in · GitHub
+-1 https://github.com/necedemalis necedemalis
+0|0 https://github.com/settings/profile Your Profile
 -2 https://startpage.com/do/search?query=shell%20script%20string%20as%20input shell script string as input - Startpage Web Search
 -1 https://startpage.com/do/search? shell script input - Startpage Web Search
 0|0 http://unixhelp.ed.ac.uk/scrpt/scrpt2.3.html Reading user input

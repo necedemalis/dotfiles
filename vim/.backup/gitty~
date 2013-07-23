@@ -8,8 +8,9 @@ case $1 in
                 ;;
 
         "-c"|"--commit"|"--push")
+                cd ~/dotfiles/
                 git add --all
-                echo "   Input commit info:"
+                echo "Input commit info:"
                 read inputline
                 co="$inputline"
                 git commit -m $co
