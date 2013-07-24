@@ -1,4 +1,4 @@
-g:default
+g:*default
 -13 https://github.com/Frasier-Crane/ Frasier-Crane
 -12 https://github.com/necedemalis necedemalis
 -11 https://github.com/necedemalis/dotfiles 
@@ -14,12 +14,9 @@ g:default
 -1 http://www.diveinto.org/python3/generators.html#generators Closures
 0|0 http://www.diveinto.org/python3/iterators.html Classes & Iterators - Dive Into Python 3
 1 http://www.diveinto.org/python3/examples/fibonacci2.py 500
-0|0 https://github.com/necedemalis/dotfiles unknown
-0|0 http://stackoverflow.com/questions/7548661/git-github-cant-push-to-master unknown
-0|0 http://unixhelp.ed.ac.uk/scrpt/scrpt2.3.html unknown
-0|0 http://www.cyberciti.biz/faq/shell-script-while-loop-examples/ unknown
--4 http://www.dict.cc/?s=rule%20of%20law dict.cc
--3 https://online.tipp10.com/de/ TIPP10
--2 https://online.tipp10.com/de/ TIPP10
--1 https://online.tipp10.com/de/training/ TIPP10 Onlineschreibtrainer | Login
-0|0 https://online.tipp10.com/de/ TIPP10 Online Tipptrainer | Schreibtraining
+-5 https://github.com/necedemalis/dotfiles unknown
+-4 http://facebook.rgm/ Error
+-3 https://www.facebook.com/ Welcome
+-2 https://www.facebook.com/login.php?login_attempt=1 Facebook
+-1 https://www.facebook.com/login.php?login_attempt=1 Facebook
+0|0 https://www.facebook.com/login.php?login_attempt=1 Facebook
