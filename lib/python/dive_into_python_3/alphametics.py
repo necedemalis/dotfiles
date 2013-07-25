@@ -1,24 +1,40 @@
-'''Fibonacci iterator'''
+'''Find solutions to alphametic equations.
 
-class Fib:
-    '''iterator that yields numbers in the Fibonacci sequence'''
+>>> alphametics.solve('SEND + MORE == MONEY')
+'9567 + 1085 == 10652'
+'''
 
-    def __init__(self, max):
-        self.max = max
+import re
+import itertools
 
-    def __iter__(self):
-        self.a = 0
-        self.b = 1
-        return self
+def solve(puzzle):
+    words = re.findall('[A-Z]+', puzzle.upper())
+    unique_characters = set(''.join(words))
+    assert len(unique_characters) <= 10, 'Too many letters'
+    first_letters = {word[0] for word in words}
+    n = len(first_letters)
+    sorted_characters = ''.join(first_letters) + \
+        ''.join(unique_characters - first_letters)
+    characters = tuple(ord(c) for c in sorted_characters)
+    digits = tuple(ord(c) for c in '0123456789')
+    zero = digits[0]
+    for guess in itertools.permutations(digits, len(characters)):
+        if zero not in guess[:n]:
+            equation = puzzle.translate(dict(zip(characters, guess)))
+            if eval(equation):
+                return equation
 
-    def __next__(self):
-        fib = self.a
-        if fib > self.max:
-            raise StopIteration
-        self.a, self.b = self.b, self.a + self.b
-        return fib
+if __name__ == '__main__':
+    import sys
+    for puzzle in sys.argv[1:]:
+        print(puzzle)
+        solution = solve(puzzle)
+        if solution:
+            print(solution)
 
-# Copyright (c) 2009, Mark Pilgrim, All rights reserved.
+# Copyright (c) 2009, Raymond Hettinger, All rights reserved.
+# Ported to Python 3 and modified by Mark Pilgrim
+# original: http://code.activestate.com/recipes/576615/
 # 
 # Redistribution and use in source and binary forms, with or without modification,
 # are permitted provided that the following conditions are met:

@@ -81,7 +81,8 @@
         alias r-calendar='remind -c+4mb1 ~/Dropbox/Markus/Remind/.reminders'
         alias r-reminders='remind -t14g ~/Dropbox/Markus/Remind/.reminders'
         alias svim='HOME=/home/joecool && sudo vim -u ~/.vimrc'
-        alias neo2='setxkbmap lv && xmodmap ~/Downloads/neo_de.xmodmap && xset -r 51'
+        alias neo2='setxkbmap lv && xmodmap ~/.Xmodmap/neo_de.xmodmap && xset -r 51'
+        alias qwertz_custom='setxkbmap lv && xmodmap ~/.Xmodmap/neo_de_custom.xmodmap && xset -r 51' #qwertz mit Neo2-Ebene 3+
         alias qwertz='setxkbmap de && xset r 51'
 #Python
         alias p='python3'

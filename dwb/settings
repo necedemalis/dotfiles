@@ -160,6 +160,9 @@ hint-offset-top=0
 javascript-api=automatic
 hint-offset-left=0
 
+enable-ipc=true
+block-insecure-content=false
+
 [joecool]
 load-on-focus=false
 adblocker-filterlist=/home/joecool/.config/dwb/adblock_lists

@@ -107,6 +107,14 @@
         nmap ,dw :cd /home/joecool/.config/dwb/<cr>
         "~/.vifm/Trash/
         nmap ,tr :cd /home/joecool/.vifm/Trash/<cr>
+        "~/lib
+        nmap ,li :cd /home/joecool/lib<cr>
+        "~/bin
+        nmap ,bi :cd /home/joecool/bin<cr>
+        "~/dotfiles
+        nmap ,df :cd /home/joecool/dotfiles/<cr>
+        "~/builds
+        nmap ,bu :cd /home/joecool/builds/<cr>
         "/
         nmap ,/ :cd /<cr>
         "~/Dokumente

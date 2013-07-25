@@ -107,6 +107,14 @@
         nmap ,dw :cd /home/joecool/.config/dwb/<cr>
         "~/.vifm/Trash/
         nmap ,tr :cd /home/joecool/.vifm/Trash/<cr>
+        "~/lib
+        nmap ,li :cd /home/joecool/lib
+        "~/bin
+        nmap ,bi :cd /home/joecool/bin
+        "~/dotfiles
+        nmap ,df :cd /home/joecool/dotfiles/
+        "~/builds
+        nmap ,bu :cd /home/joecool/builds/
         "/
         nmap ,/ :cd /<cr>
         "~/Dokumente
@@ -194,7 +202,7 @@
         command run !! ./%f
         command make !!make
         command vgrep vim "+grep %a"
-        command mplayer mplayer ./%f
+        command mplayer mplayer -really-quiet ./%f
         command smplayer smplayer ./%f &<cr>l
         command ln !ln -s %d/%f %D
         command move sudo mv -R %d/%f %D

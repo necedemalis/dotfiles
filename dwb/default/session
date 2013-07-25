@@ -1,4 +1,4 @@
-g:*default
+g:default
 -13 https://github.com/Frasier-Crane/ Frasier-Crane
 -12 https://github.com/necedemalis necedemalis
 -11 https://github.com/necedemalis/dotfiles 
@@ -14,9 +14,11 @@ g:*default
 -1 http://www.diveinto.org/python3/generators.html#generators Closures
 0|0 http://www.diveinto.org/python3/iterators.html Classes & Iterators - Dive Into Python 3
 1 http://www.diveinto.org/python3/examples/fibonacci2.py 500
--5 https://github.com/necedemalis/dotfiles unknown
--4 http://facebook.rgm/ Error
--3 https://www.facebook.com/ Welcome
+-7 https://github.com/necedemalis/dotfiles unknown
+-6 http://facebook.rgm/ Error
+-5 https://www.facebook.com/ Welcome
+-4 https://www.facebook.com/login.php?login_attempt=1 Facebook
+-3 https://www.facebook.com/login.php?login_attempt=1 Facebook
 -2 https://www.facebook.com/login.php?login_attempt=1 Facebook
 -1 https://www.facebook.com/login.php?login_attempt=1 Facebook
-0|0 https://www.facebook.com/login.php?login_attempt=1 Facebook
+0|0 https://www.facebook.com/?sk=welcome Facebook
