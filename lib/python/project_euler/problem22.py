@@ -1,9 +1,9 @@
 def name_scores():
-    '''Using problem5_names.txt begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.'''
+    '''Using problem22_names.txt begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.'''
     name_list = []
     sum_list = []
 
-    with open ('problem5_names.txt', encoding = 'utf-8') as a_file:
+    with open ('problem22_names.txt', encoding = 'utf-8') as a_file:
         a_text = a_file.read()
         cleaned_text = a_text.replace('"','')
         name_list = cleaned_text.split(',')

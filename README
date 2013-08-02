@@ -23,3 +23,8 @@ git submodule foreach git pull origin master
 
 # Delete added file
 git rm --cache %f
+
+
+# Update Vim-Plugins
+cd dotfiles/vim
+ruby pathogen_update

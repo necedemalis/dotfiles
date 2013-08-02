@@ -228,14 +228,14 @@ endif
         "F9 -> Autocomplete fÃ¼r Biblatex bei \cite{}
 
 " Custom Macros
-        "Für Kobo-Annotations (r=Delete zweiten Teil, t=fÃ¼ge zweiten Teil zu ersten Teil),
+        "Für Kobo-Annotations @z (r=Delete zweiten Teil, t=fÃ¼ge zweiten Teil zu ersten Teil),
         "schauen ob </text am zeilenanfang
         let @r='?<annotation>V/<\/annotation>d'
-        let @t='/end="v$di?end="Pnndd'
-        let @s='/<text>f>tv/<\/text>sd?<\/text>ji p'
+        let @t='/end="v$di?end="Pjdd'
+        let @s='/<annotation>/<text>f>lv/<\/text>hd?<\/text>ni p'
         let @u='/<text>dd/<annotation>V/<\/annotation>d'
-        let @k='@t/<annot@s@u'
-        let @z='gg/seiteWvtt"aygg/a--@rgg/seite a/<\/annotýLpýLýLýLýLýL@k'
+        let @k='@t@s@u'
+        let @z='gg/seiteWvt<"aygg/a--@rgg/seite a/<\/annotp@k'
 
 "Custom Commands
         "Remove Multiple Blank Lines

@@ -235,7 +235,7 @@ endif
         let @s='/<text>f>tv/<\/text>sd?<\/text>ji p'
         let @u='/<text>dd/<annotation>V/<\/annotation>d'
         let @k='@t/<annot@s@u'
-        let @z='gg/seiteWvtt"aygg/a--@rgg/seite a/<\/annotýLpýLýLýLýLýL@k'
+        let @z='gg/seiteWvtt"aygg/a--@rgg/seitea/<\/annotýLpýLýLýLýLýL@k'
 
 "Custom Commands
         "Remove Multiple Blank Lines
@@ -263,7 +263,7 @@ endif
         command Dipdir cd ~/Dropbox/Diplomarbeit/Diplomarbeit/ | :NERDTree
         command Dip :e ~/Dropbox/Diplomarbeit/Diplomarbeit/Diplomarbeit.tex | cd ~/Dropbox/Diplomarbeit/
 
-        " Neo2 remappings
+        " Qwertz/Neo2 remappings
         command Neo2 noremap s h  |
                         \ noremap n gj |
                         \ noremap r gk |
@@ -276,6 +276,18 @@ endif
                         \ noremap h r |
                         " lookup
                         \ noremap l t |
+        command Qwertz noremap s h  |
+                        \ noremap gj n |
+                        \ noremap gk r |
+                        \ noremap l t |
+                        " kill
+                        \ noremap s k |
+                        " jump
+                        \ noremap n j |
+                        " hide
+                        \ noremap r h |
+                        " lookup
+                        \ noremap t l |
         "Umschalten Prosa und Code
         command! Prose colorscheme ChocolateLiquor |
                      \ inoremap <buffer> . .<C-G>u|

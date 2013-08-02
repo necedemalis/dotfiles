@@ -13,16 +13,15 @@ git_bundles = [
   "git://github.com/plasticboy/vim-markdown",
   "git://github.com/davidhalter/jedi-vim",
   "git://github.com/tsaleh/vim-matchit",
-  #"git://github.com/vim-scripts/searchfold.vim",
   "git://github.com/godlygeek/tabular",
   "git://github.com/majutsushi/tagbar",
   "git://github.com/tmhedberg/SimpylFold",
+  "git://github.com/vim-scripts/c.vim",
 ]
 
 vim_org_scripts = [
   ["folddigest",      "2230",   "plugin"],
   ["python",          "20262",  "syntax"],
-  #["python2",          "9584",  "syntax"],
   ["python",          "15221",  "indent"],
   ["python_matchit",  "2366",   "ftplugin"],
 ]

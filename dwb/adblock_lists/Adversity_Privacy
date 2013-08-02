@@ -1,4 +1,4 @@
-! Last updated : Wed Jul 24 2013 22:05:20 GMT+0200 (CEST)
+! Last updated : Fri Aug 02 2013 16:09:36 GMT+0200 (CEST)
 ###addthis
 ###addthisButton
 ###article_actions_twitter
@@ -372,6 +372,7 @@
 ##.footer_article_share
 ##.footSocial
 ##.fourSq-widget
+##.ftFollowBox
 ##.getfaceBook
 ##.getfaceBoook
 ##.getsocial
@@ -396,6 +397,7 @@
 ##.large_share_panel
 ##.largeHorizontal_share_buttons
 ##.lazy-share-widget
+##.Like-box
 ##.likeOMG
 ##.linkedIn
 ##.linkedin_icon
@@ -553,11 +555,13 @@
 ##.text-m-hs-promo-fb-bite
 ##.tool-digg
 ##.tool-twitter
+##.top_social_icons
 ##.tw_share
 ##.tweet_action
 ##.tweetbox
 ##.tweetmeme
 ##.twiter-abuzz
+##.twitter-box
 ##.twitter-btn
 ##.twitter-container-outer-main
 ##.twitter-feed
@@ -1883,6 +1887,8 @@ androidadvices.com##.share-post
 androidanalyse.com##.sticky_bar
 androidcommunity.com##.sticky-wrapper
 androidcommunity.com,arstechnica.com,espn.go.com,gizmodo.com.au,ipodwizard.net,lifehacker.com.au,mademan.com,rei.com,sendmassage.com,siliconrepublic.com,smh.com.au,zdnet.com,goal.com##.social
+androidtopnews.com##.cat_article_share
+androidtopnews.com##.single_share
 apartmentguide.com###snap_bar_background
 arstechnica.com###in-the-know
 ashemaletube.com###ASHM_imBox
