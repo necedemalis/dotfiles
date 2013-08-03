@@ -71,3 +71,6 @@
 [submodule "vim/bundle/SimplyFold"]
 	path = vim/bundle/SimplyFold
 	url = git://github.com/tmhedberg/SimpylFold
+[submodule "vim/bundle/OmniCppComplete"]
+	path = vim/bundle/OmniCppComplete
+	url = git://github.com/vim-scripts/OmniCppComplete

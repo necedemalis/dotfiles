@@ -12,11 +12,11 @@ g:default
 -3 http://www.diveinto.org/python3/regular-expressions.html Regular
 -2 http://www.diveinto.org/python3/generators.html Closures
 -1 http://www.diveinto.org/python3/generators.html#generators Closures
-0|0 http://www.diveinto.org/python3/iterators.html Classes & Iterators - Dive Into Python 3
+0|0 http://www.diveinto.org/python3/iterators.html Classes
 1 http://www.diveinto.org/python3/examples/fibonacci2.py 500
 0|0 https://www.facebook.com/?sk=welcome unknown
 0|0 file:///home/joecool/Octopress/source/index.html unknown
 -3 http://diveintopython3.org/examples/feed.xml 
--2 dwb:keys dwb - Keys
--1 dwb:settings dwb - Settings
+-2 dwb:keys dwb
+-1 dwb:settings dwb
 0|0 dwb:bookmarks dwb - Bookmarks

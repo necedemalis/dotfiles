@@ -17,14 +17,12 @@ git push
 # Add vim plugin as submodule
 cd ~/dotfiles
 git submodule add http://github.com/$name/$plugin.git vim/bundle/$plugin
+        # For jedi-vim, pyflakes
+        cd /vim/bundle/$plugin
+        git submodule update --init
 
 # Upgrading all bundled plugins
 git submodule foreach git pull origin master
 
 # Delete added file
 git rm --cache %f
-
-
-# Update Vim-Plugins
-cd dotfiles/vim
-ruby pathogen_update
