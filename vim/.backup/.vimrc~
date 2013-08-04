@@ -125,8 +125,8 @@ endif
         nmap <CR> o<Esc>
         nmap <S-Enter> O<Esc>
         " j und k fur gewrappte Zeilen
-        "nnoremap j gj
-        "nnoremap k gk
+        nnoremap j gj
+        nnoremap k gk
         "W ist w/ Q ist q
         cmap W w
         cmap Q q
@@ -223,14 +223,14 @@ endif
         "F9 -> Autocomplete fÃ¼r Biblatex bei \cite{}
 
 " Custom Macros
-        "Für Kobo-Annotations @z
-        "schauen ob </text am zeilenanfang
-        let @r='?<annotation>V/<\/annotation>d'
-        let @t='/end="v$di?end="Pjdd'
-        let @s='/<annotation>/<text>f>lv/<\/text>hd?<\/text>ni p'
-        let @u='/<text>dd/<annotation>V/<\/annotation>d'
-        let @k='@t@s@u'
-        let @z='gg/seiteWvt<"aygg/a--@rgg/seite a/<\/annotp@k'
+        "@z: Für Kobo-Annotations
+        let @z='gg/seiteWvt<"aygg/a--?<annotation>V/<\/annotation>dgg/seite a/<\/annotp/end="v$di?end="Pjdd/<annotation>/<text>f>lv/<\/text>hd?<\/text>ni p/<text>dd/<annotation>V/<\/annotation>d'
+        "let @r='?<annotation>V/<\/annotation>d'
+        "let @t='/end="v$di?end="Pjdd'
+        "let @s='/<annotation>/<text>f>lv/<\/text>hd?<\/text>ni p'
+        "let @u='/<text>dd/<annotation>V/<\/annotation>d'
+        "let @k='@t@s@u'
+        "let @z='gg/seiteWvt<"aygg/a--@rgg/seite a/<\/annotp@k'
 
 "Custom Commands
         ":RemoveMultipleBlankLines
@@ -272,7 +272,7 @@ endif
                      \ inoremap <buffer> . .<C-G>u|
                      \ inoremap <buffer> ! !<C-G>u|
                      \ inoremap <buffer> ? ?<C-G>u|
-                     \ setlocal 
+                     \ setlocal
                      \ nolist wrap tw=96 fo=t1 nosmartindent linebreak nu|
                      \ set background=light |
                      \ colorscheme solarized |
@@ -295,7 +295,6 @@ endif
                     \ nnoremap k gk |
                     \ set guifont=Monospace\ 10 |
                     \ silent! autocmd! PROSE * <buffer>
-
         "function ToggleJust()
         "  if set formatprg? == 'par\ -w96'
         "    set formatprg=par\ -w96j    
