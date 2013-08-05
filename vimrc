@@ -148,9 +148,6 @@ endif
        nnoremap <right> <C-w>l
         "+ als *
         nnoremap + *
-        "Strg+C/Strg+Leertase -> Omnicompletion 
-        ""imap <C-c> <C-x><C-o>
-        ""imap <C-Space> <C-x><C-o>
         "Alt+j/k -> Jump to the next or previous line with same or lower indentation
                 " exclusive (bool): true: Motion is exclusive
                 " false: Motion is inclusive
@@ -328,7 +325,7 @@ endif
         "Wie Errors markieren durch Pyflakes (gui=underline zum unterstreichen)
         autocmd FileType python highlight SpellBad term=underline gui=bold guisp=Orange guifg=red
         "Pydiction
-        let g:pydiction_location = '/home/joecool/.vim/pydiction/pydiction-1.2/complete-dict'
+        """let g:pydiction_location = '/home/joecool/.vim/pydiction/pydiction-1.2/complete-dict'
         "Latex/Vim-Latex
         let g:tex_flavor="latex"
         "F9->Bibtex autocomplete
@@ -341,3 +338,5 @@ endif
         autocmd FileType sh Code 
         "C
         autocmd FileType c Code
+        let g:SuperTabDefaultCompletionType = "context"
+        let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']

@@ -148,9 +148,6 @@ endif
        nnoremap <right> <C-w>l
         "+ als *
         nnoremap + *
-        "Strg+C/Strg+Leertase -> Omnicompletion 
-        ""imap <C-c> <C-x><C-o>
-        ""imap <C-Space> <C-x><C-o>
         "Alt+j/k -> Jump to the next or previous line with same or lower indentation
                 " exclusive (bool): true: Motion is exclusive
                 " false: Motion is inclusive
@@ -224,7 +221,7 @@ endif
 
 " Custom Macros
         "@z: Für Kobo-Annotations
-        let @z='gg/seiteWvt<"aygg/a--?<annotation>V/<\/annotation>dgg/seite a/<\/annotp/end="v$di?end="Pjdd/<annotation>/<text>f>lv/<\/text>hd?<\/text>ni p/<text>dd/<annotation>V/<\/annotation>d'
+        let @k='gg/seiteWvt<"aygg/a--?<annotation>V/<\/annotation>dgg/seite a/<\/annotp/end="v$di?end="Pjdd/<annotation>/<text>f>lv/<\/text>hd?<\/text>ni p/<text>dd/<annotation>V/<\/annotation>d'
         "let @r='?<annotation>V/<\/annotation>d'
         "let @t='/end="v$di?end="Pjdd'
         "let @s='/<annotation>/<text>f>lv/<\/text>hd?<\/text>ni p'
@@ -320,6 +317,8 @@ endif
         "Code Omnicompletion
         """autocmd FileType python set omnifunc=pythoncomplete#Complete
         let g:SuperTabDefaultCompletionType = "context"
+        let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+        inoremap <Tab> <C-X><C-F>
         let g:jedi#popup_on_dot = 0
         let g:jedi#auto_initialization = 1
         let g:jedi#auto_vim_configuration = 1
