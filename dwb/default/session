@@ -1,4 +1,4 @@
-g:default
+g:*default
 -13 https://github.com/Frasier-Crane/ Frasier-Crane
 -12 https://github.com/necedemalis necedemalis
 -11 https://github.com/necedemalis/dotfiles 
@@ -12,11 +12,15 @@ g:default
 -3 http://www.diveinto.org/python3/regular-expressions.html Regular
 -2 http://www.diveinto.org/python3/generators.html Closures
 -1 http://www.diveinto.org/python3/generators.html#generators Closures
-0|0 http://www.diveinto.org/python3/iterators.html Classes
+0|0 http://www.diveinto.org/python3/iterators.html Classes & Iterators - Dive Into Python 3
 1 http://www.diveinto.org/python3/examples/fibonacci2.py 500
 0|0 https://www.facebook.com/?sk=welcome unknown
 0|0 file:///home/joecool/Octopress/source/index.html unknown
--3 http://diveintopython3.org/examples/feed.xml 
--2 dwb:keys dwb
--1 dwb:settings dwb
-0|0 dwb:bookmarks dwb - Bookmarks
+-7 http://diveintopython3.org/examples/feed.xml 
+-6 dwb:keys dwb
+-5 dwb:settings dwb
+-4 dwb:bookmarks dwb
+-3 https://startpage.com/do/search?query=arch%20mpd arch
+-2 https://wiki.archlinux.org/index.php/Music_Player_Daemon Music
+-1 https://wiki.archlinux.org/index.php/Music_Player_Daemon#Global_configuration Music
+0|0 https://wiki.archlinux.org/index.php/Music_Player_Daemon#Global_configuration Music Player Daemon - ArchWiki

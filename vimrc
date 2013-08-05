@@ -51,8 +51,8 @@ endif
         set noerrorbells " don't beep
         set hidden  "zwischen Buffern wechseln ohne speichern zu mÃ¼ssen
         set autowrite "speichter Datei automatisch beim wechseln
-        set guioptions-=T "Versteckt GUI-Toolbar
-        set guioptions-=m "Versteckt GUI-Toolbar
+        "set guioptions-=T "Versteckt GUI-Toolbar
+        "set guioptions-=m "Versteckt GUI-Toolbar
         set autoindent "Copy indent from current line when starting a new line 
         set go+=c "No Popup-Dialogs
         set shortmess+=I "Keine Startup-Message
@@ -331,6 +331,11 @@ endif
         "F9->Bibtex autocomplete
         let g:Tex_BIBINPUTS="$PWD/*.bib"
         "Starte LaTex automisch in Prosa
+        "Open Dvi with Evince
+        let g:Tex_ViewRule_dvi = "evince"
+        "Fold-Options verändert in dotfiles/vim/bundle/latex-suite/ftplugin/latex-suite/folding.vim, geschützt mit chattr +i
+        ""let g:Tex_FoldedSections = 'section,%%fakesection,%%fakesubsection'
+        ""let g:Tex_FoldedEnvironments = "abstract"
         autocmd FileType tex Prose 
         "Markdown
         autocmd FileType markdown Prose 

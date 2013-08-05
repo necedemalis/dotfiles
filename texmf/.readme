@@ -1,0 +1,6 @@
+1.) Open a shell and create your (hidden) local texmf folder by invoking mkdir ~/.texmf.
+2.) Locate texmf.cnf by invoking kpsewhich texmf.cnf. You should end up with a path like /usr/local/texlive/2011/texmf.cnf.
+3.) Open this file as root in your favorite text editor (in case you don’t yet have a favorite text editor, I suggest vim), i.e. sudoedit /usr/local/texlive
+4.) Add the following two lines anywhere you like in this file (it’s probably rather empty, containing nothing but comments)
+5.) Run texhash/sudo texhash
+(6.) Mimic the structure of /usr/local/texlive/2011/texmf/)

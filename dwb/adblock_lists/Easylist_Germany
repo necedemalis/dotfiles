@@ -1,4 +1,4 @@
-! Last updated : Mon Aug 05 2013 19:11:52 GMT+0200 (CEST)
+! Last updated : Tue Aug 06 2013 01:15:40 GMT+0200 (CEST)
 &werbemittel=
 -werb_hori.
 -werb_vert.
@@ -1359,6 +1359,7 @@ nas-hilfe.de#@#div[id^="div-gpt-ad-"]
 |http://*.cu.cc^$domain=lustich.de
 |http://*.org^$domain=lustich.de
 |http://*.tk^$domain=lustich.de
+|http://lustich.de/bilder/l/*-*-*-*.jpg
 ||0815sms.com/doku/$script
 ||0nk.de/banner/
 ||14-tage-wettervorhersage.de/popup-$script
@@ -1955,6 +1956,7 @@ nas-hilfe.de#@#div[id^="div-gpt-ad-"]
 ||flashmob.de/modules/mod_beinvolved/images/wordpress.png
 ||flirttoday.de/popup_
 ||flugzeugbilder.de/adria.gif
+||flugzeugbilder.de/schriftklein.jpg
 ||fm-arena.de/images/fm10/*x128.gif
 ||forendienst.de/ad/
 ||forenhoster.net/index.php?wbu=$subdocument
@@ -3894,6 +3896,7 @@ tri-mag.de###superbanner_wide
 prosieben.de###superbanner_wrap
 chilloutzone.net###superreplacement
 iphoneblog.de,viply.de,web.de###supersize
+paket.de###t_portletInstance_myPaket_ajax
 netzwelt.de###takeover_helper
 netzwelt.de###takeover_helper + style[type="text/css"] + .informative + .social_block + .informative
 myspass.de###target_banner_wrapper
