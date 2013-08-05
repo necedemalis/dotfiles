@@ -1,4 +1,4 @@
-! Last updated : Fri Aug 02 2013 16:09:36 GMT+0200 (CEST)
+! Last updated : Mon Aug 05 2013 19:11:51 GMT+0200 (CEST)
 ###addthis
 ###addthisButton
 ###article_actions_twitter
@@ -1011,6 +1011,7 @@
 /foot-twit.
 /foot-youtube.
 /footer-facebook.
+/footer-social-links/*
 /footer-social.$domain=~affiliates.mozilla.org
 /footer-youtube.
 /footer/fb.
@@ -1522,6 +1523,7 @@
 /social-media-icons-
 /social-media-sprite
 /social-media-widget/*$~stylesheet
+/social-media.png?
 /social-mod/facebook.
 /social-network-sprite.
 /social-networks/myspace.
@@ -2123,5 +2125,4 @@ zdnet.com##.siu-vertical
 ~wired.com##.social-media
 ~youtube.com###youtubeButton
 @@||googleusercontent.com/gadgets/$xmlhttprequest,domain=googleusercontent.com,~third-party
-
 @@||www-*-opensocial.googleusercontent.com^$domain=googleusercontent.com|~webcache.googleusercontent.com

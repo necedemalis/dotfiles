@@ -306,7 +306,7 @@ endif
         "map <leader>pj  :call ToggleJust()<CR>
 
 "Filetypes
-        "Python
+"Python
         ""http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
         map <f5> :w\|!python3 %
         au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
@@ -326,7 +326,7 @@ endif
         autocmd FileType python highlight SpellBad term=underline gui=bold guisp=Orange guifg=red
         "Pydiction
         """let g:pydiction_location = '/home/joecool/.vim/pydiction/pydiction-1.2/complete-dict'
-        "Latex/Vim-Latex
+"Latex/Vim-Latex
         let g:tex_flavor="latex"
         "F9->Bibtex autocomplete
         let g:Tex_BIBINPUTS="$PWD/*.bib"

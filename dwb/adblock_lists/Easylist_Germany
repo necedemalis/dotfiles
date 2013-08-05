@@ -1,4 +1,4 @@
-! Last updated : Fri Aug 02 2013 16:09:36 GMT+0200 (CEST)
+! Last updated : Mon Aug 05 2013 19:11:52 GMT+0200 (CEST)
 &werbemittel=
 -werb_hori.
 -werb_vert.
@@ -2110,6 +2110,7 @@ nas-hilfe.de#@#div[id^="div-gpt-ad-"]
 ||halleforum.de/images/anzeige_
 ||hallo-verlag.de/img/sky_*.swf
 ||hallo-verlag.de/img/super_*.swf
+||hamburg-pride.de/fileadmin/banner/
 ||hamm.biz/bannerBOX.php
 ||hamm.biz/bannerLB.php
 ||hammonline.de/bannerbox.php
@@ -3211,7 +3212,7 @@ spielaffe.de###adv_skyscraper_pos
 pennercity.de###advert
 gloria.tv###advertisement
 anonstream.com###advertisiment
-loipenpark.de###advertising
+loipenpark.de,traumpalast.de###advertising
 gofeminin.de###af_columnPubLabel
 computerbase.de###afc-box
 gamersglobal.de###ahoz
@@ -4059,6 +4060,7 @@ sport1.de##.addPicture
 aero.de##.add_balken
 tes-5-skyrim.de##.addleft
 oxygen-scene.com##.adoxygen
+baronbuff.de##.adp_pls
 20min.ch,250kb.de,app-kostenlos.de,arbeitszeugnisgenerator.de,bild.de,channelpartner.de,erdbeerlounge.de,fischkopf.de,focus.de,giga.de,helpster.de,mtv.de,playmassive.de,tageblatt.lu,tecchannel.de,worldofminecraft.eu,zdnet.de##.ads
 psychic.de##.ads5
 gamestar.de##.adsense

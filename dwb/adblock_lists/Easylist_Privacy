@@ -1,4 +1,4 @@
-! Last updated : Fri Aug 02 2013 16:09:36 GMT+0200 (CEST)
+! Last updated : Mon Aug 05 2013 19:11:52 GMT+0200 (CEST)
 &pageReferrer=
 -AdTracking.
 -baynote.
@@ -1501,6 +1501,7 @@
 /StatsCollector/*
 /statscounter/*
 /statscript.js
+/statsd_proxy
 /StatsHelper.gif?
 /StatsMngrWebInterface.
 /statspixel.
@@ -3277,7 +3278,6 @@ http://utm.
 ||w55c.net^$third-party
 ||waplog.net^$third-party
 ||waudit.cz^$third-party
-||web-18.com^$third-party
 ||web-stat.com^$third-party
 ||web-stat.net^$third-party
 ||webcounter.co.za^$third-party
@@ -5129,6 +5129,7 @@ http://utm.
 ||tsphone.biz/pixelvoleur.jpg?
 ||veoxa.com/get_trackingcode.
 ||wifeo.com/compteurs/$third-party
+||zebestof.com^$third-party
 ||minsk-in.net/counter.php?
 ||aff*.kolektiva.net^
 ||116.213.75.36/logstat/$domain=~caixin.com.ip
@@ -6163,6 +6164,7 @@ http://utm.
 ||link.ex.fm/img/*.gif
 ||linkbucks.com/track/
 ||linkedin.com/analytics/
+||linkedin.com/lite/rum-track
 ||linkedin.com^*/tracker.gif?
 ||linkpuls.idg.no^
 ||linuxtoday.com/hqxapi/
@@ -6969,6 +6971,7 @@ http://utm.
 ||wcnc.com/g/g/button/
 ||weather.com/pagelet/metrics/
 ||weather.com^*/makeRequest-
+||web-18.com/common/w18a26062012143253_min.js
 ||web.hbr.org/test/whoami.php
 ||webcamgalore.com/aslog.js
 ||webcollage.net/apps/el?
@@ -7758,6 +7761,7 @@ http://utm.
 @@||optimost.com^*/content.js?$domain=bebo.com
 @@||optimost.com^*/FT_live.js$domain=ft.com
 @@||pastebin.com/etc/geo.php?
+@@||patrick-wied.at/static/heatmapjs/src/heatmap.js
 @@||pillsbury.com/Shared/StarterKit/Javascript/ntpagetag.js
 @@||pillsbury.com/Shared/StarterKit/Javascript/UnicaTag.js
 @@||ping.hellobar.com/?*&_e=click&$image

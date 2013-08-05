@@ -1,4 +1,4 @@
-! Last updated : Fri Aug 02 2013 16:09:38 GMT+0200 (CEST)
+! Last updated : Mon Aug 05 2013 19:11:55 GMT+0200 (CEST)
 &ad_box_
 &ad_channel=
 &ad_classid=
@@ -4072,6 +4072,7 @@
 /scripts/ads.
 /scripts/ads/*
 /scripts/afc/*
+/scripts/zanox-
 /scrollads/*
 /search-ads?
 /search.php?uid=*.*&src=
@@ -17567,6 +17568,7 @@ _a468x60.
 ##img[alt^="Fuckbook"]
 ##input[onclick^="window.open('http://www.FriendlyDuck.com/AF_"]
 ##input[onclick^="window.open('http://www.friendlyduck.com/AF_"]
+##.l-container > #fishtank
 ###center_col > div[style="font-size:14px;margin-right:0;min-height:5px"] > div[style="font-size:14px;margin:0 4px;padding:1px 5px;background:#fff8e7"]
 ###cnt #center_col > #res > #topstuff > .ts
 ###mbEnd[cellspacing="0"][cellpadding="0"]
@@ -18952,6 +18954,7 @@ bitcoiner.net#@##ad-top
 ||doubleclick.net/adx/wn.loc.$third-party
 ||doubleclick.net/adx/wn.nat.$third-party
 ||doubleclick.net/N2/pfadx/video.wsj.com/$third-party
+||doubleclick.net/N5202/pfadx/cmn_livemixtapes/$third-party
 ||doubleclick.net/N6088/pfadx/ssp.kshb/$third-party
 ||doubleclick.net/N6872/pfadx/shaw.mylifetimetv.ca/$third-party
 ||doubleclick.net/pfadx/*.BLIPTV/$third-party
@@ -22005,7 +22008,7 @@ bitcoiner.net#@##ad-top
 ||surf100sites.com/images/banner_
 ||surveymonkey.com/jspop.aspx?$third-party
 ||surveywriter.net^$script,third-party
-||svcs.ebay.com/services/search/FindingService/*^affiliate.trackingId=$third-party,domain=~geo-ship.com
+||svcs.ebay.com/services/search/FindingService/*^affiliate.tracking$third-party
 ||swarmjam.com^$script,third-party
 ||sweed.to/?pid=$third-party
 ||sweed.to/affiliates/
@@ -26475,7 +26478,7 @@ inc.com###adoptionsimg
 yahoo.com###adposition-TOCSS
 mp3skull.com###adr_banner
 mp3skull.com###adr_banner_2
-909lifefm.com,anichart.net,audioreview.com,daemon-tools.cc,dreadcentral.com,duckduckgo.com,eveningecho.ie,financenews.co.uk,gearculture.com,genevalunch.com,hdcast.tv,healthboards.com,isearch-for.com,lyricstime.com,mobilerevamp.org,mtbr.com,playr.org,privack.com,quiz4fun.com,quote.com,theindustry.cc,tvope.com,washingtonmonthly.com,wccftech.com###ads
+909lifefm.com,anichart.net,audioreview.com,daemon-tools.cc,dreadcentral.com,duckduckgo.com,eveningecho.ie,financenews.co.uk,gearculture.com,genevalunch.com,hdcast.tv,healthboards.com,isearch-for.com,lyricstime.com,mobilerevamp.org,mtbr.com,playr.org,privack.com,quiz4fun.com,quote.com,theindustry.cc,toorgle.net,tvope.com,washingtonmonthly.com,wccftech.com###ads
 release-ddl.com,womanowned.com###ads3
 chia-anime.com###ads4
 chia-anime.com###ads8
@@ -29422,7 +29425,7 @@ daijiworld.com##.a2
 knowyourmeme.com##.a250x250
 cnet.com##.a2[style="padding-top: 20px;"]
 twitch.tv,twitchtv.com##.a300
-animeflv.net,animeid.com,chia-anime.com,knowyourmeme.com##.a300x250
+animeflv.net,animeid.com,chia-anime.com,knowyourmeme.com,politicususa.com##.a300x250
 animeid.com##.a728
 localtiger.com##.a9gy_lt
 tvnz.co.nz##.aPopup
@@ -29848,6 +29851,7 @@ tucsoncitizen.com##.bigbox_container
 caller.com,commercialappeal.com,courierpress.com,gosanangelo.com,govolsxtra.com,independentmail.com,kitsapsun.com,knoxnews.com,naplesnews.com,redding.com,reporternews.com,tcpalm.com,timesrecordnews.com,vcstar.com##.bigbox_wrapper
 exclaim.ca##.bigboxhome
 motherjones.com,pep.ph,todaysbigthing.com##.billboard
+bre.ad##.billboard-body
 yelp.be,yelp.ca,yelp.ch,yelp.co.nz,yelp.co.uk,yelp.com,yelp.com.au,yelp.com.sg,yelp.ie##.biz-details-add
 slate.com##.bizbox_promo
 arsenalnews.co.uk##.bkmrk_pst_flt
@@ -30261,6 +30265,7 @@ free-tv-video-online.me##.dloadh
 orlydb.com##.dlright
 dreammining.com##.dm-adds
 dailymotion.com##.dmpi_masscast
+torrentz.eu##.dnotblcokmebro
 torrentz.eu##.dnotblockmebro
 nydailynews.com##.dod_img
 isup.me##.domain + p + center:last-child > a:first-child
@@ -30443,6 +30448,7 @@ mattgemmell.com##.fusion_attrib_footer
 chrisbrownworld.com,myplay.com##.fwas300x250
 masterworksbroadway.com##.fwas728x90_top
 prokerala.com##.gAS_468x60
+titantv.com##.gAd
 about.com##.gB
 free-games.net##.gPBoxAD
 search.babylon.com##.gRsAdw
@@ -30708,6 +30714,7 @@ arstechnica.com##.jobs-feed
 allthingsd.com##.jobs-module
 bnd.com##.jobs_widget_large
 ninemsn.com.au##.jobsearchBox
+toorgle.net##.join
 jpost.com##.jp-grid-oppsidepane
 jpost.com##.jp-grid-oppsidepane-home
 jpost.com##.jp-grid-sidepane
@@ -31424,7 +31431,6 @@ impactwrestling.com,newswireless.net##.rotator
 leadership.ng##.rotor
 leadership.ng##.rotor-items[style="width: 300px; height: 260px; visibility: visible;"]
 lonelyplanet.com##.row--leaderboard
-chron.com,ctpost.com,seattlepi.com##.row1
 bikechatforums.com##.row1[align="center"][valign="middle"][style="padding: 5px;"] > div[id][style="display: block;"]:first-child
 bikechatforums.com##.row2[align="center"][valign="middle"][style="padding: 5px;"] > div[id][style="display: block;"]:first-child
 bikechatforums.com##.row2[colspan="6"]
@@ -31730,6 +31736,7 @@ monsterindia.com##.sponsoreRes_rp
 92q.com,asktofriends.com,cnet.com,ecosia.org,examiner.co.uk,guardian.co.uk,hotklix.com,lycos.com,mamma.com,mywot.com,noscript.net,pcworld.com,phoenixnewtimes.com,rapidlibrary.com,seroundtable.com,torrentz.eu,torrentz.in,torrentz.me,trovit.co.uk,washingtonpost.com,yippy.com##.sponsored
 general-files.com##.sponsored-btn
 advisorone.com,cutimes.com,frommers.com,futuresmag.com##.sponsored-by
+chron.com##.sponsored-content
 itproportal.com##.sponsored-hub
 fbdownloader.com##.sponsored-info
 techtipsgeek.com##.sponsored-level
@@ -32066,6 +32073,7 @@ iwannawatch.net##.watch.external
 flashx.tv##.watch_left > div[style="height:36px;width:620px;margin-left:8px;"]
 coolspotters.com##.wau
 wincustomize.com##.wc_home_tour_loggedout
+wikidot.com##.wd-adunit
 dir.indiamart.com##.wd1
 yahoo.com##.wdpa1
 glamourvanity.com##.wdt_gads
@@ -33669,6 +33677,7 @@ limelinx.com##div[style="width:480px; height:60px;"]
 weatherbug.com##div[style="width:484px; height:125px; background:#FFFFFF; overflow:hidden;"]
 themesbase.com##div[style="width:486px;height:60px;margin:0 auto;line-height:60px;text-align:center;"]
 caymannewsservice.com##div[style="width:550px; height:100px; margin:0px auto;"]
+toorgle.net##div[style="width:550px;margin-bottom:15px;font-family:arial,serif;font-size:10pt;"]
 techgage.com##div[style="width:600px; height:74px;"]
 chrome-hacks.net##div[style="width:600px;height:250px;"]
 photoshoproadmap.com##div[style="width:620px; background-color:#ffffff; padding-left:0; margin:0 auto 20px auto; border-bottom:1px dotted black;"]
@@ -33769,6 +33778,7 @@ w3schools.com##div[style="width:960px;height:94px;position:relative;margin-left:
 w3schools.com##div[style="width:960px;height:94px;position:relative;margin:0px;margin-left:auto;margin-right:auto;margin-top:5px;margin-bottom:5px;padding:0px;overflow:hidden"]
 androidapps.com##div[style="width:970px; height:90px; float:right; margin:0 3px 20px 0;"]
 tigerdirect.ca##div[style="width:977px; clear:both; margin-top:2px; height:90px;"]
+ndtv.com##div[style="width:980px; margin:3px  auto;"]
 apphit.com##div[style="width:980px;height:100px;clear:both;margin:0 auto;"]
 independent.com##div[style^="background-image:url('http://media.independent.com/img/ads/ads-bg.gif')"]
 gamebanshee.com##div[style^="border:1px solid #b98027; width:300px;"]
@@ -35952,6 +35962,7 @@ literotica.com##tr[style="background: #fff; text-align: center; font-size: 80%; 
 @@||mads.cbs.com/mac-ad?$object-subrequest
 @@||mads.com.com/ads/common/faith/*.xml$object-subrequest
 @@||mads.tv.com/mac-ad?META^$script,domain=tv.com
+@@||magicbricks.com/img/adbanner/
 @@||mail.google.com^*&view=ad&$xmlhttprequest
 @@||mail.google.com^*/uploaderapi*.swf
 @@||mail.yahoo.com/neo/assets/swf/uploader.swf
@@ -36312,6 +36323,7 @@ literotica.com##tr[style="background: #fff; text-align: center; font-size: 80%; 
 @@||sun-sentinel.com/hive/images/adv_
 @@||super.kitnmedia.com/super/$domain=fallenlondon.com
 @@||superfundo.org/advertisement.js
+@@||svcs.ebay.com/services/search/FindingService/*affiliate.tracking$domain=bkshopper.com|geo-ship.com
 @@||syn-api.com^*&adsafe=$script,domain=armstrongmywire.com|atlanticbb.net|bresnan.net|broadstripe.net|buckeyecablesystem.net|cableone.net|centurylink.net|charter.net|cincinnatibell.net|forbbbs.org|hargray.net|hawaiiantel.net|hickorytech.net|knology.net|mediacomtoday.com|midco.net|mybendbroadband.com|mybrctv.com|mycenturylink.com|myconsolidated.net|myepb.net|mygrande.net|mygvtc.com|myhughesnet.com|myritter.com|northstate.net|nwcable.net|searchresults.verizon.com|suddenlink.net|surewest.com|synacor.net|tds.net|toshiba.com|truvista.net|windstream.net|windstreambusiness.net|wowway.net
 @@||tacdn.com^*_popunder_$script,stylesheet
 @@||tags.bkrtx.com/js/bk-coretag.js$domain=zillow.com
@@ -36402,7 +36414,7 @@ literotica.com##tr[style="background: #fff; text-align: center; font-size: 80%; 
 @@||utdallas.edu/maps/images/img/$image
 @@||utdallas.edu^*/banner.js
 @@||uuuploads.com/ads-on-buildings/$image,domain=boredpanda.com
-@@||v.fwmrm.net/ad/p/1?$object-subrequest,domain=abc.go.com|abcfamily.go.com|abcnews.go.com|adultswim.com|cartoonnetwork.com|cmt.com|colbertnation.com|comedycentral.com|espn.go.com|ign.com|mlb.mlb.com|mtvnservices.com|nbc.com|sky.com|spike.com|thedailyshow.com|thingx.tv|tvland.com|uverseonline.att.net|video.cnbc.com
+@@||v.fwmrm.net/ad/p/1?$object-subrequest,domain=abc.go.com|abcfamily.go.com|abcnews.go.com|adultswim.com|cartoonnetwork.com|cmt.com|colbertnation.com|comedycentral.com|espn.go.com|ign.com|mlb.mlb.com|mtvnservices.com|nbc.com|sky.com|southparkstudios.com|spike.com|thedailyshow.com|thingx.tv|tvland.com|uverseonline.att.net|video.cnbc.com
 @@||v.fwmrm.net/crossdomain.xml$object-subrequest
 @@||vad.go.com/dynamicvideoad?$object-subrequest
 @@||valueram.com/banners/ads/

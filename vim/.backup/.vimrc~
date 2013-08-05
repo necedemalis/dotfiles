@@ -317,8 +317,6 @@ endif
         "Code Omnicompletion
         """autocmd FileType python set omnifunc=pythoncomplete#Complete
         let g:SuperTabDefaultCompletionType = "context"
-        let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-        inoremap <Tab> <C-X><C-F>
         let g:jedi#popup_on_dot = 0
         let g:jedi#auto_initialization = 1
         let g:jedi#auto_vim_configuration = 1
@@ -327,7 +325,7 @@ endif
         "Wie Errors markieren durch Pyflakes (gui=underline zum unterstreichen)
         autocmd FileType python highlight SpellBad term=underline gui=bold guisp=Orange guifg=red
         "Pydiction
-        let g:pydiction_location = '/home/joecool/.vim/pydiction/pydiction-1.2/complete-dict'
+        """let g:pydiction_location = '/home/joecool/.vim/pydiction/pydiction-1.2/complete-dict'
         "Latex/Vim-Latex
         let g:tex_flavor="latex"
         "F9->Bibtex autocomplete
@@ -340,3 +338,5 @@ endif
         autocmd FileType sh Code 
         "C
         autocmd FileType c Code
+        let g:SuperTabDefaultCompletionType = "context"
+        let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
