@@ -332,7 +332,7 @@ endif
         let g:Tex_BIBINPUTS="$PWD/*.bib"
         "Starte LaTex automisch in Prosa
         "Open Dvi with Evince
-        let g:Tex_ViewRule_dvi = "evince"
+        let g:Tex_ViewRule_dvi = "xdvi"
         "Fold-Options verändert in dotfiles/vim/bundle/latex-suite/ftplugin/latex-suite/folding.vim, geschützt mit chattr +i
         ""let g:Tex_FoldedSections = 'section,%%fakesection,%%fakesubsection'
         ""let g:Tex_FoldedEnvironments = "abstract"
