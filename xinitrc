@@ -1,5 +1,5 @@
 #run systemd as user instance
-exec /usr/lib/sytemd/systemd --user &
+#/usr/lib/sytemd/systemd --user
 
 #Keyboard Map
 setxkbmap lv && xmodmap ~/.Xmodmap/neo_de_custom.xmodmap && xset -r 51
@@ -8,7 +8,8 @@ setxkbmap lv && xmodmap ~/.Xmodmap/neo_de_custom.xmodmap && xset -r 51
 #Pulseaudio
 pulseaudio --start
 #mpd
-[ ! -s ~/.mpd/pid ] && mpd ~/.mpd/mpd.conf
+#[ ! -s ~/.mpd/pid ] && mpd ~/.mpd/mpd.conf
+mpd ~/.mpd/mpd.conf &
 #mpdscribble
 pidof mpdscribble >& /dev/null
 if [ $? -ne 0 ]; then

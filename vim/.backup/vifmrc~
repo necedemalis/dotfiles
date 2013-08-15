@@ -70,6 +70,9 @@
 " Set custom status line look
         set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
+" Filters
+        filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.dbus|.dosbox|.dropbox-dist|.eclipse|.fontconfig|.gconf|.gem|.gimp|.git-credential|.gstreamer|.icons|.java|.macromedia|.nicotine|.openttd|.pki|.python-eggs|.sabnzbd.|.scummvm|.swt|.texlive|.thumbnails|.tor|.ts3client|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.viminfo|.Xauthority|.zcompdump|.zsh_histfile)"
+
 "Marks (mark /full/directory/path [filename])
         mark h ~/
         mark b ~/Dropbox
@@ -93,7 +96,8 @@
         ",ma: show marks
         nmap ,ma :marks<cr>
         ",co: copy
-        nmap ,cp :copy<cr>
+        map ,cp :copy<cr>
+        ",mv: move
         map ,mv :move<cr>
 " Mappings für Verzeichnisse (mit Leader-Key)
         "/home
@@ -199,8 +203,6 @@
         command ln !ln -s %d/%f %D
         command move sudo mv -R %d/%f %D
         command copy sudo cp -R %d/%f %D
-        command userfilter filter .AbiSuite | .PyCharm20 
-        "command name filter .AbiSuite
 
 "Filetypes
         "The file type is for the default programs to be used with

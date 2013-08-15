@@ -51,15 +51,13 @@ endif
         set noerrorbells " don't beep
         set hidden  "zwischen Buffern wechseln ohne speichern zu mÃ¼ssen
         set autowrite "speichter Datei automatisch beim wechseln
-        "set guioptions-=T "Versteckt GUI-Toolbar
-        "set guioptions-=m "Versteckt GUI-Toolbar
+        set guioptions-=T "Versteckt GUI-Toolbar
+        set guioptions-=m "Versteckt GUI-Toolbar
         set autoindent "Copy indent from current line when starting a new line 
         set go+=c "No Popup-Dialogs
         set shortmess+=I "Keine Startup-Message
         set formatprg=par\ -w96 "Par für Umbruchformatierung mit Q/gq (ohne par = mit gw!)
         set autochdir "Change working directory to directory of current file
-        "Pathogen
-        call pathogen#infect()
         "Save/Load manual made Folds
         au BufWinLeave * silent! mkview
         au BufWinEnter * silent! loadview
@@ -69,10 +67,6 @@ endif
         set backupdir=~/.vim/.backup,/tmp
         set directory=~/.vim/.backup,/tmp
         set writebackup
-        "TaskList Suchbefehle
-        let g:tlTokenList = ['TODO','todo', 'XXX', 'xxx', '???']
-        "Close Nerdtree wenn man Datei Ã¶ffnet
-        let NERDTreeQuitOnOpen = 1 
 
 " Custom Keymapping
         "Leader Keymapping
@@ -115,9 +109,14 @@ endif
         vmap <C-x> "+c
         "vmap <C-v> c<ESC>"+p
         imap <C-v> <C-r><C-o>+
+        "zs -> Fold everything except were cursor is
+        nnoremap zs zMzv
         "Use Q for formatting the current paragraph (or selection)
         vmap Q gq
         nmap Q gqap
+        "Won't deselect visual selection when moving selected code blocks
+        vnoremap < <gv 
+        vnoremap > >gv
         "jj/jk fur Esc
         inoremap jk <esc>
         inoremap jj <esc>
@@ -147,7 +146,7 @@ endif
        nnoremap <left> <C-w>h
        nnoremap <right> <C-w>l
         "+ als *
-        nnoremap + *
+        "nnoremap + *
         "Alt+j/k -> Jump to the next or previous line with same or lower indentation
                 " exclusive (bool): true: Motion is exclusive
                 " false: Motion is inclusive
@@ -273,7 +272,7 @@ endif
                      \ nolist wrap tw=96 fo=t1 nosmartindent linebreak nu|
                      \ set background=light |
                      \ colorscheme solarized |
-                     \ set guifont=Monospace\ 11 |
+                     \ set guifont=Monospace\ 10 |
                      "\ augroup PROSE|
                      "\   autocmd InsertEnter <buffer> set fo+=a|
                      "\   autocmd InsertLeave <buffer> set fo-=a|
@@ -305,6 +304,29 @@ endif
 
         "map <leader>pj  :call ToggleJust()<CR>
 
+"Plugin Settings
+"Pathogen
+        call pathogen#infect()
+"TaskList
+        "Tastlist Suchbefehle
+        let g:tlTokenList = ['TODO','todo', 'XXX', 'xxx', '???']
+"Nerdtree
+        "Close Nerdtree wenn man Datei Ã¶ffnet
+        let NERDTreeQuitOnOpen = 1 
+"UltiSnips
+        "Open edit Window vertically
+        let g:UltiSnipsEditSplit = "vertical"
+        "UltiSnips Directory
+        let g:UltiSnipsSnippetsDir = "~/dotfiles/vim/ultisnips-snippets/"
+        let g:UltiSnipsSnippetDirectories = ["ultisnips-snippets"]
+        "Key for UltiSnips Trigger
+        let g:UltiSnipsExpandTrigger = '<C-y>'
+        "Python-Mode
+        let g:pymode_lint_checker = "pyflakes"
+        let g:pymode_rope_autocomplete_map = '<C-c>'
+
+
+
 "Filetypes
 "Python
         ""http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
@@ -317,9 +339,12 @@ endif
         "Code Omnicompletion
         """autocmd FileType python set omnifunc=pythoncomplete#Complete
         let g:SuperTabDefaultCompletionType = "context"
-        let g:jedi#popup_on_dot = 0
+        "Jedi Vim
+        let g:jedi#popup_on_dot = 1
         let g:jedi#auto_initialization = 1
         let g:jedi#auto_vim_configuration = 1
+        let g:jedi#use_tabs_not_buffers = 0
+        let g:jedi#pydoc = "D"
         "Starte Python automatisch in Code
         autocmd FileType python Code
         "Wie Errors markieren durch Pyflakes (gui=underline zum unterstreichen)
@@ -328,6 +353,7 @@ endif
         """let g:pydiction_location = '/home/joecool/.vim/pydiction/pydiction-1.2/complete-dict'
 "Latex/Vim-Latex
         let g:tex_flavor="latex"
+        au Filetype tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
         "F9->Bibtex autocomplete
         let g:Tex_BIBINPUTS="$PWD/*.bib"
         "Starte LaTex automisch in Prosa
@@ -343,5 +369,6 @@ endif
         autocmd FileType sh Code 
         "C
         autocmd FileType c Code
+
         let g:SuperTabDefaultCompletionType = "context"
         let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']

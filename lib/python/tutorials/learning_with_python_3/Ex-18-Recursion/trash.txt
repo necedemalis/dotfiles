@@ -1,0 +1,15 @@
+/home/joecool/lib/python/tutorial/Ex10-Even-Driven Programming.py
+/home/joecool/lib/python/tutorial/Ex11-Lists.py
+/home/joecool/lib/python/tutorial/Ex12-Modules.py
+/home/joecool/lib/python/tutorial/Ex15-Classes_and_objects.py
+/home/joecool/lib/python/tutorial/Ex16-Classes_and_objects.py
+/home/joecool/lib/python/tutorial/Ex17-Sprites.py
+/home/joecool/lib/python/tutorial/Ex18-Recursion.py
+/home/joecool/lib/python/tutorial/Ex5-Conditionals.py
+/home/joecool/lib/python/tutorial/Ex6-Fruitful Functions.py
+/home/joecool/lib/python/tutorial/Ex7-Iterations.py
+/home/joecool/lib/python/tutorial/Ex8-Strings.py
+/home/joecool/lib/python/tutorial/litter.py
+/home/joecool/lib/python/tutorial/trash.txt
+/home/joecool/lib/python/tutorial/unit_tester.py
+/home/joecool/lib/python/tutorial/unit_tester.pyc

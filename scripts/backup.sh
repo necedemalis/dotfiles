@@ -9,7 +9,7 @@ elif [ $# -gt 1 ]; then
 fi
 
 START=$(date +%s)
-rsync -aAXv --delete /* $1 --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/home/*/.gvfs,/var/lib/pacman/sync/*,/var/log/journal/*,/home/joecool/Downloads,/home/joecool/Dokumente,/home/joecool/builds,/home/joecool/Dropbox,/home/joecool/Musik,/swapfile}
+rsync -aAXv --delete /* $1 --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/home/*/.gvfs,/var/lib/pacman/sync/*,/var/log/journal/*,/home/joecool/Downloads,/home/joecool/Dokumente,/home/joecool/builds,/home/joecool/Dropbox,/home/joecool/Musik,/home/joecool/.PlayOnLinux,/home/joecool/PlayOnLinux\'s\ virtual\ drives,/home/joecool/Studium,/home/joecool/.vifm/Trash,/home/joecool/.wine,/swapfile}
 FINISH=$(date +%s)
 echo "total time: $(( ($FINISH-$START) / 60 )) minutes, $(( ($FINISH-$START) % 60 )) seconds"
 

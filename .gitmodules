@@ -80,3 +80,15 @@
 [submodule "vim/bundle/latex-suite"]
 	path = vim/bundle/latex-suite
 	url = http://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = https://github.com/vim-scripts/UltiSnips
+[submodule "vim/bundle/autoclose"]
+	path = vim/bundle/autoclose
+	url = https://github.com/andrewle/vim-autoclose
+[submodule "vim/bundle/delimitmate"]
+	path = vim/bundle/delimitmate
+	url = https://github.com/Raimondi/delimitMate
+[submodule "vim/bundle/python-mode"]
+	path = vim/bundle/python-mode
+	url = https://github.com/klen/python-mode

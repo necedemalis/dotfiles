@@ -45,11 +45,14 @@
 #Add $PATH
         export PATH=$PATH:/home/joecool/bin/
         export PATH=$PATH:/home/joecool/bin/dbgl #DosBox Game Launcher
-        export PATH=$PATH:/home/joecool/Dokumente/Nand2Tetris/nand2tetris/tools/
-        export PATH="$HOME/.rbenv/bin:$PATH"
-        export PATH="$HOME/.rbenv/shims:$PATH"
-        source "$HOME/.rbenv/completions/rbenv.zsh"
-        export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
+        if [ -z "$HOME/.rbenv" ] ; then
+                export PATH="$HOME/.rbenv/bin:$PATH"
+                export PATH="$HOME/.rbenv/shims:$PATH"
+                source "$HOME/.rbenv/completions/rbenv.zsh"
+        fi
+        if [ -z "$HOME/.gem" ] ; then
+                export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
+        fi
 
 #ALIASES
         #Pacman

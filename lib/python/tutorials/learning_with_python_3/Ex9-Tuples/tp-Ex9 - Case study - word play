@@ -1,0 +1,2 @@
+fin=open ('~/Dokumente/Python/tp-Ex9-words.txt')
+print (fin)

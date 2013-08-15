@@ -1,8 +1,0 @@
-status: 200
-content-location: http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=1234544827
-content-type: text/html
-server: lighttpd/1.4.28
-x-powered-by: PHP/5.3.3-7+squeeze8
-date: Fri, 02 Aug 2013 13:00:43 GMT
-
-and the next nothing is 5307

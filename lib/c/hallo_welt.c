@@ -1,7 +1,10 @@
 #include<stdio.h>
 
 int main() {
-        printf("Hallo Welt\n");
-        printf("Hallo Du\n");
+        int telnummer;
+        telnummer = 225678;
+        telnummer = 886547;
+        printf("Telefonnummer: %d\n", telnummer);
         return 0;
 }
+
