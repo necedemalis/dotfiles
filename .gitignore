@@ -1,4 +1,6 @@
 dwb/default/session
 dwb/default/session.*
-bin/dbgl/
+bin/dbgl
 dwb/adblock_lists/
+vim/view/
+vim/.backup/
