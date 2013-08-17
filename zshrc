@@ -58,6 +58,7 @@
         #Pacman
         alias pacin='sudo pacman -S'
         alias pacins='sudo pacman -U'
+        alias pactest='sudo pacman -S --asdeps'
         alias pacrm='sudo pacman -Rscn'
         alias pacupg='sudo pacman -Syu'
         alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;\$!ba;s/\n/ /g')" # '[r]emove [o]rphans' - recursively remove ALL orphaned packages

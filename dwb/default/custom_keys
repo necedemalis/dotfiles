@@ -1,6 +1,7 @@
 <F7> :toggle enable-caret-browsing  
 Control p:toggle enable-plugins;; reload
 
+stop_loading = ss
 hints_background= ,f
 hints_clipboard= ,y
 hints_download= ,d

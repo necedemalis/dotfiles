@@ -124,6 +124,8 @@ endif
         nmap <CR> o<Esc>
         nmap <S-Enter> O<Esc>
         " j und k fur gewrappte Zeilen
+        nnoremap gj j
+        nnoremap gk k
         nnoremap j gj
         nnoremap k gk
         "W ist w/ Q ist q
@@ -220,13 +222,13 @@ endif
 
 " Custom Macros
         "@z: Für Kobo-Annotations
-        let @k='gg/seiteWvt<"aygg/a--?<annotation>V/<\/annotation>dgg/seite a/<\/annotp/end="v$di?end="Pjdd/<annotation>/<text>f>lv/<\/text>hd?<\/text>ni p/<text>dd/<annotation>V/<\/annotation>d'
-        "let @r='?<annotation>V/<\/annotation>d'
-        "let @t='/end="v$di?end="Pjdd'
-        "let @s='/<annotation>/<text>f>lv/<\/text>hd?<\/text>ni p'
-        "let @u='/<text>dd/<annotation>V/<\/annotation>d'
-        "let @k='@t@s@u'
-        "let @z='gg/seiteWvt<"aygg/a--@rgg/seite a/<\/annotp@k'
+        "let @k='gg/seiteWvt<"aygg/a--?<annotation>V/<\/annotation>dgg/seite a/<\/annotp/end="v$di?end="Pjdd/<annotation>/<text>f>lv/<\/text>hd?<\/text>ni p/<text>dd/<annotation>V/<\/annotation>d'
+        let @r='?<annotation>V/<\/annotation>d'
+        let @t='/end="v$di?end="Pgjdd'
+        let @s='/<annotation>/<text>f>lv/<\/text>hd?<\/text>ni p'
+        let @u='/<text>dd/<annotation>V/<\/annotation>d'
+        let @k='@t@s@u'
+        let @z='gg/seiteWvt<"aygg/a--@rgg/seite a/<\/annotp@k'
 
 "Custom Commands
         ":RemoveMultipleBlankLines
