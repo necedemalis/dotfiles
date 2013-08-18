@@ -324,9 +324,12 @@ endif
         "Key for UltiSnips Trigger
         let g:UltiSnipsExpandTrigger = '<C-y>'
         "Python-Mode
-        let g:pymode_lint_checker = "pyflakes"
+        let g:pymode_lint_checker = "pyflakes,mccabe"
         let g:pymode_rope_autocomplete_map = '<C-c>'
-
+        let g:pymode_lint_cwindow = 0 " Auto open cwindow if errors be finded
+        "Supertab
+        let g:SuperTabDefaultCompletionType = "context"
+        let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
 
 
 "Filetypes
@@ -372,5 +375,3 @@ endif
         "C
         autocmd FileType c Code
 
-        let g:SuperTabDefaultCompletionType = "context"
-        let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']

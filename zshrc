@@ -6,6 +6,7 @@
         bindkey -v
         zstyle :compinstall filename '/home/joecool/.zshrc'
         autoload -U compinit && compinit
+        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 #Präambel
         export EDITOR="vim"
@@ -26,7 +27,6 @@
 #Keybindings
         bindkey -M viins 'jk' vi-cmd-mode
 
-
 #Set VIMODE 
         function zle-line-init zle-keymap-select {
             RPS1="${${KEYMAP/vicmd/-- N --}/(main|viins)/-- I --}"
@@ -39,8 +39,13 @@
         autoload -U promptinit
         promptinit
         autoload -U colors && colors
-        PROMPT="%{$fg[red]%}%n %{$fg_no_bold[yellow]%}%~ %{$fg[red]%}$ %{$reset_color%} "
-        RPROMPT=""
+        PROMPT="┌─ %{$fg[red]%}%n %{$fg_no_bold[yellow]%}%~ %{$fg[red]%}$ %{$reset_color%}
+└──╼ "
+        if [ -n "$SSH_CLIENT" ] ; then
+                RPROMPT="SSH"
+        else
+                RPROMPT=""
+        fi
 
 #Add $PATH
         export PATH=$PATH:/home/joecool/bin/
@@ -84,10 +89,11 @@
         #Remind
         alias r-calendar='remind -c+4mb1 ~/Dropbox/Markus/Remind/.reminders'
         alias r-reminders='remind -t14g ~/Dropbox/Markus/Remind/.reminders'
-        alias svim='HOME=/home/joecool && sudo vim -u ~/.vimrc'
+        #Keyboard Map
         alias neo2='setxkbmap lv && xmodmap ~/.Xmodmap/neo_de.xmodmap && xset -r 51'
         alias qwertz_custom='setxkbmap lv && xmodmap ~/.Xmodmap/neo_de_custom.xmodmap && xset -r 51' #qwertz mit Neo2-Ebene 3+
         alias qwertz='setxkbmap de && xset r 51'
+
 #Python
         alias p='python3'
         PYTHONPATH=/home/joecool/lib/python
