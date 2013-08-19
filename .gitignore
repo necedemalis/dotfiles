@@ -2,5 +2,6 @@ bin/dbgl
 dwb/default/session
 dwb/default/session.*
 dwb/adblock_lists/
+lib/python/tutorials/
 vim/view/
 vim/.backup/
