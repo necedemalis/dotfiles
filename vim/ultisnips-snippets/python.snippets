@@ -17,6 +17,10 @@ class ${1:MyClass}(${2:object}):
 		"""${5:@todo: to be defined}`!p
 endsnippet
 
+snippet from "from module import name" b
+from ${1:module} import ${2:Stuff}
+endsnippet
+
 snippet cmp "methods implementing rich comparison"
 def __eq__(self, other): #==
 	${1:pass}
@@ -123,7 +127,74 @@ def __coerce__(self, other):
 	${25:pass}
 endsnippet
 
+##########################
+# Abstract Datatypes     #
+##########################
+snippet stack "stack" b
+class Stack:
+    """Docstring for Stack """
 
+    def __init__(self):
+        self.items = []
+
+    def isEmpty(self):
+        return self.items == []
+    def push(self,item):
+
+        self.items.append(item)
+
+    def pop (self):
+        return self.items.pop()
+
+    def peek(self):
+        return self.items[len(self.items)-1]
+
+    def size(self):
+        return len(self.items)
+endsnippet
+
+snippet queue "queue" b
+class Queue():
+
+    def __init__(self):
+        self.items = []
+
+    def isEmpty(self):
+        return self.items == []
+
+    def enqueue(self,item):
+        self.items.insert(0,item)
+
+    def dequeue(self):
+        return self.items.pop()
+
+    def size(self):
+        return len(self.items)
+endsnippet
+
+snippet deque "deque" b
+class Deque:
+    def __init__(self):
+        self.items = []
+
+    def isEmpty(self):
+        return self.items == []
+
+    def addFront(self, item):
+        self.items.append(item)
+
+    def addRear(self, item):
+        self.items.insert(0,item)
+
+    def removeFront(self):
+        return self.items.pop()
+
+    def removeRear(self):
+        return self.items.pop(0)
+
+    def size(self):
+        return len(self.items)
+endsnippet
 
 ##########################
 # Try / Except / Finally #

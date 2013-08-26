@@ -331,7 +331,6 @@ endif
         let g:SuperTabDefaultCompletionType = "context"
         let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
 
-
 "Filetypes
 "Python
         ""http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
@@ -350,6 +349,7 @@ endif
         let g:jedi#auto_vim_configuration = 1
         let g:jedi#use_tabs_not_buffers = 0
         let g:jedi#pydoc = "D"
+        let g:jedi#autocompletion_command = "ö"
         "Starte Python automatisch in Code
         autocmd FileType python Code
         "Wie Errors markieren durch Pyflakes (gui=underline zum unterstreichen)
@@ -374,4 +374,3 @@ endif
         autocmd FileType sh Code 
         "C
         autocmd FileType c Code
-

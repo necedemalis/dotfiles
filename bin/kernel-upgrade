@@ -1,0 +1,14 @@
+#!/bin/bash
+
+rm -r ~/builds/.self-compiled/kernel/.backup/*
+sudo mv ~/builds/.self-compiled/kernel/core/ ~/builds/.self-compiled/kernel/.backup
+ABSROOT=/home/joecool/builds/.self-compiled/kernel abs core/linux
+
+# Input lines for modprobed_db
+sed -i '/make prepare/a \ \ sudo /usr/bin/modprobed_db recall \
+  sudo make localmodconfig' ~/builds/.self-compiled/kernel/core/linux/PKGBUILD
+# Delete linux headers and doc
+sed -i 's:pkgname=(.*:pkgname=("${pkgbase}"):g' ~/builds/.self-compiled/kernel/core/linux/PKGBUILD
+
+cd /home/joecool/builds/.self-compiled/kernel/core/linux/
+makepkg -sir
