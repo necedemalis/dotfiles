@@ -9,6 +9,8 @@ sed -i '/make prepare/a \ \ sudo /usr/bin/modprobed_db recall \
   sudo make localmodconfig' ~/builds/.self-compiled/kernel/core/linux/PKGBUILD
 # Delete linux headers and doc
 sed -i 's:pkgname=(.*:pkgname=("${pkgbase}"):g' ~/builds/.self-compiled/kernel/core/linux/PKGBUILD
+# Change name to linux-custom
+sed -i 's:pkgbase=linux.*:pkgbase=linux-custom:g' ~/builds/.self-compiled/kernel/core/linux/PKGBUILD
 
 cd /home/joecool/builds/.self-compiled/kernel/core/linux/
 makepkg -sir
