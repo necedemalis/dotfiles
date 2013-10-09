@@ -349,7 +349,7 @@ endif
         let g:jedi#auto_vim_configuration = 1
         let g:jedi#use_tabs_not_buffers = 0
         let g:jedi#pydoc = "D"
-        let g:jedi#autocompletion_command = "ö"
+        let g:jedi#autocompletion_command = "<C-Space>"
         "Starte Python automatisch in Code
         autocmd FileType python Code
         "Wie Errors markieren durch Pyflakes (gui=underline zum unterstreichen)

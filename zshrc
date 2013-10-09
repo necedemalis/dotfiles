@@ -94,6 +94,9 @@
         alias qwertz_custom='setxkbmap lv && xmodmap ~/.Xmodmap/neo_de_custom.xmodmap && xset -r 51' #qwertz mit Neo2-Ebene 3+
         alias qwertz='setxkbmap de && xset r 51'
 
+        alias catalyst='sudo aticonfig --sync-video=on; sudo aticonfig --sync-vsync=on; sudo aticonfig --set-pcs-u32=DDX,EnableTearFreeDesktop,1'
+
+
 #Python
         alias p='python3'
         PYTHONPATH=/home/joecool/lib/python

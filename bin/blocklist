@@ -1,0 +1,9 @@
+#!/bin/bash
+
+wget http://www.bluetack.co.uk/config/level1.gz
+wget http://www.bluetack.co.uk/config/level2.gz
+wget http://www.bluetack.co.uk/config/level3.gz
+zcat level1.gz level2.gz level3.gz > blocklist
+gzip blocklist
+rm level1.gz level2.gz level3.gz
+mv blocklist.gz /home/joecool/.config/deluge/

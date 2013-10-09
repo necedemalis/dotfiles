@@ -16,5 +16,8 @@ sudo mv -v /usr/lib/modules/$ver-old /usr/lib/modules/$ver
 sudo mv -v /usr/src/linux-$ver-old /usr/src/linux-$ver
 ls /usr/src/ | egrep 'old$' | sed -e 's/\(.*\)/\/usr\/src\/\1/g' | sudo xargs rm -Rv
 ls /usr/lib/modules/ | egrep 'old$' | sed -e 's/\(.*\)/\/usr\/lib\/modules\/\1/g' | sudo xargs rm -Rv
+
+catalyst_build_module
 sudo aticonfig --sync-video=on
 sudo aticonfig --sync-vsync=on
+sudo aticonfig --set-pcs-u32=DDX,EnableTearFreeDesktop,1

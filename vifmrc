@@ -121,6 +121,8 @@
         nmap ,/ :cd /<cr>
         "~/Dokumente
         nmap ,dk :cd ~/Dokumente/<cr>
+        "~/Dokumente/Texte/
+        nmap ,te :cd ~/Dokumente/Texte/<cr>
         "~/Downloads/
         nmap ,do :cd ~/Downloads/<cr>
         "~/Dropbox/
@@ -135,6 +137,8 @@
         nmap ,oc :cd ~/Octopress/source/_posts/<cr>
         "/media/
         nmap ,me :cd /media/<cr>
+        "/media/SSD/
+        nmap ,ss :cd /media/SSD/<cr>
         "/media/Daten
         nmap ,da :cd /media/Daten/<cr>
         "/media/Daten/Torrents
@@ -147,12 +151,12 @@
         nmap ,se :cd /media/Multimedia/Serien/<cr>
         "/media/Multimedia/Spiele/Adventures
         nmap ,ad :cd /media/Multimedia/Spiele/Adventures/<cr>
+        "/media/Extern/aaa
+        nmap ,ex :cd /media/Extern/aaa<cr>
         "/media/Extern/aaa/Museion/
         nmap ,mu :cd /media/Extern/aaa/Museion/<cr>
         "/media/Extern/aaa/Museion/Jazz/
         nmap ,ja :cd /media/Extern/aaa/Museion/Jazz/<cr>
-        "/media/Truecrypt/
-        nmap ,tr :cd /home/joecool/.vifm/Trash/<cr>
 " Mappings for faster renaming
         nmap cc cw<c-u>
         nmap ce cw<c-w>
@@ -247,7 +251,7 @@
         filextype *.djvu zathura %f "evince %f
 
 " Office files
-        filextype *.doc,*.docx,*.xls,*.xlsx abiword %f &
+        filextype *.doc,*.docx,*.xls,*.xlsx,*.abw abiword %f &
         fileview *.docx, docx2txt.pl %f -
 
 " Audio

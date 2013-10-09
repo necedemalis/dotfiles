@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -r ~/builds/.self-compiled/kernel/.backup/*
+sudo rm -vr ~/builds/.self-compiled/kernel/.backup/*
 sudo mv ~/builds/.self-compiled/kernel/core/ ~/builds/.self-compiled/kernel/.backup
 ABSROOT=/home/joecool/builds/.self-compiled/kernel abs core/linux
 
@@ -8,7 +8,7 @@ ABSROOT=/home/joecool/builds/.self-compiled/kernel abs core/linux
 sed -i '/make prepare/a \ \ sudo /usr/bin/modprobed_db recall \
   sudo make localmodconfig' ~/builds/.self-compiled/kernel/core/linux/PKGBUILD
 # Delete linux headers and doc
-sed -i 's:pkgname=(.*:pkgname=("${pkgbase}"):g' ~/builds/.self-compiled/kernel/core/linux/PKGBUILD
+sed -i 's:pkgname=(.*:pkgname=("${pkgbase}" "${pkgbase}-headers"):g' ~/builds/.self-compiled/kernel/core/linux/PKGBUILD
 # Change name to linux-custom
 sed -i 's:pkgbase=linux.*:pkgbase=linux-custom:g' ~/builds/.self-compiled/kernel/core/linux/PKGBUILD
 
