@@ -138,15 +138,15 @@
 	##################################################
 	
 	context main
-		helptext "ESC| menu || |F2| save || |F5| commandline || |return| edit |
+		helptext "ESC| menu || |w| save || |:| commandline || |e| edit |
 		bind f1 'status "Take a look at ~/.hnbrc to check out the configuration"'
 		bind .. 'status "there you will also find details about the available keybindings."'
 		bind .. 'status "please feel free to contribute more useful keybindings and helptexts..."'
 		
 		bind esc menu
-		bind ^Q 'context quitsave'
+		bind q 'context quitsave'
 		
-		bind f5 'commandline'
+		bind : 'commandline'
 		bind .. 'status --clear'
 		
 		bind f6 'macro m_spellcheck'
@@ -158,7 +158,7 @@
 		
 		bind ^E 'context export'
 		bind ^L 'context import'
-		bind ^F 'macro m_search'
+		bind / 'macro m_search'
 			macro define m_search
 				context search
 				save_state
@@ -173,51 +173,57 @@
 		bind .. 'save_state'
 		
 		bind ^A 'action'
+		bind k     up
 		bind up    up
+		bind j     down
 		bind down  down
+		bind h     left
 		bind left  left
+		bind l     right
 		bind right right
 		bind npage pagedown
-		bind ppage pageup
-		bind home  "go root"
+		bind ^F pagedown
+		bind ^B pageup
+		bind ~  "go root"
 		
 		
-		bind return edit
-		bind del    remove
+		bind e    edit
+		bind return    edit
+		bind d    remove
 		
-		bind ins    insert_below
+		bind i    insert_below
 		bind .. edit
 		
 		bind tab complete
-		bind ^T  toggle_todo
-		bind ^D  toggle_done
+		bind t   toggle_todo
+		bind x   toggle_done
 		bind >   indent
 		bind <   outdent
-		bind f2  save
+		bind w  save
 		
 		bind ^X save_state
 		bind .. cut
 		
-		bind ^C copy
+		bind y copy
 		
-		bind ^V paste
+		bind p paste
 		bind .. down
 		
 		bind ^S save_state
-		bind .. sort
+		bind s sort
 		
 		bind backspace	backspace
 		bind backspace2	backspace
 		
-		bind sleft "movenode left"
-		bind sright	 "movenode right"
-		bind sprevious "movenode up"
-		bind snext "movenode down"
+		bind H "movenode left"
+		bind L	 "movenode right"
+		bind K "movenode up"
+		bind J "movenode down"
 		
 		bind + expand
 		bind - collapse
 		
-		bind ^Z restore_state
+		bind u restore_state
 		
 	context nodeedit
 		helptext "editing node |  |ESC| revert || |return| confirm"
@@ -428,10 +434,10 @@
 		
 		bind f1  "context user_ispell"
 		bind f2  "context user_browser"
-		bind f3  "expand --all"
+		bind z  "expand --all"
 		bind ..  "context main"
 		
-		bind f4  "collapse --all"
+		bind Z  "collapse --all"
 		bind ..  "context main"
 		
 		bind any "unbound"
@@ -481,9 +487,9 @@
 			escdelay 100
 ##### menu definition
 	##### file
-		menu "File" "------------" ""
-		menu "File" "save      F2" "save"
-		menu "File" "save as..   " "macro saveas"
+		menu "File" "---------------" ""
+		menu "File" "save         w" "save"
+		menu "File" "save as..      " "macro saveas"
 			macro define saveas
 				getquery db_file 'fila to save'
 				save_state
@@ -491,14 +497,14 @@
 				export_$format $db_file
 				restore_state
 			end
-		menu "File" "revert   " "revert"		
-		menu "File" "------------" ""
-		menu "File" "export    ^E" "context export"
-		menu "File" "import    ^L" "context import"
-		menu "File" "------------" ""
-		menu "File" "spell chk F6" "macro m_spellcheck"
-		menu "File" "expand all"	    "expand --all"
-		menu "File" "collapse all"      "collapse --all"
+		menu "File" "revert         " "revert"		
+		menu "File" "---------------" ""
+		menu "File" "export       ^E" "context export"
+		menu "File" "import       ^L" "context import"
+		menu "File" "---------------" ""
+		menu "File" "spell chk    F6" "macro m_spellcheck"
+		menu "File" "expand all   z"	    "expand --all"
+		menu "File" "collapse all Z"      "collapse --all"
 		menu "File" "statistics"	"macro stats"
 			macro define stats
 				status "file: \"$db_file\" format:$format"
@@ -506,31 +512,31 @@
 				stats			
 			end
 		menu "File" "------------" ""
-		menu "File" "exit      ^Q" "context quitsave"
+		menu "File" "exit      q" "context quitsave"
 	##### edit
 		menu "Edit" "---------" ""
-		menu "Edit" "copy   ^C" "copy"
+		menu "Edit" "copy   y" "copy"
 		menu "Edit" "cut    ^X" "cut"
-		menu "Edit" "paste  ^V" "paste"
+		menu "Edit" "paste  p" "paste"
 		menu "Edit" "---------" ""
-		menu "Edit" "Search ^F" "macro m_search"
+		menu "Edit" "Search /" "macro m_search"
 	##### node
 		menu "Entry" "--------------" ""
-		menu "Entry" "edit    return" "edit"
-		menu "Entry" "delete     del" "remove"
+		menu "Entry" "edit        e" "edit"
+		menu "Entry" "delete      d" "remove"
 		menu "Entry" "--------------" ""
 		menu "Entry" "do action   ^A" "action"
 		menu "Entry" "indent      >" "indent"
 		menu "Entry" "outdent     <" "outdent"
-		menu "Entry" "toggle todo ^T" "toggle_todo"
-		menu "Entry" "toggle done ^D" "toggle_done"
+		menu "Entry" "toggle todo t" "toggle_todo"
+		menu "Entry" "toggle done x" "toggle_done"
 		menu "Entry" "expand      +" "expand"
 		menu "Entry" "collapse    -" "collapse"
 	##### level
-		menu "Level" "------------" ""
-		menu "Level" "sort      ^S" "sort -a"
-		menu "Level" "sort (desc.)" "sort -d"
-		menu "Level" "shuffle     " "sort -r"
+		menu "Level" "--------------" ""
+		menu "Level" "sort         s" "sort -a"
+		menu "Level" "sort (desc.) S" "sort -d"
+		menu "Level" "shuffle       " "sort -r"
 #####
 	context main
 	macro define m_about

@@ -66,6 +66,10 @@
         alias pactest='sudo pacman -S --asdeps'
         alias pacrm='sudo pacman -Rscn'
         alias pacupg='sudo pacman -Syu'
+        alias pacrep='sudo pacman -Si'
+        alias pacreps='sudo pacman -Ss'
+        alias pacloc='sudo pacman -Qi'
+        alias paclocs='sudo pacman -Qs'
         alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;\$!ba;s/\n/ /g')" # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
         #alias expacshow="expac "%n %N" -Q $(expac "%n %G" | grep -v ' base') | awk '$2 == "" {print $1}'" # Listing all packages that nothing else depends on
         #Ein/aushängen
