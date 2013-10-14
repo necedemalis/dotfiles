@@ -27,6 +27,10 @@
 
         Rxvt*geometry: 105x33
 
+        ! Disable Perl extension
+        URxvt.perl-ext:
+        URxvt.perl-ext-common:
+
 ! Solarized Color Scheme for URxvt
 
         ! Common

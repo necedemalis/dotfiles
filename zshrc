@@ -39,8 +39,15 @@
         autoload -U promptinit
         promptinit
         autoload -U colors && colors
-        PROMPT="┌─ %{$fg[red]%}%n %{$fg_no_bold[yellow]%}%~ %{$fg[red]%}$ %{$reset_color%}
+
+        if [ -n "$(pacman -Qs zsh-syntax-highlighting)" ] ; then
+                PROMPT="┌─ %{$fg[red]%}%n %{$fg_no_bold[yellow]%}%~ %{$fg[red]%}$ %{$reset_color%}
 └──╼ "
+        else
+                PROMPT="┌─ %{$fg[red]%}%n %{$fg_no_bold[yellow]%}%~ %{$fg[red]%}$ %{$reset_color%}
+└──> "
+        fi
+
         if [ -n "$SSH_CLIENT" ] ; then
                 RPROMPT="SSH"
         else
@@ -88,8 +95,8 @@
         alias suspend='sudo pm-suspend'
         alias hibernate='sudo pm-hibernate'
         #Restart
-        alias pulseaudio-restart='sudo pulseaudio -k && sudo pulseaudio -D'
-        alias dropbox-restart='dropboxd -k && dropboxd '
+        alias dropbox-stop='sudo systemctl stop dropbox@joecool.service'
+        alias dropbox-start='sudo systemctl start dropbox@joecool.service'
         #Remind
         alias r-calendar='remind -c+4mb1 ~/Dropbox/Markus/Remind/.reminders'
         alias r-reminders='remind -t14g ~/Dropbox/Markus/Remind/.reminders'
