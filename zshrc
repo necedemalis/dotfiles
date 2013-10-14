@@ -6,7 +6,9 @@
         bindkey -v
         zstyle :compinstall filename '/home/joecool/.zshrc'
         autoload -U compinit && compinit #Autocomplete
-        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+        if [ -n "$(pacman -Qs zsh-syntax-highlighting)" ] ; then
+                source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+        fi
 
 #Präambel
         export EDITOR="vim"
