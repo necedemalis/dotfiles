@@ -5,6 +5,9 @@
 setxkbmap lv && xmodmap ~/.Xmodmap/neo_de_custom.xmodmap && xset -r 51
 #setxkbmap de -variant nodeadkeys
 
+#Urxvt Daemon
+urxvtd -q -f -o
+
 #Pulseaudio
 pactl load-module module-x11-xsmp
 pulseaudio --start

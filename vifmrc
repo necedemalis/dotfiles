@@ -82,23 +82,6 @@
         mark t /media/Daten/Torrents/
 
 "Mappings
-"Sample mappings
-        nmap s :shell<cr>
-        nmap S :sort<cr>
-        nmap w :view<cr>
-        nmap o :!gvim --remote-tab-silent %f<cr>
-        nmap O :!gvim %f<cr>
-" Commands for Leader-Key
-        ",ls: lsview
-        nmap ,ls :set lsview!<cr>
-        ",re: show registers
-        nmap ,re :di<cr>
-        ",ma: show marks
-        nmap ,ma :marks<cr>
-        ",co: copy
-        map ,cp :copy<cr>
-        ",mv: move
-        map ,mv :move<cr>
 " Mappings für Verzeichnisse (mit Leader-Key)
         "/home
         nmap ,h :cd ~<cr>
@@ -133,12 +116,18 @@
         nmap ,ca :cd ~/Dropbox/Markus/Calibre\ Library/<cr>
         "~/Studium/
         nmap ,st :cd ~/Studium/<cr>
+        "~/Studium/Mathematik/
+        nmap ,ma :cd ~/Studium/Mathematik/<cr>
+        "~/Studium/Diverses/Nachhilfe/
+        nmap ,na :cd ~/Studium/Diverses/Nachhilfe/<cr>
         "~/Octopress/source/_posts/
         nmap ,oc :cd ~/Octopress/source/_posts/<cr>
         "/media/
         nmap ,me :cd /media/<cr>
         "/media/SSD/
         nmap ,ss :cd /media/SSD/<cr>
+        "/media/SSD/Installationen/
+        nmap ,in :cd /media/SSD/Installationen/<cr>
         "/media/Daten
         nmap ,da :cd /media/Daten/<cr>
         "/media/Daten/Torrents
@@ -157,12 +146,31 @@
         nmap ,mu :cd /media/Extern/aaa/Museion/<cr>
         "/media/Extern/aaa/Museion/Jazz/
         nmap ,ja :cd /media/Extern/aaa/Museion/Jazz/<cr>
+"Sample mappings
+        "nmap s :shell<cr>
+        nmap S :sort<cr>
+        nmap w :view<cr>
+        nmap o :!gvim --remote-tab-silent %f<cr>
+        nmap O :!gvim %f<cr>
+" Commands for Leader-Key
+        ",ls: lsview
+        nmap ,ls :set lsview!<cr>
+        ",re: show registers
+        nmap ,re :di<cr>
+        ",ma: show marks
+        nmap ,ma :marks<cr>
+        ",co: copy
+        map ,cp :copy<cr>
+        ",mv: move
+        map ,mv :move<cr>
+        ",vs: vsplit"
+        map ,vs :vsplit<cr>
+        ",sp: split"
+        map ,sp :split<cr>
 " Mappings for faster renaming
         nmap cc cw<c-u>
         nmap ce cw<c-w>
-        "nmap I cw<c-a>
 " Open file in the background using its default program
-        nmap gb :file &<cr>l
         nmap i :file &<cr>l
 " Yank current directory path into the clipboard
         nmap yd :!echo %d | xclip %i<cr>
@@ -199,14 +207,17 @@
         command diff vim -d %f %F
         command zip zip -r %f.zip %f
         command run !! ./%f
-        command make !!make
-        command vgrep vim "+grep %a"
-        command mplayer mplayer -really-quiet ./%f
-        command smplayer smplayer ./%f &<cr>l
-        command vlc vlc ./%f &<cr>l
+
         command ln !ln -s %d/%f %D
         command move sudo mv -R %d/%f %D
         command copy sudo cp -R %d/%f %D
+
+        command mplayer mplayer -really-quiet ./%f
+        command smplayer smplayer ./%f &<cr>l
+        command vlc vlc ./%f &<cr>l
+
+        " command make !!make
+        " command vgrep vim "+grep %a"
 
 "Filetypes
         "The file type is for the default programs to be used with

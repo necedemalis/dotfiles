@@ -106,7 +106,6 @@
 
         alias catalyst='sudo aticonfig --sync-video=on; sudo aticonfig --sync-vsync=on; sudo aticonfig --set-pcs-u32=DDX,EnableTearFreeDesktop,1'
 
-
 #Python
         alias p='python3'
         PYTHONPATH=/home/joecool/lib/python
@@ -114,8 +113,9 @@
         export PYTHONPATH EDITOR
 
 # Syntac-Hightlight/Override highlighter colors
-if [ -n "$(pacman -Qs zsh-syntax-highlighting)" ] ; then
-                source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+#if [ -n "$(pacman -Qs zsh-syntax-highlighting)" ] ; then
+if [ -z "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh" ] ; then
+        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
         ZSH_HIGHLIGHT_STYLES[default]=none
         ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold

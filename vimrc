@@ -331,6 +331,7 @@ endif
         "Supertab
         let g:SuperTabDefaultCompletionType = "context"
         let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+        let folddigest_size = 20
 
 "Filetypes
 "Python
@@ -349,8 +350,10 @@ endif
         let g:jedi#auto_initialization = 1
         let g:jedi#auto_vim_configuration = 1
         let g:jedi#use_tabs_not_buffers = 0
-        let g:jedi#pydoc = "D"
-        let g:jedi#autocompletion_command = "<C-Space>"
+        "let g:jedi#pydoc = "D"
+        let g:jedi#documentation_command = "D"
+        "let g:jedi#autocompletion_command = "<C-Space>"
+        let g:jedi#completions_command = "<C-Space>"
         "Starte Python automatisch in Code
         autocmd FileType python Code
         "Wie Errors markieren durch Pyflakes (gui=underline zum unterstreichen)
