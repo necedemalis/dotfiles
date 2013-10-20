@@ -53,7 +53,8 @@
                 RPROMPT=""
         fi
 
-#Add $PATH
+#Environmental Variables
+        export DIFFPROG=$DIFFPROG:/usr/bin/meld
         export PATH=$PATH:/home/joecool/bin/
         export PATH=$PATH:/home/joecool/bin/dbgl #DosBox Game Launcher
         if [ -z "$HOME/.rbenv" ] ; then
@@ -67,16 +68,17 @@
 
 #ALIASES
         #Pacman
-        alias pacin='sudo pacman -S'
-        alias pacins='sudo pacman -U'
-        alias pactest='sudo pacman -S --asdeps'
+        alias pacin='sudo pacmatic -S'
+        alias pacins='sudo pacmatic -U'
+        alias pactest='sudo pacmatic -S --asdeps'
         alias pacrm='sudo pacman -Rscn'
-        alias pacupg='sudo pacman -Syu'
+        alias pacupg='sudo pacmatic -Syu'
         alias pacrep='sudo pacman -Si'
         alias pacreps='sudo pacman -Ss'
         alias pacloc='sudo pacman -Qi'
         alias paclocs='sudo pacman -Qs'
         alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;\$!ba;s/\n/ /g')" # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
+        alias paclocatefiles="locate -e --regex '\.pac(new|orig|save)$'" #Find .pac* files (.pacnew,pacsave,pacorig)
         #alias expacshow="expac "%n %N" -Q $(expac "%n %G" | grep -v ' base') | awk '$2 == "" {print $1}'" # Listing all packages that nothing else depends on
         #Ein/aushängen
         alias mntext='sudo mount -t ntfs-3g -o defaults UUID="A24A74BF4A749231" /media/Extern'
