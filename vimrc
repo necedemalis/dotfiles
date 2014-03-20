@@ -1,30 +1,10 @@
 ".vimrc
-" The ArchLinux global vimrc - setting only a few sane defaults
-"
-" Maintainer:      Tobias Kieslich [tobias funnychar archlinux dot org]
-"
-" NEVER EDIT THIS FILE, IT'S OVERWRITTEN UPON UPGRADES, GLOBAL CONFIGURATION
-" SHALL BE DONE IN /etc/vimrc, USER SPECIFIC CONFIGURATION IN ~/.vimrc
 
-" Normally we use vim-extensions. If you want true vi-compatibility
-" remove change the following statements
-set nocompatible                " Use Vim defaults instead of 100% vi compatibility
-set backspace=indent,eol,start  " more powerful backspacing
-
-" Now we set some defaults for the editor
-set history=50                  " keep 50 lines of command line history
-set ruler                       " show
-
-" Suffixes that get lower priority when doing tab completion for filenames.
-" These are files we are not likely to want to edit or read.
-set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-
-if has('gui_running')
+"if has('gui_running')
   " Make shift-insert work like in Xterm
-  map <S-Insert> <MiddleMouse>
-  map! <S-Insert> <MiddleMouse>
-endif
-
+  "map <S-Insert> <MiddleMouse>
+  "map! <S-Insert> <MiddleMouse>
+"endif
 
 """"""""""
 ""Custom""
@@ -32,13 +12,17 @@ endif
 "Basic Settings
         "Basic
         let mapleader="," ", statt \ als leader key
-        colorscheme ChocolateLiquor
+        silent! colorscheme ChocolateLiquor
         "Detect file types
         filetype on
         filetype plugin on
         filetype plugin indent on
         syntax on
         "set 
+        set history=50 "keep 50 lines of command line history
+        set backspace=indent,eol,start "more powerful backspacing
+        set nocompatible "Use Vim defaults instead of 100% vi compatibility
+        set ruler "show
         set hls ic is "Search: Highlight, ignore case, show
         set smartcase "ignore case if search pattern is all lowercase,
         set nocp "nocompatible
@@ -46,13 +30,16 @@ endif
         set smarttab "Insert tabs at the start of a line
         set tw=96
         set showbreak=>>>>
+        set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc " Suffixes that get lower priority when doing tab completion for filenames.
         set wildignore=*.swp,*.bak,*.pyc,*.class "ignore some file extensions when completing names by pressing Tab,
         set visualbell " Visuelles Piepen 
         set noerrorbells " don't beep
         set hidden  "zwischen Buffern wechseln ohne speichern zu mÃ¼ssen
         set autowrite "speichter Datei automatisch beim wechseln
-        set guioptions-=T "Versteckt GUI-Toolbar
-        set guioptions-=m "Versteckt GUI-Toolbar
+        if has("gui_running")
+                set guioptions-=T "Versteckt GUI-Toolbar
+                set guioptions-=m "Versteckt GUI-Toolbar
+        endif
         set autoindent "Copy indent from current line when starting a new line 
         set go+=c "No Popup-Dialogs
         set shortmess+=I "Keine Startup-Message
@@ -223,13 +210,16 @@ endif
 
 " Custom Macros
         "@z: Für Kobo-Annotations
-        "let @k='gg/seiteWvt<"aygg/a--?<annotation>V/<\/annotation>dgg/seite a/<\/annotp/end="v$di?end="Pjdd/<annotation>/<text>f>lv/<\/text>hd?<\/text>ni p/<text>dd/<annotation>V/<\/annotation>d'
         let @r='?<annotation>V/<\/annotation>d'
         let @t='/end="v$di?end="Pgjdd'
         let @s='/<annotation>/<text>f>lv/<\/text>hd?<\/text>ni p'
         let @u='/<text>dd/<annotation>V/<\/annotation>d'
         let @k='@t@s@u'
         let @z='gg/seiteWvt<"aygg/a--@rgg/seite a/<\/annotp@k'
+        "@m: Für Marginalnote (Lat. Text)
+        let @m='veyea\mynote{\textbf{}\textit{ }: }jk'
+        let @x='/\. ajk@x'
+        let @y='/\; ajk@y'
 
 "Custom Commands
         ":RemoveMultipleBlankLines
@@ -267,14 +257,14 @@ endif
                         " lookup
                         \ noremap t l |
         "Umschalten Prosa und Code
-        command! Prose colorscheme ChocolateLiquor |
+        command! Prose silent! colorscheme ChocolateLiquor |
                      \ inoremap <buffer> . .<C-G>u|
                      \ inoremap <buffer> ! !<C-G>u|
                      \ inoremap <buffer> ? ?<C-G>u|
                      \ setlocal
                      \ nolist wrap tw=96 fo=t1 nosmartindent linebreak nu|
                      \ set background=light |
-                     \ colorscheme solarized |
+                     \ silent! colorscheme solarized |
                      \ set guifont=Monospace\ 10 |
                      "\ augroup PROSE|
                      "\   autocmd InsertEnter <buffer> set fo+=a|
@@ -287,7 +277,7 @@ endif
                     \ setlocal nospell list wrap
                     \     tw=96 fo=cqr1 smartindent nolinebreak nu|
                     \ set background=dark |
-                    \ colorscheme solarized |
+                    \ silent! colorscheme solarized |
                     \ set listchars=tab:>.,trail:.,extends:$,nbsp:. | "". bei Tab
                     \ autocmd filetype html,xml set listchars-=tab:>. | ""keine . bei Tab   
                     \ nnoremap j gj |
@@ -309,7 +299,7 @@ endif
 
 "Plugin Settings
 "Pathogen
-        call pathogen#infect()
+        silent! call pathogen#infect()
 "TaskList
         "Tastlist Suchbefehle
         let g:tlTokenList = ['TODO','todo', 'XXX', 'xxx', '???']

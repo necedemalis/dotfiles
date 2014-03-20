@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ "`awk '/alarm_IRQ/{ print $3 }' /proc/driver/rtc`" == "yes" ] ; then
+        smplayer /media/Daten/Soulseek/Progressive_Muskelrelaxation_kurz.mp3 && sudo systemctl suspend 
+else
+        sudo systemctl suspend
+
+fi

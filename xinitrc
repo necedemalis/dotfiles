@@ -8,13 +8,14 @@ setxkbmap lv && xmodmap ~/.Xmodmap/neo_de_custom.xmodmap && xset -r 51
 #Urxvt Daemon
 urxvtd -q -f -o
 
-#Pulseaudio
+#Pulseaudio & Timidity
 pactl load-module module-x11-xsmp
 pulseaudio --start
+timidity -iA -Os &
 
 #mpd
 #[ ! -s ~/.mpd/pid ] && mpd ~/.mpd/mpd.conf
-mpd ~/.mpd/mpd.conf &
+mpd ~/.mpd/mpd.conf
 #mpdscribble
 pidof mpdscribble >& /dev/null
 if [ $? -ne 0 ]; then
@@ -23,4 +24,3 @@ fi
 
 #fluxbox
 exec startfluxbox
-

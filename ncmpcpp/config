@@ -31,6 +31,7 @@ mpd_host = "127.0.0.1"
 mpd_port = "6600"
 #
 mpd_music_dir = "/home/joecool/Musik"
+#mpd_music_dir = "/home/joecool/samba"
 #
 #mpd_connection_timeout = "5"
 #
@@ -46,12 +47,12 @@ mpd_music_dir = "/home/joecool/Musik"
 ## or 44100:16:2 for stereo visualization. Example
 ## configuration (it has to be put into mpd.conf):
 ##
-## audio_output {
+##audio_output {
 ##        type            "fifo"
 ##        name            "My FIFO"
 ##        path            "/tmp/mpd.fifo"
 ##        format          "44100:16:2"
-## }
+##}
 ##
 #
 ##

@@ -71,7 +71,11 @@
         set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
 " Filters
-        filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cpan|.dbus|.dosbox|.dropbox-dist|.eclipse|.fontconfig|.gconf|.gem|.gimp|.git-credential|.gstreamer|.icons|.java|.macromedia|.nicotine|.openttd|.pki|.python-eggs|.sabnzbd.|.scummvm|.swt|.texlive|.thumbnails|.tor|.ts3client|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile)"
+        filter
+        "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cpan|.dbus|.dosbox|.dropbox-dist|.eclipse|.fontconfig|.gconf|.gem|.gimp|.git-credential|.gstreamer|.icons|.java|.macromedia|.nicotine|.openttd|.pki|.python-eggs|.sabnzbd.|.scummvm|.swt|.texlive|.thumbnails|.tor|.ts3client|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|)" 
+        
+        filter "(.aux|.dvi|.log|.out)$"
+
 
 "Marks (mark /full/directory/path [filename])
         mark h ~/
@@ -114,6 +118,10 @@
         " nmap ,ma :cd ~/Dropbox/Markus/<cr>
         "~/Dropbox/Markus/Calibre Library/
         nmap ,ca :cd ~/Dropbox/Markus/Calibre\ Library/<cr>
+        "~/samba/
+        nmap ,sa :cd ~/samba/<cr>
+        "~/samba/SABnzbd/
+        nmap ,sb :cd ~/samba/SABnzbd/<cr>
         "~/Studium/
         nmap ,st :cd ~/Studium/<cr>
         "~/Studium/Mathematik/
@@ -167,6 +175,10 @@
         map ,vs :vsplit<cr>
         ",sp: split"
         map ,sp :split<cr>
+        ",sd!: sudo remove"
+        map ,sd :!sudo rm -r %f<cr>
+        ",ch: chown joecool"
+        map ,ch :!sudo chown -R joecool:users %f<cr>
 " Mappings for faster renaming
         nmap cc cw<c-u>
         nmap ce cw<c-w>
@@ -247,44 +259,44 @@
         " program.
 
 " Pdf
-        filetype *.pdf zathura %f 
+        filetype *.pdf zathura %f &
         "fileview *.pdf pdftotext -nopgbrk %c -
 
 " Text
-        filetype *.odt abiword %f
-        filetype *.epub ebook-viewer %f
+        filetype *.abw abiword %f &
+        filetype *.odt,*.doc,*.docx libreoffice %f &
+        filetype *.epub ebook-viewer %f &
 
 " PostScript
-        filextype *.dvi zathura %f 
+        filextype *.dvi zathura %f &
         filextype *.ps,*.ps.gz gv %c %i &
 
 " Djvu
-        filextype *.djvu zathura %f "evince %f
+        filextype *.djvu zathura %f "evince %f &
 
-" Office files
-        filextype *.doc,*.docx,*.xls,*.xlsx,*.abw abiword %f &
-        fileview *.docx, docx2txt.pl %f -
+" Mathematica
+        filetype *.nb /media/SSD/Installationen/Mathematica/Executables/Mathematica %f &
 
 " Audio
         filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a
                \ {Play using MPlayer}
                \ mplayer %f,
-        fileviewer *.mp3 mp3info
+        "fileviewer *.mp3 mp3info
 
 " Video
         filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mpg,*.vob,*.flv,*.mov
                 \ {View using mplayer}
-                \ mplayer %f,
+                \ mplayer %f &,
         filextype *.mkv
                 \ {View using smplayer}
-                \ smplayer %f,
+                \ smplayer %f &,
         fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob
                  \ ffprobe -show_files -pretty %f 2> /dev/null
 
 " Image
         filetype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
                 \ {View in ristretto}
-                \ ristretto %c,
+                \ ristretto %c &,
         fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm convert -identify %f -verbose /dev/null
 
 " Bin
@@ -295,6 +307,9 @@
 
 " Unzip
         filetype *.zip unzip %f -d %d/%f:r 
+
+" Unrar
+        filetype *.rar unrar e %f &
 
 " Untar
         filetype *.tar.bz2,*.tbz2,*.tgz,*.tar.gz, *.tar tar -xvzf %f
@@ -361,3 +376,4 @@
                 \ {View in thunar}
                 \ Thunar %f &,
         fileview */ tree %f
+

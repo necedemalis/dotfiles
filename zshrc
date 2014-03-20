@@ -79,7 +79,6 @@
         alias paclocs='sudo pacman -Qs'
         alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;\$!ba;s/\n/ /g')" # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
         alias paclocatefiles="locate -e --regex '\.pac(new|orig|save)$'" #Find .pac* files (.pacnew,pacsave,pacorig)
-        #alias expacshow="expac "%n %N" -Q $(expac "%n %G" | grep -v ' base') | awk '$2 == "" {print $1}'" # Listing all packages that nothing else depends on
         #Ein/aushängen
         alias mntext='sudo mount -t ntfs-3g -o defaults UUID="A24A74BF4A749231" /media/Extern'
         alias umntext='sudo umount /media/Extern'
@@ -93,20 +92,22 @@
         #Dropbox Backup
         alias backup-dropbox='rsync -P -r -a --delete ~/Dropbox/ /media/Daten/Backup/Dropbox-Backup/'
         #suspend/hibernate
-        alias suspend='sudo pm-suspend'
+        #alias suspend='sudo systemctl suspend'
         alias hibernate='sudo pm-hibernate'
         #Restart
-        alias dropbox-stop='sudo systemctl stop dropbox@joecool.service'
-        alias dropbox-start='sudo systemctl start dropbox@joecool.service'
         #Remind
-        alias r-calendar='remind -c+4mb1 ~/Dropbox/Markus/Remind/.reminders'
+        alias calendar='remind -c+4mb1 ~/Dropbox/Markus/Remind/.reminders'
         alias r-reminders='remind -t14g ~/Dropbox/Markus/Remind/.reminders'
         #Keyboard Map
         alias neo2='setxkbmap lv && xmodmap ~/.Xmodmap/neo_de.xmodmap && xset -r 51'
         alias qwertz_custom='setxkbmap lv && xmodmap ~/.Xmodmap/neo_de_custom.xmodmap && xset -r 51' #qwertz mit Neo2-Ebene 3+
         alias qwertz='setxkbmap de && xset r 51'
-
-        alias catalyst='sudo aticonfig --sync-video=on; sudo aticonfig --sync-vsync=on; sudo aticonfig --set-pcs-u32=DDX,EnableTearFreeDesktop,1'
+        alias raspberrypi='ssh root@192.168.0.165 -l pi'
+        alias resolution='xrandr -s 1680x1050'
+        #alias dropbox-stop='sudo systemctl stop dropbox@joecool.service'
+        #alias dropbox-start='sudo systemctl start dropbox@joecool.service'
+        #alias catalyst='sudo aticonfig --sync-video=on; sudo aticonfig --sync-vsync=on; sudo aticonfig --set-pcs-u32=DDX,EnableTearFreeDesktop,1'
+        #alias expacshow="expac "%n %N" -Q $(expac "%n %G" | grep -v ' base') | awk '$2 == "" {print $1}'" # Listing all packages that nothing else depends on
 
 #Python
         alias p='python3'
