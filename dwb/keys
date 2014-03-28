@@ -166,15 +166,17 @@ winopen_url= wO
 winopen= wo
 tabdo= 
 
-adblock_reload_rules=
-visual_mode=v
+adblock_reload_rules= 
+visual_mode= v
 
-tabgrep=
-jump='
-mark=`
-repeat=.
+tabgrep= 
+jump= '
+mark= `
+repeat= .
 
 entry_delete_active=Control d
+
+hints_selector= 
 
 [joecool]
 save_search_field=gs

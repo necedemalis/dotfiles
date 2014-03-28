@@ -1,0 +1,22 @@
+#!/usr/bin/bash
+
+dir=/home/joecool/samba/Torrents/
+target=/media/Daten/Torrents/Raspberry/
+
+#inotifywait -m "$dir" --format '%w%f' -e create |
+inotifywait -m /home/joecool/samba/Torrents/ -e create
+    while read file; do
+        cp "$file" /media/Daten/Torrents/Raspberry/
+    done
+
+
+#cd ~/samba/Torrents/
+#inotifywait -m "/home/joecool/samba/Torrents/" -q -e close_write  | while IFS= read -r file; do
+#  cp -p "$file" /media/Daten/Torrents/Raspberry/
+#done
+
+#inotifywait -m "/home/joecool/samba/Torrents/" 2>&- | awk '$2 == "CREATE" { print $3; fflush() }' |
+    #while read file; do
+        #echo "$file"
+        #cp "$file" /media/Daten/Torrents/Raspberry/
+    #done

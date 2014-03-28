@@ -217,7 +217,7 @@
         let @k='@t@s@u'
         let @z='gg/seiteWvt<"aygg/a--@rgg/seite a/<\/annotp@k'
         "@m: Für Marginalnote (Lat. Text)
-        let @m='veyea\mynote{\textbf{}\textit{ }: }jk'
+        let @m='veyea\mynote{\textbf{}\textit{}: }jk'
         let @x='/\. ajk@x'
         let @y='/\; ajk@y'
 

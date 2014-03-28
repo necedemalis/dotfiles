@@ -71,11 +71,7 @@
         set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
 " Filters
-        filter
-        "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cpan|.dbus|.dosbox|.dropbox-dist|.eclipse|.fontconfig|.gconf|.gem|.gimp|.git-credential|.gstreamer|.icons|.java|.macromedia|.nicotine|.openttd|.pki|.python-eggs|.sabnzbd.|.scummvm|.swt|.texlive|.thumbnails|.tor|.ts3client|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|)" 
-        
-        filter "(.aux|.dvi|.log|.out)$"
-
+        filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cpan|.dbus|.dosbox|.dropbox-dist|.eclipse|.fontconfig|.gconf|.gem|.gimp|.git-credential|.gstreamer|.icons|.java|.macromedia|.nicotine|.openttd|.pki|.python-eggs|.sabnzbd.|.scummvm|.swt|.texlive|.thumbnails|.tor|.ts3client|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.*\.aux$|.*\.dvi$|.*\.log$|.*\.out$)" 
 
 "Marks (mark /full/directory/path [filename])
         mark h ~/
@@ -203,6 +199,7 @@
         nmap <f7> :mkdir<space>
         nmap <f8> :delete<cr>
 
+
 "Com[mand] command_name action
         " The following macros can be used in a command
         " %a is replaced with the user arguments.
@@ -227,9 +224,11 @@
         command mplayer mplayer -really-quiet ./%f
         command smplayer smplayer ./%f &<cr>l
         command vlc vlc ./%f &<cr>l
+        command pdf !pdflatex %f
 
         " command make !!make
         " command vgrep vim "+grep %a"
+
 
 "Filetypes
         "The file type is for the default programs to be used with
@@ -259,8 +258,7 @@
         " program.
 
 " Pdf
-        filetype *.pdf zathura %f &
-        "fileview *.pdf pdftotext -nopgbrk %c -
+        filetype *.pdf evince %f &, zathura %f &
 
 " Text
         filetype *.abw abiword %f &
@@ -268,11 +266,13 @@
         filetype *.epub ebook-viewer %f &
 
 " PostScript
+        filextype *.dvi evince %f &
         filextype *.dvi zathura %f &
         filextype *.ps,*.ps.gz gv %c %i &
 
 " Djvu
-        filextype *.djvu zathura %f "evince %f &
+        filextype *.djvu evince %f
+        filextype *.djvu zathura %f
 
 " Mathematica
         filetype *.nb /media/SSD/Installationen/Mathematica/Executables/Mathematica %f &
