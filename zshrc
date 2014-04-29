@@ -92,12 +92,13 @@
         #Dropbox Backup
         alias backup-dropbox='rsync -P -r -a --delete ~/Dropbox/ /media/Daten/Backup/Dropbox-Backup/'
         #suspend/hibernate
-        #alias suspend='sudo systemctl suspend'
+        alias suspend='sudo systemctl suspend'
         alias hibernate='sudo pm-hibernate'
         #Restart
         #Remind
         alias calendar='remind -c+4mb1 ~/Dropbox/Markus/Remind/.reminders'
         alias r-reminders='remind -t14g ~/Dropbox/Markus/Remind/.reminders'
+        alias calendar-print='remind -p ~/Dropbox/Markus/Remind/.reminders| rem2ps > remind.ps | lpr remind.ps'
         #Keyboard Map
         alias neo2='setxkbmap lv && xmodmap ~/.Xmodmap/neo_de.xmodmap && xset -r 51'
         alias qwertz_custom='setxkbmap lv && xmodmap ~/.Xmodmap/neo_de_custom.xmodmap && xset -r 51' #qwertz mit Neo2-Ebene 3+
