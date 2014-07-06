@@ -1,0 +1,6 @@
+#!/bin/bash
+
+setxkbmap de -variant nodeadkeys
+sleep 3s
+setxkbmap lv && xmodmap ~/.Xmodmap/neo_de_custom.xmodmap && xset -r 51
+
