@@ -71,7 +71,7 @@
         set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
 " Filters
-        filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cpan|Desktop|.dbus|.dosbox|.dropbox-dist|.eclipse|.fontconfig|.gconf|.gem|.gimp|.git-credential|.gstreamer|.icons|.java|.macromedia|.magick|.nicotine|.openttd|.puddletag|.ropeproject|.pki|.pspp_history|.python-eggs|.python_history|.sabnzbd|.scummvm|.swt|.texlive|.thumbnails|.tor|.ts3client|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.pulse-cookie|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.*\.aux$|.*\.dvi$|.*\.log$|.*\.out$)" 
+        filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cpan|Desktop|.dbus|.dosbox|.dropbox-dist|.eclipse|.fontconfig|.gconf|.gem|.gimp|.git-credential|.gstreamer|.icons|.java|.macromedia|.magick|.nicotine|.openttd|.puddletag|.ropeproject|.pki|.pspp_history|.python-eggs|.python_history|.sabnzbd|.scummvm|.swt|.SyncID|.SyncIgnore|.SyncArchive|.texlive|.thumbnails|.tor|.ts3client|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.pulse-cookie|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.*\.aux$|.*\.log$|.*\.out$)" 
 
 "Marks (mark /full/directory/path [filename])
         mark h ~/
@@ -100,14 +100,16 @@
         nmap ,df :cd /home/joecool/dotfiles/<cr>
         "~/builds
         nmap ,bu :cd /home/joecool/builds/<cr>
+        "~/.wine
+        nmap ,wi :cd /home/joecool/.wine/<cr>
         "/
         nmap ,/ :cd /<cr>
         "~/Dokumente
         nmap ,dk :cd ~/Dokumente/<cr>
         "~/Dokumente/Texte/
         nmap ,te :cd ~/Dokumente/Texte/<cr>
-        "~/Downloads/
-        nmap ,do :cd ~/Downloads/<cr>
+        "~/downloads/
+        nmap ,do :cd ~/downloads/<cr>
         "~/Dropbox/
         nmap ,dr :cd ~/Dropbox/<cr>
         "~/Dropbox/Markus
@@ -128,16 +130,20 @@
         nmap ,oc :cd ~/Octopress/source/_posts/<cr>
         "/media/
         nmap ,me :cd /media/<cr>
-        "/media/SSD/
-        nmap ,ss :cd /media/SSD/<cr>
-        "/media/SSD/Installationen/
-        nmap ,in :cd /media/SSD/Installationen/<cr>
+        "/media/MP3-Player/
+        nmap ,mp :cd /media/MP3-Player/<cr>
+        "/media/USB
+        nmap ,us :cd /media/USB/<cr>
         "/media/Daten
         nmap ,da :cd /media/Daten/<cr>
         "/media/Daten/Torrents
         nmap ,to :cd /media/Daten/Torrents/<cr>
+        "/media/Daten/Installationen/
+        nmap ,in :cd /media/Daten/Installationen/<cr>
+        "/media/Daten/Installationen/Spiele/
+        nmap ,sp :cd /media/Daten/Installationen/Spiele/<cr>
         "/media/Daten/Soulseek
-        nmap ,so :cd /media/Daten/Soulseek/<cr>
+        nmap ,so :cd /media/Daten/Museion/Soulseek/<cr>
         "/media/Multimedia/
         nmap ,mm :cd /media/Multimedia/<cr>
         "/media/Multimedia/Serien/
@@ -147,9 +153,9 @@
         "/media/Extern/aaa
         nmap ,ex :cd /media/Extern/aaa<cr>
         "/media/Extern/aaa/Museion/
-        nmap ,mu :cd /media/Extern/aaa/Museion/<cr>
-        "/media/Extern/aaa/Museion/Jazz/
-        nmap ,ja :cd /media/Extern/aaa/Museion/Jazz/<cr>
+        nmap ,mu :cd /media/Daten/Museion/<cr>
+        "/media/Daten/Museion/Jazz/
+        nmap ,ja :cd /media/Daten/Museion/Jazz/<cr>
 "Sample mappings
         "nmap s :shell<cr>
         nmap S :sort<cr>
@@ -226,6 +232,9 @@
         command vlc vlc ./%f &<cr>l
         command pdf !pdflatex %f
 
+        command umount sudo umount %f 
+        command mount sudo mount -a
+
         " command make !!make
         " command vgrep vim "+grep %a"
 
@@ -266,9 +275,7 @@
         filetype *.epub ebook-viewer %f &
 
 " PostScript
-        filextype *.dvi evince %f &
-        filextype *.dvi zathura %f &
-        filextype *.ps,*.ps.gz gv %c %i &
+        filextype *.dvi xdvi %f &
 
 " Djvu
         filextype *.djvu evince %f

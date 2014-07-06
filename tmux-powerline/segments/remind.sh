@@ -18,12 +18,12 @@ __process_settings() {
 
 run_segment() {
         __process_settings
-        test_var=`remind -t14g ~/Dropbox/Markus/Remind/.reminders | awk '/No\ reminders/ {print "True"}'`
+        test_var=`remind -t14g ~/Dokumente/Remind/.reminders | awk '/No\ reminders/ {print "True"}'`
         if [ $test_var == "True" ]; then
                 echo ""
         else
-                ereig=`remind -t14g ~/Dropbox/Markus/Remind/.reminders | awk 'NR == 3 {print}'`
-                ereig_dat=`remind -n ~/Dropbox/Markus/Remind/.reminders | grep "$ereig" | sed 's/\//\ /g' | awk '{print $3 "." $2 ":"}'`
+                ereig=`remind -t14g ~/Dokumente/Remind/.reminders | awk 'NR == 3 {print}'`
+                ereig_dat=`remind -n ~/Dokumente/Remind/.reminders | grep "$ereig" | sed 's/\//\ /g' | awk '{print $3 "." $2 ":"}'`
                 echo "$ereig_dat" "$ereig"
                 #echo $(remind -n ~/Dropbox/Markus/Remind/.reminders | grep "$(echo -n $rem_var | cut -c 49-54)" | cut -c 6-10 && echo $(echo -n $rem_var | cut -c 49-70))
         fi

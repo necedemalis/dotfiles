@@ -94,17 +94,19 @@
         #suspend/hibernate
         alias suspend='sudo systemctl suspend'
         alias hibernate='sudo pm-hibernate'
+        #alias windows='sudo extlinux --once "chain.c32 hd1 2" /boot/syslinux/'
         #Restart
         #Remind
-        alias calendar='remind -c+4mb1 ~/Dropbox/Markus/Remind/.reminders'
-        alias r-reminders='remind -t14g ~/Dropbox/Markus/Remind/.reminders'
-        alias calendar-print='remind -p ~/Dropbox/Markus/Remind/.reminders| rem2ps > remind.ps | lpr remind.ps'
+        alias calendar='remind -c+4mb1 ~/Dokumente/Remind/.reminders'
+        alias r-reminders='remind -t14g ~/Dokumente/Remind/.reminders'
+        alias calendar-print='remind -p ~/Dokumente/Remind/.reminders| rem2ps > remind.ps | lpr remind.ps'
         #Keyboard Map
         alias neo2='setxkbmap lv && xmodmap ~/.Xmodmap/neo_de.xmodmap && xset -r 51'
         alias qwertz_custom='setxkbmap lv && xmodmap ~/.Xmodmap/neo_de_custom.xmodmap && xset -r 51' #qwertz mit Neo2-Ebene 3+
         alias qwertz='setxkbmap de && xset r 51'
         alias raspberrypi='ssh root@192.168.0.165 -l pi'
         alias resolution='xrandr -s 1680x1050'
+        alias screenshot='import -window root screenshot.jpg'
         #alias dropbox-stop='sudo systemctl stop dropbox@joecool.service'
         #alias dropbox-start='sudo systemctl start dropbox@joecool.service'
         #alias catalyst='sudo aticonfig --sync-video=on; sudo aticonfig --sync-vsync=on; sudo aticonfig --set-pcs-u32=DDX,EnableTearFreeDesktop,1'
@@ -144,3 +146,7 @@ if [ -z "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.
         ZSH_HIGHLIGHT_STYLES[assign]=none
         ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 fi
+
+
+#Java Font-Rendering
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'

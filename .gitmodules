@@ -67,7 +67,7 @@
 	url = git://github.com/vim-scripts/TaskList.vim
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
-	url = git://github.com/tsaleh/vim-matchit
+	url = https://github.com/tmhedberg/matchit.git
 [submodule "vim/bundle/SimplyFold"]
 	path = vim/bundle/SimplyFold
 	url = git://github.com/tmhedberg/SimpylFold
