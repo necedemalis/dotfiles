@@ -4,30 +4,29 @@ source! /home/joecool/.vimperatorrc.local
 
 " vim: set ft=vimperator:
 
-
-"nnoremap gt J
-"nnoremap gT K
 map J gt
 map K gT
+inoremap jk <esc>
+inoremap jj <esc>
 
 
 " Options {{{1
-"set runtimepath=~/.vimperator
+set runtimepath=~/.vimperator
 set titlestring="Mozilla Firefox"
 "set messages=100
 "set verbose=1
-"set defsearch=google
+"set defsearch=startpage
 "set toolbars=noaddons,nobookmarks,nomenu,nonavigation,tabs
-"set complete=slS
-"set history=1000
-"set newtab=all
-"set popups=tab
-"set nohlsearch
-"set ignorecase
-"set incsearch
-"set smartcase
-"set nofocuscontent
-"set visualbell
+set complete=slS
+set history=1000
+set newtab=all
+set popups=tab
+set nohlsearch
+set ignorecase
+set incsearch
+set smartcase
+set nofocuscontent
+set visualbell
 set hintchars=HJKLASDFGYUIOPQWERTNMZXCVB
 
 let mapleader = ","

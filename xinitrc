@@ -11,6 +11,7 @@ urxvtd -q -f -o
 #Pulseaudio & Timidity
 pactl load-module module-x11-xsmp
 pulseaudio --start
+jack_control start
 timidity -iA -Os &
 
 #mpd
