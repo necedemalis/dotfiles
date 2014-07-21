@@ -27,6 +27,6 @@ set incsearch
 set smartcase
 set nofocuscontent
 set visualbell
-set hintchars=HJKLASDFGYUIOPQWERTNMZXCVB
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
 
 let mapleader = ","

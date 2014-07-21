@@ -321,6 +321,7 @@
         "Supertab
         let g:SuperTabDefaultCompletionType = "context"
         let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+        "FoldDigest
         let folddigest_size = 20
 
 "Filetypes
