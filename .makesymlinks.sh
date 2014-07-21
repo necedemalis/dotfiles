@@ -21,5 +21,4 @@ ln -s ~/dotfiles/vifmrc ~/.vifm/vifmrc
 ln -s ~/dotfiles/dwb/ ~/.config/
 ln -s ~/dotfiles/mpd.conf ~/.mpd
 ln -s ~/dotfiles/bin/ ~/
-ln -s ~/dotfiles/lib/ ~/
 ln -s ~/dotfiles/scripts/ ~/

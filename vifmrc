@@ -70,8 +70,8 @@
 " Set custom status line look
         set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
-" Filters
-        filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cpan|Desktop|.dbus|.dosbox|.dropbox-dist|.eclipse|.fontconfig|.gconf|.gem|.gimp|.git-credential|.gstreamer|.icons|.java|.macromedia|.magick|.nicotine|.openttd|.puddletag|.ropeproject|.pki|.pspp_history|.python-eggs|.python_history|.sabnzbd|.scummvm|.swt|.SyncID|.SyncIgnore|.SyncArchive|.texlive|.thumbnails|.tor|.ts3client|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.pulse-cookie|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.*\.aux$|.*\.log$|.*\.out$)" 
+" Filters 
+filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|.dbus|.dosbox|.dropbox-dist|.eclipse|.fontconfig|.gconf|.gem|.gimp|git|.git-credential|.gstreamer|.icons|.java|.keychain|.log|.macromedia|.magick|.nicotine|.openttd|.puddletag|.ropeproject|.pki|.pspp_history|.python-eggs|.python_history|.sabnzbd|.scummvm|.swt|.SyncID|.SyncIgnore|.SyncArchive|.texlive|.thumbnails|.tor|.ts3client|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.pulse-cookie|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.*\.aux$|.*\.log$|.*\.out$)" 
 
 "Marks (mark /full/directory/path [filename])
         mark h ~/
@@ -82,7 +82,7 @@
         mark t /media/Daten/Torrents/
 
 "Mappings
-" Mappings für Verzeichnisse (mit Leader-Key)
+"Mappings für Verzeichnisse (mit Leader-Key)
         "/home
         nmap ,h :cd ~<cr>
         nmap ~ :cd ~<cr>
@@ -108,8 +108,10 @@
         nmap ,dk :cd ~/Dokumente/<cr>
         "~/Dokumente/Texte/
         nmap ,te :cd ~/Dokumente/Texte/<cr>
-        "~/downloads/
-        nmap ,do :cd ~/downloads/<cr>
+        "~/Dokumente/PDFs
+        nmap ,pd :cd ~/Dokumente/PDFs/<cr>
+        "~/Downloads/
+        nmap ,do :cd ~/Downloads/<cr>
         "~/Dropbox/
         nmap ,dr :cd ~/Dropbox/<cr>
         "~/Dropbox/Markus
@@ -205,7 +207,6 @@
         nmap <f7> :mkdir<space>
         nmap <f8> :delete<cr>
 
-
 "Com[mand] command_name action
         " The following macros can be used in a command
         " %a is replaced with the user arguments.
@@ -237,7 +238,6 @@
 
         " command make !!make
         " command vgrep vim "+grep %a"
-
 
 "Filetypes
         "The file type is for the default programs to be used with
@@ -278,8 +278,8 @@
         filextype *.dvi xdvi %f &
 
 " Djvu
-        filextype *.djvu evince %f
-        filextype *.djvu zathura %f
+        filextype *.djvu evince %f &
+        filextype *.djvu zathura %f &
 
 " Mathematica
         filetype *.nb /media/SSD/Installationen/Mathematica/Executables/Mathematica %f &
@@ -288,6 +288,7 @@
         filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a
                \ {Play using MPlayer}
                \ mplayer %f,
+        filetype *.mid timidity %f
         "fileviewer *.mp3 mp3info
 
 " Video
@@ -322,7 +323,7 @@
         filetype *.tar.bz2,*.tbz2,*.tgz,*.tar.gz, *.tar tar -xvzf %f
 
 " Web
-        filetype *.html,*.htm dwb %f %i &
+        filetype *.html,*.htm firefox %f %i &
 
 
 " IsoMount
@@ -383,4 +384,3 @@
                 \ {View in thunar}
                 \ Thunar %f &,
         fileview */ tree %f
-
