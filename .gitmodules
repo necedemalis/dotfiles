@@ -32,9 +32,6 @@
 [submodule "vim/bundle/jedi-vim"]
 	path = vim/bundle/jedi-vim
 	url = git://github.com/davidhalter/jedi-vim
-[submodule "vim/bundle/vim-matchit"]
-	path = vim/bundle/vim-matchit
-	url = git://github.com/tsaleh/vim-matchit
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular
@@ -65,9 +62,6 @@
 [submodule "vim/bundle/TaskList"]
 	path = vim/bundle/TaskList
 	url = git://github.com/vim-scripts/TaskList.vim
-[submodule "vim/bundle/matchit"]
-	path = vim/bundle/matchit
-	url = https://github.com/tmhedberg/matchit.git
 [submodule "vim/bundle/SimplyFold"]
 	path = vim/bundle/SimplyFold
 	url = git://github.com/tmhedberg/SimpylFold
