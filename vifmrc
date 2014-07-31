@@ -71,7 +71,7 @@
         set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
 " Filters 
-filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|.dbus|.dosbox|.dropbox-dist|.eclipse|.fontconfig|.gconf|.gem|.gimp|git|.git-credential|.gstreamer|.icons|.java|.keychain|.log|.macromedia|.magick|.nicotine|.openttd|.puddletag|.ropeproject|.pki|.pspp_history|.python-eggs|.python_history|.sabnzbd|.scummvm|.swt|.SyncID|.SyncIgnore|.SyncArchive|.texlive|.thumbnails|.tor|.ts3client|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.pulse-cookie|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.*\.aux$|.*\.log$|.*\.out$)" 
+filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|.dbus|.dosbox|.dropbox-dist|.eclipse|.fehbg|.fontconfig|.gconf|.gem|.gimp|git|.git-credential|.gstreamer|.icons|.java|.keychain|.log|.macromedia|.magick|.nicotine|.openttd|.puddletag|.ropeproject|.pki|.pspp_history|.python-eggs|.python_history|.sabnzbd|.scummvm|.swt|.SyncID|.SyncIgnore|.SyncArchive|.texlive|.thumbnails|.tor|.ts3client|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.pulse-cookie|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.*\.aux$|.*\.log$|.*\.out$)" 
 
 "Marks (mark /full/directory/path [filename])
         mark h ~/

@@ -1,4 +1,0 @@
-#!/bin/sh
-
-sudo extlinux -o 'chain.c32 hd1 2' /boot/syslinux/
-sudo reboot

@@ -351,6 +351,11 @@
         autocmd FileType python highlight SpellBad term=underline gui=bold guisp=Orange guifg=red
         "Pydiction
         """let g:pydiction_location = '/home/joecool/.vim/pydiction/pydiction-1.2/complete-dict'
+"Sage"
+        "To get Vim to use Python syntax highlighting, indentation, and so on for .sage files
+        augroup filetypedetect
+          au! BufRead,BufNewFile *.sage,*.spyx,*.pyx setfiletype python
+        augroup END
 "Latex/Vim-Latex
         let g:tex_flavor="latex"
         au Filetype tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
