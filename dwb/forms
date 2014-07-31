@@ -1,0 +1,151 @@
+{
+  "login.live.com": {
+    "id": null,
+    "form": {
+      "login": {
+        "id": "i0116",
+        "value": "Chief_Wiggum44@hotmail.com"
+      },
+      "passwd": {
+        "id": "i0118",
+        "value": "?;mlx=Yxop=7.h:("
+      },
+      "KMSI": {
+        "id": "idChkBx_PWD_KMSI0Pwd",
+        "value": "1"
+      }
+    },
+    "hasIds": true,
+    "autosubmit": true
+  },
+  "sso.sbg.ac.at": {
+    "id": null,
+    "form": {
+      "j_username": {
+        "value": "0422071"
+      },
+      "j_password": {
+        "value": "iwemiroF"
+      }
+    },
+    "hasIds": false,
+    "autosubmit": true
+  },
+  "www.bigfinishgames.com": {
+    "id": "user-login",
+    "form": {
+      "name": {
+        "id": "edit-name",
+        "value": "FrasierCrane"
+      },
+      "pass": {
+        "id": "edit-pass",
+        "value": "wapsuvMnQq"
+      }
+    },
+    "hasIds": true,
+    "autosubmit": true
+  },
+  "www.facebook.com": {
+    "id": "login_form",
+    "form": {
+      "email": {
+        "id": "email",
+        "value": "debqxtol@proxymail.eu"
+      },
+      "pass": {
+        "id": "pass",
+        "value": ".i[(^ddMddIV!&*@(6jh+"
+      },
+      "persistent": {
+        "id": "persist_box",
+        "value": "1"
+      }
+    },
+    "hasIds": true,
+    "autosubmit": true
+  },
+  "joecool.no-ip.org": {
+    "id": "signinform",
+    "form": {
+      "pass": {
+        "value": "5PyswhV~x3]kE[\\GCYYS"
+      },
+      "keepsigned": {
+        "value": "1"
+      }
+    },
+    "hasIds": false,
+    "autosubmit": true
+  },
+  "www.adventuregamers.com": {
+    "id": "member_login_form",
+    "form": {
+      "username": {
+        "id": "fm-username",
+        "value": "FrasierCrane"
+      },
+      "password": {
+        "id": "fm-password",
+        "value": ".&f4-mA2?6$p1Qv!//a-(;"
+      },
+      "auto_login": {
+        "id": "fm-auto-login",
+        "value": "1"
+      },
+      "anon": {
+        "id": "fm-show-name",
+        "value": "1"
+      }
+    },
+    "hasIds": true,
+    "autosubmit": true
+  },
+  "www.adventure-treff.de": {
+    "id": null,
+    "form": {
+      "username": {
+        "value": "FrasierCrane"
+      },
+      "password": {
+        "value": "G$³(}66mB4qT5%%\"WadfM{{/&;C"
+      },
+      "autologin": {
+        "value": "on"
+      },
+      "viewonline": {
+        "value": "on"
+      }
+    },
+    "hasIds": false,
+    "autosubmit": true
+  },
+  "www.humblebundle.com": {
+    "id": "no-js-login",
+    "form": {
+      "username": {
+        "value": "Chief_Wiggum44@hotmail.com"
+      },
+      "password": {
+        "value": ".%d4Q2'x?9h3$!^#bP5),4a+,"
+      }
+    },
+    "hasIds": false,
+    "autosubmit": true
+  },
+  "www.khanacademy.org": {
+    "id": "login-form",
+    "form": {
+      "identifier": {
+        "id": "identifier",
+        "value": "NilesCrane"
+      },
+      "password": {
+        "id": "password",
+        "value": ".5/mdo8-1Kh?1*4\"1\"d;.\\"
+      }
+    },
+    "hasIds": true,
+    "autosubmit": true
+  }
+}

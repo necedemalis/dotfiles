@@ -91,4 +91,4 @@
 	url = https://github.com/Raimondi/delimitMate
 [submodule "vim/bundle/python-mode"]
 	path = vim/bundle/python-mode
-	url = https://github.com/klen/python-mode
+	url = http://github.com/klen/python-mode.git

@@ -164,7 +164,6 @@ zip
 zotero
 zsh-syntax-highlighting
 
-
 apache-ant
 mariadb
 php-apache
@@ -173,7 +172,6 @@ phpmyadmin
 zathura-djvu
 zathura-pdf-poppler
 zathura-ps
-
 
 otf-cantarell-ib
 otf-cantoraone-ib
@@ -196,6 +194,27 @@ ttf-noto-sans-multilang-ib
 ttf-noto-serif-multilang-ib
 ttf-opensans-ib
 ttf-signika-family-ib
+
+
+b43-firmware
+b43-fwcutter
+dmenu
+dwm
+feh
+keepassc
+modprobed_db
+mplayer
+rts5229-dkms
+pm-utils
+python
+unzip
+xf86-input-keyboard
+xf86-input-synaptics
+xf86-video-intel
+wget
+xsel
+zsh
 "
+
 
 comm -23 <(pacman -Qqt | sort) <(echo $ignorepkg | tr ' ' '\n' | cat <(pacman -Sqg $ignoregrp) - | sort -u)
