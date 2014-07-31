@@ -1,4 +1,8 @@
 # ZSH - Konfigurationen
+
+#Präambel
+        export EDITOR="vim"
+        export MOZ_DISABLE_PANGO=1
         HISTFILE=~/.zsh_histfile
         HISTSIZE=1000
         SAVEHIST=1000
@@ -6,10 +10,6 @@
         bindkey -v
         zstyle :compinstall filename '/home/joecool/.zshrc'
         autoload -U compinit && compinit #Autocomplete
-
-#Präambel
-        export EDITOR="vim"
-        export MOZ_DISABLE_PANGO=1
 
 #History Search
         [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
@@ -107,6 +107,9 @@
         alias raspberrypi='ssh root@192.168.0.165 -l pi'
         alias resolution='xrandr -s 1680x1050'
         alias screenshot='import -window root screenshot.jpg'
+        alias pdfjoin_norotate='pdfjoin --rotateoversize false'
+        alias audio_restart='pulseaudio --kill && jack_control stop && jack_control start && pulseaudio --start'
+        alias ksp='cd / && LC_ALL=C ni ./media/Daten/Installationen/Spiele/KSP/KSP.x86_64'
         #alias dropbox-stop='sudo systemctl stop dropbox@joecool.service'
         #alias dropbox-start='sudo systemctl start dropbox@joecool.service'
         #alias catalyst='sudo aticonfig --sync-video=on; sudo aticonfig --sync-vsync=on; sudo aticonfig --set-pcs-u32=DDX,EnableTearFreeDesktop,1'

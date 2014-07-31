@@ -35,16 +35,19 @@ dwarffortress
 dwb
 easytag
 evince
+feh
 fcron
 firefox
 flashplugin
 fluxbox
+freeciv
 geogebra
 getmail
 gimp
 git
 gnuchess
 gnugo
+gnuplot
 gparted
 grsync
 gutenprint
@@ -59,6 +62,7 @@ lib32-ati-dri
 lib32-alsa-plugins
 lib32-curl
 lib32-libpulse
+lib32-sdl_mixer
 libreoffice-calc
 libreoffice-impress
 libreoffice-writer
@@ -152,6 +156,7 @@ wyrd
 xclip
 xcursor-vanilla-dmz
 xf86-video-ati
+xf86-input-keyboard
 xorg-server
 xorg-server-utils
 xorg-xdpyinfo
@@ -165,6 +170,7 @@ zotero
 zsh-syntax-highlighting
 
 apache-ant
+ctags
 mariadb
 php-apache
 php-mcrypt

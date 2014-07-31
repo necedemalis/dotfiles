@@ -1,6 +1,0 @@
-#!/bin/bash
-
-wget -P /home/joecool http://someonewhocares.org/hosts/hosts
-rm /etc/hosts
-cp /home/joecool/hosts /etc/hosts
-rm /home/joecool/hosts

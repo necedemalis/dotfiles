@@ -12,7 +12,8 @@ urxvtd -q -f -o
 pactl load-module module-x11-xsmp
 jack_control start
 pulseaudio --start
-timidity -iA -Os &
+#timidity -iA -Os &
+timidity -iA -B2,8 -Os -EFreverb=0 &
 
 #mpd
 #[ ! -s ~/.mpd/pid ] && mpd ~/.mpd/mpd.conf
@@ -22,6 +23,9 @@ pidof mpdscribble >& /dev/null
 if [ $? -ne 0 ]; then
  mpdscribble &
 fi
+
+#Feh
+sh ~/.fehbg &
 
 #fluxbox
 exec startfluxbox
