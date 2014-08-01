@@ -20,9 +20,6 @@
 [submodule "vim/bundle/pyflakes-vim"]
 	path = vim/bundle/pyflakes-vim
 	url = git://github.com/kevinw/pyflakes-vim
-[submodule "vim/bundle/LaTeX-Suite-aka-Vim-LaTeX"]
-	path = vim/bundle/LaTeX-Suite-aka-Vim-LaTeX
-	url = git://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX
 [submodule "vim/bundle/TaskList.vim"]
 	path = vim/bundle/TaskList.vim
 	url = git://github.com/vim-scripts/TaskList.vim
@@ -32,9 +29,6 @@
 [submodule "vim/bundle/jedi-vim"]
 	path = vim/bundle/jedi-vim
 	url = git://github.com/davidhalter/jedi-vim
-[submodule "vim/bundle/vim-matchit"]
-	path = vim/bundle/vim-matchit
-	url = git://github.com/tsaleh/vim-matchit
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular
@@ -65,9 +59,6 @@
 [submodule "vim/bundle/TaskList"]
 	path = vim/bundle/TaskList
 	url = git://github.com/vim-scripts/TaskList.vim
-[submodule "vim/bundle/matchit"]
-	path = vim/bundle/matchit
-	url = https://github.com/tmhedberg/matchit.git
 [submodule "vim/bundle/SimplyFold"]
 	path = vim/bundle/SimplyFold
 	url = git://github.com/tmhedberg/SimpylFold
@@ -89,6 +80,9 @@
 [submodule "vim/bundle/delimitmate"]
 	path = vim/bundle/delimitmate
 	url = https://github.com/Raimondi/delimitMate
+[submodule "vim/bundle/matchit"]
+	path = vim/bundle/matchit
+	url = https://github.com/tmhedberg/matchit
 [submodule "vim/bundle/python-mode"]
 	path = vim/bundle/python-mode
-	url = http://github.com/klen/python-mode.git
+	url = https://github.com/klen/python-mode
