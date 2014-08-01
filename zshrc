@@ -97,7 +97,7 @@
         #alias windows='sudo extlinux --once "chain.c32 hd1 2" /boot/syslinux/'
         #Restart
         #Remind
-        alias calendar='remind -c+4mb1 ~/Dokumente/Remind/.reminders'
+        alias calendar='remind -c+4mb1 ~/Dokumente/Remind/.remindersGrand Piano'
         alias r-reminders='remind -t14g ~/Dokumente/Remind/.reminders'
         alias calendar-print='remind -p ~/Dokumente/Remind/.reminders| rem2ps > remind.ps | lpr remind.ps'
         #Keyboard Map
@@ -117,7 +117,7 @@
 
 #Python
         alias p='python3'
-        PYTHONPATH=/home/joecool/lib/python
+        PYTHONPATH=/home/joecool/lib/python:/opt/sage/local/lib/python/site-packages/
         EDITOR=vim
         export PYTHONPATH EDITOR
 

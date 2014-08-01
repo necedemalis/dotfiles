@@ -44,9 +44,6 @@
 [submodule "vim/bundle/pyflakes"]
 	path = vim/bundle/pyflakes
 	url = git://github.com/kevinw/pyflakes-vim
-[submodule "vim/bundle/LaTeX-Suite"]
-	path = vim/bundle/LaTeX-Suite
-	url = git://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX
 [submodule "vim/bundle/TaskList"]
 	path = vim/bundle/TaskList
 	url = git://github.com/vim-scripts/TaskList.vim
@@ -56,18 +53,12 @@
 [submodule "vim/bundle/OmniCppComplete"]
 	path = vim/bundle/OmniCppComplete
 	url = git://github.com/vim-scripts/OmniCppComplete
-[submodule "vim/bundle/LaTeX-Box"]
-	path = vim/bundle/LaTeX-Box
-	url = https://github.com/LaTeX-Box-Team/LaTeX-Box
 [submodule "vim/bundle/latex-suite"]
 	path = vim/bundle/latex-suite
 	url = http://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = https://github.com/vim-scripts/UltiSnips
-[submodule "vim/bundle/autoclose"]
-	path = vim/bundle/autoclose
-	url = https://github.com/andrewle/vim-autoclose
 [submodule "vim/bundle/delimitmate"]
 	path = vim/bundle/delimitmate
 	url = https://github.com/Raimondi/delimitMate
