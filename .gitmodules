@@ -17,12 +17,6 @@
 [submodule "vim/bundle/pydiction"]
 	path = vim/bundle/pydiction
 	url = git://github.com/rkulla/pydiction
-[submodule "vim/bundle/pyflakes-vim"]
-	path = vim/bundle/pyflakes-vim
-	url = git://github.com/kevinw/pyflakes-vim
-[submodule "vim/bundle/TaskList.vim"]
-	path = vim/bundle/TaskList.vim
-	url = git://github.com/vim-scripts/TaskList.vim
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = git://github.com/plasticboy/vim-markdown
@@ -35,9 +29,6 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar
-[submodule "vim/bundle/SimpylFold"]
-	path = vim/bundle/SimpylFold
-	url = git://github.com/tmhedberg/SimpylFold
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = https://github.com/sjl/gundo.vim
