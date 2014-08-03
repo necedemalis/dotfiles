@@ -36,6 +36,7 @@
         set noerrorbells " don't beep
         set hidden  "zwischen Buffern wechseln ohne speichern zu mÃ¼ssen
         set autowrite "speichter Datei automatisch beim wechseln
+        set spelllang=en,de "Sprachen für Rechtschreibüberprüfung: Deutsch, English
         if has("gui_running")
                 set guioptions-=T "Versteckt GUI-Toolbar
                 set guioptions-=m "Versteckt GUI-Toolbar
@@ -374,3 +375,6 @@
         autocmd FileType sh Code 
         "C
         autocmd FileType c Code
+        "Mail
+        autocmd FileType mail setlocal fo+=aw
+        autocmd FileType mail set spell 
