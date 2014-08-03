@@ -56,6 +56,7 @@ ibfonts-meta-base
 inotify-tools
 ifplugd
 jabref
+kdeedu-cantor
 keepassx
 keychain
 lib32-ati-dri
@@ -171,7 +172,9 @@ zsh-syntax-highlighting
 
 apache-ant
 ctags
+dmenu
 mariadb
+mlocate
 php-apache
 php-mcrypt
 phpmyadmin

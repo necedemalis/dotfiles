@@ -1,0 +1,66 @@
+#Diverses
+  set header_cache=~/.cache/mutt
+  set certificate_file=~/.mutt/.mutt-certs
+  set send_charset="us-ascii:utf-8"
+
+  set edit_headers=yes
+
+  #Keine SSL Verification beim Start
+  set ssl_verify_host = no
+  set ssl_verify_dates = no
+
+#Aussehen
+  set sort = 'reverse-date-received' # default: 'date'
+  #set index_format="%4C %Z %[!%b %d %Y] %-17.17F (%3l) %s"
+
+## Abook
+set query_command= "abook --mutt-query '%s'"
+macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
+bind editor        <Tab> complete-query
+
+#IMAP
+  set folder=imaps://joecool.no-ip.org:143
+  set imap_pass='C66T?&HHe$>;[bQ%TbUs'
+  set spoolfile="imaps://markus.klein@joecool.no-ip.org"
+  mailboxes =+INBOX
+  set postponed="imaps://markus.klein@joecool.no-ip.org/Drafts"
+  set imap_keepalive = 300
+  set mail_check =120
+
+  #set record = +Sent
+  #set use_from = yes
+
+#SMTP über msmtp
+  set realname='Markus Klein'
+  set from = markus.klein@joecool.no-ip.org
+  set sendmail="/usr/bin/msmtp"
+  set envelope_from=yes
+
+  #Formatierung
+  #set edit_headers=yes
+  #set mbox=+mbox
+  #set record=+sent
+  #set mbox_type=Maildir
+
+  #Authentifizierung Ignorieren
+  ignore "Authentication-Results:"
+  ignore "DomainKey-Signature:"
+  ignore "DKIM-Signature:"
+
+#GPGME
+        set crypt_use_gpgme = yes
+        set pgp_sign_as = 333731D0 
+        # Sign replies to signed email
+        set crypt_replysign = yes
+        # Encrypt replies to encrypted email
+        set crypt_replyencrypt = yes
+        # Encrypt and sign replies to encrypted and signed email
+        set crypt_replysignencrypted = yes
+        # Attempt to verify email signatures automatically
+        set crypt_verify_sig = yes
+        # Autosign
+        set crypt_autosign = no
+        # Auto-decrypt
+        set pgp_auto_decode = yes
+        #Add link to public PGP key in header
+        my_hdr X-PGP-Key: http://joecool.no-ip.org/markus-klein.public.asc

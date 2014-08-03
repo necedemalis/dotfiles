@@ -5,6 +5,9 @@
 setxkbmap lv && xmodmap ~/.Xmodmap/neo_de_custom.xmodmap && xset -r 51
 #setxkbmap de -variant nodeadkeys
 
+#GPG Agent
+eval $(gpg-agent --daemon) &
+
 #Urxvt Daemon
 urxvtd -q -f -o
 

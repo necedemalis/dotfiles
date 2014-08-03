@@ -20,5 +20,5 @@ done
 ln -s ~/dotfiles/vifmrc ~/.vifm/vifmrc
 ln -s ~/dotfiles/dwb/ ~/.config/
 ln -s ~/dotfiles/mpd.conf ~/.mpd
+ln -s ~/dotfiles/muttrc ~/.mutt/muttrc
 ln -s ~/dotfiles/bin/ ~/
-ln -s ~/dotfiles/scripts/ ~/
