@@ -1,0 +1,83 @@
+#Diverses
+  set header_cache=~/.cache/mutt
+  set certificate_file=~/.mutt/.mutt-certs
+  set send_charset="us-ascii:utf-8"
+  set edit_headers=yes
+
+  #Keine SSL Verification beim Start
+  set ssl_verify_host = no
+  set ssl_verify_dates = no
+  set text_flowed=yes #No Line Breaks
+  set mail_check =120
+
+#Aussehen
+  set sort = 'reverse-date-received' # default: 'date'
+  #set index_format="%4C %Z %[!%b %d %Y] %-17.17F (%3l) %s"
+
+# Mailbox type and location
+#set mbox_type = 'Maildir'
+#set folder = '~/Mail/'
+#set header_cache=~/.cache/mutt
+# Submailboxes
+#set spoolfile = '+inbox'
+#set postponed = '+drafts'
+#set record = '+sent'
+#mailboxes !
+# Jump to mailboxes
+macro generic,index,browser,pager gi '<change-folder>=inbox<enter>' 'Change to inbox folder'
+macro generic,index,browser,pager gs '<change-folder>=sent<enter>' 'Change to sent folder'
+
+# Abook
+set query_command= "abook --mutt-query '%s'"
+macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
+bind editor        <Tab> complete-query
+
+#SMTP über msmtp
+  set sendmail="/usr/bin/msmtp"
+  set envelope_from=yes
+
+  #Authentifizierung Ignorieren
+  ignore "Authentication-Results:"
+  ignore "DomainKey-Signature:"
+  ignore "DKIM-Signature:"
+
+#IMAP
+  set folder=imaps://joecool.no-ip.org:143
+  #set imap_pass='j&2N@u?6m]KV?h>F3G;M'
+  set imap_pass=`getpassword email_id`
+  set spoolfile="imaps://markus.klein@joecool.no-ip.org"
+  set postponed="imaps://markus.klein@joecool.no-ip.org/Drafts"
+  set record = 'imaps://markus.klein@joecool.no-ip.org/Sent Items'
+  set imap_keepalive = 300
+
+#Header-Zeugs
+        unmy_hdr *       # delete existing header-settings, if there are any.
+        my_hdr X-PGP-Key: http://joecool.no-ip.org/markus-klein.public.asc #Add link to public PGP key in header
+        set from="Markus.Klein@joecool.no-ip.org"
+        set realname="Markus Klein"
+
+#GPGME
+        set crypt_use_gpgme = yes
+        set pgp_sign_as = 333731D0 
+        set crypt_replysign = yes # Sign replies to signed email
+        set crypt_replyencrypt = yes # Encrypt replies to encrypted email
+        set crypt_replysignencrypted = yes # Encrypt and sign replies to encrypted and signed email
+        set crypt_verify_sig = yes # Attempt to verify email signatures automatically
+        set crypt_autosign = no # Autosign
+        set pgp_auto_decode = yes # Auto-decrypto
+
+# Vim-ish bindings
+bind index gg first-entry
+bind index G last-entry
+bind pager gg top
+bind pager G bottom
+bind index,pager \Cu half-up
+bind index,pager \Cd half-down
+bind generic,index,browser,pager \Cf next-page
+bind generic,index,browser,pager \Cb previous-page
+
+# Responses
+set fast_reply = yes
+set forward_format = 'Fw: %s'
+set include = yes
+set use_envelope_from = yes
