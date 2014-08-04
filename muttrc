@@ -14,22 +14,26 @@
   set mail_check =120
   set pager_stop #Kein Mail wechsel am Ende der Mail
   unset beep #Kein Biepen
+  set delete=yes #Automatically delete messages marked for deletion on exit
 
   #Keine SSL Verification beim Start
   set ssl_verify_host = no
   set ssl_verify_dates = no
 
 #Accounts
-#Account 1
+#Account Pi
   source "~/.mutt/pi"
   folder-hook $folder 'source ~/.mutt/pi'
-#Account 2
-  #source "~/.mutt/hotmail"
+#Account Hotmail
   folder-hook $folder 'source ~/.mutt/hotmail'
+#Account uni
+  folder-hook $folder 'source ~/.mutt/uni'
 
 #Aussehen
+  set sort = threads
+  set sort_aux = last-date-received
   set sort = 'reverse-date-received' # default: 'date'
-  #set index_format="%4C %Z %[!%b %d %Y] %-17.17F (%3l) %s"
+  set index_format="%4C %Z %[!%b %d %Y] %-17.17F : %s"
 
 # Abook
 set query_command= "abook --mutt-query '%s'"
@@ -39,7 +43,6 @@ bind editor        <Tab> complete-query
 #Header-Zeugs
         unmy_hdr *       # delete existing header-settings, if there are any.
         my_hdr X-PGP-Key: http://joecool.no-ip.org/markus-klein.public.asc #Add link to public PGP key in header
-        set from="Markus.Klein@joecool.no-ip.org"
         set realname="Markus Klein"
 
 #GPGME
@@ -68,7 +71,7 @@ bind editor        <Tab> complete-query
   set include = yes
   set use_envelope_from = yes
 
-Viewing HTML
+#Viewing HTML
   set mailcap_path        = ~/.mutt/mailcap
   auto_view text/html
 
@@ -76,11 +79,11 @@ Viewing HTML
   #Urlscan mit Strg+b
   macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
   macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
-
-### Shortcuts
-macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/pi<enter><change-folder>!<enter>'
-macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/hotmail<enter><change-folder>!<enter>'
-
-# Jump to mailboxes
-macro generic,index,browser,pager gi '<change-folder>=inbox<enter>' 'Change to inbox folder'
-macro generic,index,browser,pager gs '<change-folder>=sent<enter>' 'Change to sent folder'
+  #Account wechsel
+  macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/pi<enter><change-folder>!<enter>'
+  macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/hotmail<enter><change-folder>!<enter>'
+  macro index,pager <f4> '<sync-mailbox><enter-command>source ~/.mutt/uni<enter><change-folder>!<enter>'
+  #Ordner wechsel
+  macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>' #Change Folder mit c
+  #macro generic,index,browser,pager gi '<change-folder>=inbox<enter>' 'Change to inbox folder'
+  #macro generic,index,browser,pager gs '<change-folder>=sent<enter>' 'Change to sent folder'
