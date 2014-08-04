@@ -2,14 +2,19 @@ import urllib
 import os
 import shutil
 import time
+import datetime
 
 class MyOpener(urllib.FancyURLopener):
     version = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; it; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11'
 
 
-#Move old picture to /media/Daten/Bilder/Comics/Peanuts/
+#Move old picture to /media/Daten/Bilder/Comics/Peanuts/ (wenn vom Sonntag, dann als jpg
 timestr = time.strftime("%Y-%m-%d")
-shutil.move("/home/joecool/.fluxbox/backgrounds/peanuts.gif","/media/Daten/Bilder/Comics/Peanuts/peanuts_{0}.gif".format(timestr))
+now = datetime.datetime.now()
+if now.isoweekday() == 1:
+    shutil.move("/home/joecool/.fluxbox/backgrounds/peanuts.gif","/media/Daten/Bilder/Comics/Peanuts/peanuts_{0}.jpg".format(timestr))
+else:
+    shutil.move("/home/joecool/.fluxbox/backgrounds/peanuts.gif","/media/Daten/Bilder/Comics/Peanuts/peanuts_{0}.gif".format(timestr))
 
 #Read Source Code
 myopener = MyOpener()

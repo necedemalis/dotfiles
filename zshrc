@@ -55,6 +55,7 @@
 
 #Environmental Variables
         export DIFFPROG=$DIFFPROG:/usr/bin/meld
+        export BROWSER=$BROWSER/usr/bin/firefox
         export PATH=$PATH:/home/joecool/bin/
         export PATH=$PATH:/home/joecool/bin/dbgl #DosBox Game Launcher
         if [ -z "$HOME/.rbenv" ] ; then
