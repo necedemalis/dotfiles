@@ -67,6 +67,9 @@
                 export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
         fi
 
+#Start Keychain for SSH-Agent & GPG-Agent
+eval $(keychain --eval)
+
 #ALIASES
         #Pacman
         alias pacin='sudo pacmatic -S'

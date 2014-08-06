@@ -46,7 +46,9 @@
         set shortmess+=I "Keine Startup-Message
         set formatprg=par\ -w96 "Par für Umbruchformatierung mit Q/gq (ohne par = mit gw!)
         set autochdir "Change working directory to directory of current file
-        set clipboard=unnamedplus "Unnamed register to plus register (system clipboard)
+        if has('unnamedplus') 
+          set clipboard=unnamed,unnamedplus "Unnamed register to plus register (system clipboard)
+        endif
         "Save/Load manual made Folds
         au BufWinLeave * silent! mkview
         au BufWinEnter * silent! loadview

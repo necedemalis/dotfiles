@@ -55,7 +55,7 @@ bind editor        <Tab> complete-query
         set crypt_autosign = no # Autosign
         set pgp_auto_decode = yes # Auto-decrypto
 
-# Vim-ish bindings
+#Vim-ish bindings
   bind index gg first-entry
   bind index G last-entry
   bind pager gg top
@@ -81,8 +81,11 @@ bind editor        <Tab> complete-query
   macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
   #Account wechsel
   macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/pi<enter><change-folder>!<enter>'
+  macro index,pager 'gp' '<sync-mailbox><enter-command>source ~/.mutt/pi<enter><change-folder>!<enter>'
   macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/hotmail<enter><change-folder>!<enter>'
+  macro index,pager 'gh' '<sync-mailbox><enter-command>source ~/.mutt/hotmail<enter><change-folder>!<enter>'
   macro index,pager <f4> '<sync-mailbox><enter-command>source ~/.mutt/uni<enter><change-folder>!<enter>'
+  macro index,pager 'gu' '<sync-mailbox><enter-command>source ~/.mutt/uni<enter><change-folder>!<enter>'
   #Ordner wechsel
   macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>' #Change Folder mit c
   #macro generic,index,browser,pager gi '<change-folder>=inbox<enter>' 'Change to inbox folder'

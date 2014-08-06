@@ -1,6 +1,7 @@
 bin/dbgl
 dwb/default/session
 dwb/default/session.*
+dwb/forms
 dwb/adblock_lists/
 lib/python/tutorials/
 lib/mathematica
