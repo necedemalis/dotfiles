@@ -371,6 +371,8 @@
         ""let g:Tex_FoldedSections = 'section,%%fakesection,%%fakesubsection'
         ""let g:Tex_FoldedEnvironments = "abstract"
         autocmd FileType tex Prose 
+
+        let g:Tex_ViewRule_dvi = '/usr/bin/evince'
         "Markdown
         autocmd FileType markdown Prose 
         "Shell-Script
