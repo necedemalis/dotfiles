@@ -138,6 +138,8 @@
        nnoremap <down> <C-w>j
        nnoremap <left> <C-w>h
        nnoremap <right> <C-w>l
+       map <F13> <C-w>h
+       map <F14> <C-w>l
         "+ als *
         "nnoremap + *
         "Alt+j/k -> Jump to the next or previous line with same or lower indentation
@@ -370,9 +372,12 @@
         "Fold-Options verändert in dotfiles/vim/bundle/latex-suite/ftplugin/latex-suite/folding.vim, geschützt mit chattr +i
         ""let g:Tex_FoldedSections = 'section,%%fakesection,%%fakesubsection'
         ""let g:Tex_FoldedEnvironments = "abstract"
+         " redef C-j to C-g
+        imap <C-g> <Plug>IMAP_JumpForward
+        nmap <C-g> <Plug>IMAP_JumpForward       
+        
         autocmd FileType tex Prose 
 
-        let g:Tex_ViewRule_dvi = '/usr/bin/evince'
         "Markdown
         autocmd FileType markdown Prose 
         "Shell-Script

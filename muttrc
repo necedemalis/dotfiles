@@ -21,12 +21,12 @@
   set ssl_verify_dates = no
 
 #Accounts
-#Account Pi
-  source "~/.mutt/pi"
-  folder-hook $folder 'source ~/.mutt/pi'
 #Account Hotmail
   #source "~/.mutt/hotmail"
   folder-hook $folder 'source ~/.mutt/hotmail'
+#Account Pi
+  source "~/.mutt/pi"
+  folder-hook $folder 'source ~/.mutt/pi'
 #Account uni
   folder-hook $folder 'source ~/.mutt/uni'
 

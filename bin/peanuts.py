@@ -12,9 +12,9 @@ class MyOpener(urllib.FancyURLopener):
 timestr = time.strftime("%Y-%m-%d")
 now = datetime.datetime.now()
 if now.isoweekday() == 1:
-    shutil.move("/home/joecool/.fluxbox/backgrounds/peanuts.gif","/media/Daten/Bilder/Comics/Peanuts/peanuts_{0}.jpg".format(timestr))
+    shutil.copyfile("/home/joecool/.fluxbox/backgrounds/peanuts.gif","/media/Daten/Bilder/Comics/Peanuts/peanuts_{0}.jpg".format(timestr))
 else:
-    shutil.move("/home/joecool/.fluxbox/backgrounds/peanuts.gif","/media/Daten/Bilder/Comics/Peanuts/peanuts_{0}.gif".format(timestr))
+    shutil.copyfile("/home/joecool/.fluxbox/backgrounds/peanuts.gif","/media/Daten/Bilder/Comics/Peanuts/peanuts_{0}.gif".format(timestr))
 
 #Read Source Code
 myopener = MyOpener()

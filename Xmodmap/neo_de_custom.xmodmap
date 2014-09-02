@@ -309,6 +309,12 @@ keycode 91 = KP_Separator	period		comma		minutes		seconds		NoSymbol	KP_Delete	KP
 !		,		.		,		′ min,feets	″ sec,inches					
 
 
+keycode 418 = 	w		W		underscore	Greek_omega	BackSpace	BackSpace	radical		NoSymbol
+
+keycode 166 = F13
+keycode 167 = F14
+
+
 add Mod3 = ISO_First_Group
 add Mod5 = ISO_Level3_Shift
 
