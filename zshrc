@@ -54,6 +54,7 @@
         fi
 
 #Environmental Variables
+        [[ -z $XDG_CONFIG_HOME ]] && export XDG_CONFIG_HOME="$HOME/.config" && export XDG_DATA_HOME="$HOME/.local/share" && export XDG_CACHE_HOME="$HOME/.cache"
         export DIFFPROG=$DIFFPROG:/usr/bin/meld
         export BROWSER=$BROWSER/usr/bin/firefox
         export PATH=$PATH:/home/joecool/bin/
