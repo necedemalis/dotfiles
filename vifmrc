@@ -294,7 +294,7 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
 " Video
         filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mpg,*.vob,*.flv,*.mov
                 \ {View using mplayer}
-                \ mplayer %f &,
+                \ smplayer %f &,
         filextype *.mkv
                 \ {View using smplayer}
                 \ smplayer %f &,

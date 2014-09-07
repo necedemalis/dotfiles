@@ -1,18 +1,10 @@
 ".vimrc
 
-"if has('gui_running')
-  " Make shift-insert work like in Xterm
-  "map <S-Insert> <MiddleMouse>
-  "map! <S-Insert> <MiddleMouse>
-"endif
-
-""""""""""
-""Custom""
-""""""""""
 "Basic Settings
-        "Basic
         let mapleader="," ", statt \ als leader key
-        silent! colorscheme ChocolateLiquor
+        "Background Theme 
+        set background=light
+        silent! colorscheme solarized "silent! colorscheme ChocolateLiquor
         "Detect file types
         filetype on
         filetype plugin on
@@ -26,10 +18,13 @@
         set hls ic is "Search: Highlight, ignore case, show
         set smartcase "ignore case if search pattern is all lowercase,
         set nocp "nocompatible
+        set tw=96
         set et "expandtab
         set smarttab "Insert tabs at the start of a line
-        set tw=96
-        set showbreak=>>>>
+        set breakindent "Indent soft wrapped lines
+        set tabstop=4
+        set shiftwidth=4
+        set showbreak=>>
         set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc " Suffixes that get lower priority when doing tab completion for filenames.
         set wildignore=*.swp,*.bak,*.pyc,*.class "ignore some file extensions when completing names by pressing Tab,
         set visualbell " Visuelles Piepen 
@@ -44,10 +39,12 @@
         set autoindent "Copy indent from current line when starting a new line 
         set go+=c "No Popup-Dialogs
         set shortmess+=I "Keine Startup-Message
-        set formatprg=par\ -w96 "Par für Umbruchformatierung mit Q/gq (ohne par = mit gw!)
+        set formatprg=par\ -w96 "Par für Umbruchformatierung mit Alt+q
         set autochdir "Change working directory to directory of current file
+        set nolist
+        "Unnamed register to plus register (system clipboard)
         if has('unnamedplus') 
-          set clipboard=unnamed,unnamedplus "Unnamed register to plus register (system clipboard)
+          set clipboard=unnamed,unnamedplus 
         endif
         "Save/Load manual made Folds
         au BufWinLeave * silent! mkview
@@ -103,8 +100,11 @@
         "zs -> Fold everything except were cursor is
         nnoremap zs zMzv
         "Use Q for formatting the current paragraph (or selection)
-        vmap Q gq
-        nmap Q gqap
+        vmap Q gq  "formats marked in visual mode
+        nmap Q gqap "format whole paragraph in normal mode
+        "Use Alt+Q to format paragraph with par
+        map <A-q> {v}!par -jw96<CR>
+        vmap <A-q> !par -jw96<CR>
         "Won't deselect visual selection when moving selected code blocks
         vnoremap < <gv 
         vnoremap > >gv
@@ -127,19 +127,11 @@
        "inoremap <down> <nop>
        "inoremap <left> <nop>
        "inoremap <right> <nop>
-       "Pfeiltasten fÃ¼r Fensternavigation
-       " let g:C_Ctrl_j   = 'off'
-       " let g:BASH_Ctrl_j = 'off'
-       "nnoremap <C-h> <C-w>h
-       "nnoremap <C-j> <C-w>j
-       "nnoremap <C-k> <C-w>k
-       "nnoremap <C-l> <C-w>l
+       "Pfeiltasten für Fensternavigation
        nnoremap <up> <C-w>k
        nnoremap <down> <C-w>j
        nnoremap <left> <C-w>h
        nnoremap <right> <C-w>l
-       map <F13> <C-w>h
-       map <F14> <C-w>l
         "+ als *
         "nnoremap + *
         "Alt+j/k -> Jump to the next or previous line with same or lower indentation
@@ -206,11 +198,9 @@
         command! Nein set fo=t1
         "F4 -> DistractionFreeWriting-Scheme (s. Plugin)
         "F5 -> Python-Compiler
-        "F6 -> WÃ¶rterbuch
+        "F6 -> Wörterbuch
         map <F6> :setlocal spell! spelllang=de,en<CR>
-        "F7 -> Latex-Befehle automatisch einfÃ¼llen
-        "F8 -> Fold Digest
-        "map <F8> :call FoldDigest ()<CR>
+        "F7 -> Latex-Befehle automatisch einfüllen
         "F9 -> Autocomplete fÃ¼r Biblatex bei \cite{}
 
 " Custom Macros
@@ -262,15 +252,19 @@
                         " lookup
                         \ noremap t l |
         "Umschalten Prosa und Code
-        command! Prose silent! colorscheme ChocolateLiquor |
-                     \ inoremap <buffer> . .<C-G>u|
-                     \ inoremap <buffer> ! !<C-G>u|
-                     \ inoremap <buffer> ? ?<C-G>u|
-                     \ setlocal
-                     \ nolist wrap tw=96 fo=t1 nosmartindent linebreak nu|
-                     \ set background=light |
+        "command! Prose silent! colorscheme ChocolateLiquor |
+        "\ inoremap <buffer> . .<C-G>u|
+        "\ inoremap <buffer> ! !<C-G>u|
+        "\ inoremap <buffer> ? ?<C-G>u|
+        command! Prose silent! inoremap <buffer> . .<C-G>u|
+                     \ silent! inoremap <buffer> ! !<C-G>u|
+                     \ silent! inoremap <buffer> ? ?<C-G>u|
+                     \ setlocal nolist wrap
+                     \     tw=96 fo=t1 nosmartindent linebreak nu|
                      \ silent! colorscheme solarized |
+                     \ set background=light |
                      \ set guifont=Monospace\ 10 |
+                     \ highlight NonText cterm=none ctermfg=0 guifg=#dc322f
                      "\ augroup PROSE|
                      "\   autocmd InsertEnter <buffer> set fo+=a|
                      "\   autocmd InsertLeave <buffer> set fo-=a|
@@ -281,13 +275,13 @@
                     \ silent! iunmap <buffer> ?|
                     \ setlocal nospell list wrap
                     \     tw=96 fo=cqr1 smartindent nolinebreak nu|
-                    \ set background=dark |
                     \ silent! colorscheme solarized |
-                    \ set listchars=tab:>.,trail:.,extends:$,nbsp:. | "". bei Tab
-                    \ autocmd filetype html,xml set listchars-=tab:>. | ""keine . bei Tab   
+                    \ set background=dark |
+                    \ set guifont=Monospace\ 10 |
+                    \ set listchars=tab:>.,trail:.,nbsp:. | ",eol:$,extends:$| "". bei Tab
+                    \ autocmd filetype html,xml set listchars-=tab:>. | ""keine . bei Tab
                     \ nnoremap j gj |
                     \ nnoremap k gk |
-                    \ set guifont=Monospace\ 10 |
                     \ silent! autocmd! PROSE * <buffer>
         "function ToggleJust()
         "  if set formatprg? == 'par\ -w96'
@@ -334,10 +328,8 @@
         ""http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
         map <f5> :w\|!python3 %
         au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
-        "Turn on line numbers:
-        set number
-        "~/.vim/syntax
-        autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+        set number "Turn on line numbers
+        autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,( "~/.vim/syntax
         "Code Omnicompletion
         """autocmd FileType python set omnifunc=pythoncomplete#Complete
         let g:SuperTabDefaultCompletionType = "context"
@@ -356,7 +348,7 @@
         autocmd FileType python highlight SpellBad term=underline gui=bold guisp=Orange guifg=red
         "Pydiction
         """let g:pydiction_location = '/home/joecool/.vim/pydiction/pydiction-1.2/complete-dict'
-"Sage"
+"Sage
         "To get Vim to use Python syntax highlighting, indentation, and so on for .sage files
         augroup filetypedetect
           au! BufRead,BufNewFile *.sage,*.spyx,*.pyx setfiletype python
@@ -364,20 +356,16 @@
 "Latex/Vim-Latex
         let g:tex_flavor="latex"
         au Filetype tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
-        "F9->Bibtex autocomplete
-        let g:Tex_BIBINPUTS="$PWD/*.bib"
-        "Starte LaTex automisch in Prosa
-        "Open Dvi with Evince
-        let g:Tex_ViewRule_dvi = "xdvi"
+        autocmd FileType tex Prose "Starte LaTex automisch in Prosa
+        let g:Tex_BIBINPUTS="$PWD/*.bib" "F9->Bibtex autocomplete
+        let g:Tex_ViewRule_dvi = "xdvi" "Open Dvi with Evince
+        imap <C-g> <Plug>IMAP_JumpForward
+        nmap <C-g> <Plug>IMAP_JumpForward       
         "Fold-Options verändert in dotfiles/vim/bundle/latex-suite/ftplugin/latex-suite/folding.vim, geschützt mit chattr +i
         ""let g:Tex_FoldedSections = 'section,%%fakesection,%%fakesubsection'
         ""let g:Tex_FoldedEnvironments = "abstract"
          " redef C-j to C-g
-        imap <C-g> <Plug>IMAP_JumpForward
-        nmap <C-g> <Plug>IMAP_JumpForward       
         
-        autocmd FileType tex Prose 
-
         "Markdown
         autocmd FileType markdown Prose 
         "Shell-Script
@@ -387,3 +375,5 @@
         "Mail
         autocmd FileType mail setlocal fo+=aw
         autocmd FileType mail set spell 
+        "Xml
+        autocmd FileType xml Code "Starte LaTex automisch in Prosa
