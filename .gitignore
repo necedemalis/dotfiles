@@ -7,5 +7,6 @@ lib/python/tutorials/
 lib/mathematica
 ncmpcpp/artists/
 ncmpcpp/lyrics/
+ncmpcpp/error.log
 vim/view/
 vim/.backup/
