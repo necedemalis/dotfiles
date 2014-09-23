@@ -78,7 +78,7 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         mark b ~/Dropbox
         mark d ~/Downloads
         mark k ~/Dokumente
-        mark s ~/Studium
+        mark s ~/Dokumente/Studium
         mark t /media/Daten/Torrents/
 
 "Mappings
@@ -123,10 +123,10 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         "~/samba/SABnzbd/
         nmap ,sb :cd ~/samba/SABnzbd/<cr>
         "~/Studium/
-        nmap ,st :cd ~/Studium/<cr>
-        "~/Studium/Mathematik/
+        nmap ,st :cd ~/Dokumente/Studium/<cr>
+        "~/Dokumente/Studium/Mathematik/
         nmap ,ma :cd ~/Studium/Mathematik/<cr>
-        "~/Studium/Diverses/Nachhilfe/
+        "~/Dokumente/Studium/Diverses/Nachhilfe/
         nmap ,na :cd ~/Studium/Diverses/Nachhilfe/<cr>
         "~/Octopress/source/_posts/
         nmap ,oc :cd ~/Octopress/source/_posts/<cr>
@@ -236,6 +236,9 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         command umount sudo umount %f 
         command mount sudo mount -a
 
+        command tmsu ls /home/joecool/.tmsu-tags/queries/%a && cd /home/joecool/.tmsu-tags/queries/%a 
+        command tag tmsu tag %f %a
+        
         " command make !!make
         " command vgrep vim "+grep %a"
 

@@ -6,6 +6,7 @@ source! /home/joecool/.vimperatorrc.local
 
 map J gt
 map K gT
+map O t
 inoremap jk <esc>
 inoremap jj <esc>
 

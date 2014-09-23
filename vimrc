@@ -92,6 +92,8 @@
         map <leader>pp :w\|!python3 %
         " ,/ um Highlight bei Suche zu lÃ¶schen
         nmap <silent> ,/ :nohlsearch<CR>
+        "ct -> Command-T
+        nnoremap <silent> <Leader>ct :CommandT<CR>
         "Strg+xcv -> Cut/Copy/Paste mit cvx in GVim
         vmap <C-c> "+yi
         vmap <C-x> "+c
@@ -100,8 +102,10 @@
         "zs -> Fold everything except were cursor is
         nnoremap zs zMzv
         "Use Q for formatting the current paragraph (or selection)
-        vmap Q gq  "formats marked in visual mode
-        nmap Q gqap "format whole paragraph in normal mode
+        "formats marked in visual mode
+        vmap Q gq 
+        "format whole paragraph in normal mode
+        nmap Q gqap 
         "Use Alt+Q to format paragraph with par
         map <A-q> {v}!par -jw96<CR>
         vmap <A-q> !par -jw96<CR>
@@ -299,6 +303,7 @@
 "Plugin Settings
 "Pathogen
         silent! call pathogen#infect()
+"Comman-t
 "TaskList
         "Tastlist Suchbefehle
         let g:tlTokenList = ['TODO','todo', 'XXX', 'xxx', '???']

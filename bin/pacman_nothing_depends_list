@@ -21,7 +21,6 @@ asoundconf
 audacity
 autojump
 bleachbit
-btsync
 calibre
 chromium
 clamav
@@ -30,6 +29,7 @@ cmatrix
 cower
 cups
 deluge
+dmenu
 dosbox
 dwarffortress
 dwb
@@ -64,9 +64,9 @@ lib32-alsa-plugins
 lib32-curl
 lib32-libpulse
 lib32-sdl_mixer
-libreoffice-calc
-libreoffice-impress
-libreoffice-writer
+libreoffice-still-calc
+libreoffice-still-impress
+libreoffice-still-writer
 linuxband
 linux-custom
 linux-custom-headers
@@ -126,7 +126,9 @@ scummvm
 sigil
 slim
 smplayer
+solfege
 syslinux
+syncthing
 task
 tcplay
 teamspeak3
@@ -136,13 +138,14 @@ tesseract-data-eng
 texlive-bibtexextra
 texlive-pstricks
 thunar-volman
-thunderbird
 timidity-freepats
+tmsu-bin
 tmux
 TokiTori
 torsocks
 tumbler
 tt-rss
+urlscan-git
 vifm
 vim-spell-de
 virtualbox
@@ -172,7 +175,6 @@ zsh-syntax-highlighting
 
 apache-ant
 ctags
-dmenu
 mariadb
 mlocate
 php-apache
