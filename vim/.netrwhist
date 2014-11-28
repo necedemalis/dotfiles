@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/joecool/dotfiles/lib/python/project_euler'
 let g:netrw_dirhist_2='/home/joecool/dotfiles/lib/python'
 let g:netrw_dirhist_3='/home/joecool'
 let g:netrw_dirhist_4='/home/joecool/dotfiles/lib/python'
 let g:netrw_dirhist_5='/home/joecool/dotfiles/lib/python/project_euler'
 let g:netrw_dirhist_6='/home/joecool/dotfiles/lib/python'
+let g:netrw_dirhist_7='/home/joecool/lib/arduino/diverses/python-plot_graph_with_matplotlib2'

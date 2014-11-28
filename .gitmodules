@@ -71,3 +71,24 @@
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
 	url = https://github.com/wincent/Command-T
+[submodule "vim/bundle/visSum"]
+	path = vim/bundle/visSum
+	url = https://github.com/vim-scripts/visSum.vim
+[submodule "vim/bundle/vim-arduino-ino"]
+	path = vim/bundle/vim-arduino-ino
+	url = https://github.com/jplaut/vim-arduino-ino
+[submodule "vim/bundle/vim-arduino"]
+	path = vim/bundle/vim-arduino
+	url = https://github.com/tclem/vim-arduino
+[submodule "vim/bundle/vim-arduino-syntax"]
+	path = vim/bundle/vim-arduino-syntax
+	url = https://github.com/sudar/vim-arduino-syntax.git
+[submodule "vim/bundle/conque-shell"]
+	path = vim/bundle/conque-shell
+	url = https://github.com/vim-scripts/Conque-Shell
+[submodule "vim/bundle/vim-ipython"]
+	path = vim/bundle/vim-ipython
+	url = https://github.com/ivanov/vim-ipython
+[submodule "antigen"]
+	path = antigen
+	url = https://github.com/zsh-users/antigen.git

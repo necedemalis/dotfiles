@@ -10,7 +10,7 @@ else
                 builddir="$i"
                 read -p "Do you want to upgrade '$i'?  [y/n] " yn
                 case $yn in
-                        [Yy]* ) cower -fd "$i" && cd $HOME/builds/$builddir ;${EDITOR:-vim} PKGBUILD; makepkg -sir && cd - &>/dev/null;;
+                        [YyJj]* ) cower -fd "$i" && cd $HOME/builds/$builddir ;${EDITOR:-vim} PKGBUILD; makepkg -sir && cd - &>/dev/null;;
                         [Nn]* ) ;;
                         * ) echo "Please answer y(es) or n(o).";;
                 esac

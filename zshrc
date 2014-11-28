@@ -53,17 +53,17 @@
                 RPROMPT=""
         fi
 
-#Environmental Variables
+#Environmental Variables, PATH
         [[ -z $XDG_CONFIG_HOME ]] && export XDG_CONFIG_HOME="$HOME/.config" && export XDG_DATA_HOME="$HOME/.local/share" && export XDG_CACHE_HOME="$HOME/.cache"
         export DIFFPROG=$DIFFPROG:/usr/bin/meld
         export BROWSER=$BROWSER/usr/bin/firefox
         export PATH=$PATH:/home/joecool/bin/
-        export PATH=$PATH:/home/joecool/bin/dbgl #DosBox Game Launcher
-        if [ -z "$HOME/.rbenv" ] ; then
+        #export PATH=$PATH:/home/joecool/bin/dbgl #DosBox Game Launcher
+        #if [ -z "$HOME/.rbenv" ] ; then
                 export PATH="$HOME/.rbenv/bin:$PATH"
                 export PATH="$HOME/.rbenv/shims:$PATH"
                 source "$HOME/.rbenv/completions/rbenv.zsh"
-        fi
+        #fi
         if [ -z "$HOME/.gem" ] ; then
                 export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
         fi
@@ -114,11 +114,7 @@ eval $(keychain --eval)
         alias screenshot='import -window root screenshot.jpg'
         alias pdfjoin_norotate='pdfjoin --rotateoversize false'
         alias audio_restart='pulseaudio --kill && jack_control stop && jack_control start && pulseaudio --start'
-        alias ksp='cd / && LC_ALL=C ni ./media/Daten/Installationen/Spiele/KSP/KSP.x86_64'
-        #alias dropbox-stop='sudo systemctl stop dropbox@joecool.service'
-        #alias dropbox-start='sudo systemctl start dropbox@joecool.service'
-        #alias catalyst='sudo aticonfig --sync-video=on; sudo aticonfig --sync-vsync=on; sudo aticonfig --set-pcs-u32=DDX,EnableTearFreeDesktop,1'
-        #alias expacshow="expac "%n %N" -Q $(expac "%n %G" | grep -v ' base') | awk '$2 == "" {print $1}'" # Listing all packages that nothing else depends on
+        alias ksp='cd / && LC_ALL=C ni ./media/Daten/Installationen/Spiele/KSP/KSP.x86_64' #Kerbal
 
 #Python
         alias p='python3'
@@ -126,8 +122,7 @@ eval $(keychain --eval)
         EDITOR=vim
         export PYTHONPATH EDITOR
 
-# Syntac-Hightlight/Override highlighter colors
-#if [ -n "$(pacman -Qs zsh-syntax-highlighting)" ] ; then
+# Syntax-Hightlight/Override highlighter colors
 if [ -z "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh" ] ; then
         source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
@@ -154,7 +149,6 @@ if [ -z "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.
         ZSH_HIGHLIGHT_STYLES[assign]=none
         ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 fi
-
 
 #Java Font-Rendering
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'

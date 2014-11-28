@@ -3,7 +3,7 @@
 "Basic Settings
         let mapleader="," ", statt \ als leader key
         "Background Theme 
-        set background=light
+        set background=dark
         silent! colorscheme solarized "silent! colorscheme ChocolateLiquor
         "Detect file types
         filetype on
@@ -25,6 +25,7 @@
         set tabstop=4
         set shiftwidth=4
         set showbreak=>>
+        set autochdir "Change to same dir as file
         set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc " Suffixes that get lower priority when doing tab completion for filenames.
         set wildignore=*.swp,*.bak,*.pyc,*.class "ignore some file extensions when completing names by pressing Tab,
         set visualbell " Visuelles Piepen 
@@ -124,7 +125,7 @@
         nnoremap j gj
         nnoremap k gk
         "W ist w/ Q ist q
-        cmap W w
+        "cmap W w
         cmap Q q
         "Pfeiltasen deaktivieren
        "inoremap <up> <nop>
@@ -200,11 +201,12 @@
 
         command! Ja set fo+=a
         command! Nein set fo=t1
-        "F4 -> DistractionFreeWriting-Scheme (s. Plugin)
-        "F5 -> Python-Compiler
+        "F4 -> Python2-Compiler
+        "F5 -> Python3-Compiler
         "F6 -> Wörterbuch
         map <F6> :setlocal spell! spelllang=de,en<CR>
         "F7 -> Latex-Befehle automatisch einfüllen
+        "F8 -> Arduino Compile
         "F9 -> Autocomplete fÃ¼r Biblatex bei \cite{}
 
 " Custom Macros
@@ -318,19 +320,31 @@
         let g:UltiSnipsSnippetDirectories = ["ultisnips-snippets"]
         "Key for UltiSnips Trigger
         let g:UltiSnipsExpandTrigger = '<C-y>'
-        "Python-Mode
+"Python-Mode
         let g:pymode_lint_checker = "pyflakes"
         let g:pymode_rope_autocomplete_map = '<C-c>'
         let g:pymode_lint_cwindow = 0 " Auto open cwindow if errors be finded
-        "Supertab
+"Supertab
         let g:SuperTabDefaultCompletionType = "context"
         let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-        "FoldDigest
+"FoldDigest
         let folddigest_size = 20
+"Vim-Arduino
+        let g:vim_arduino_serial_port = '/dev/ttyACM0'
+"Conqe-Shell
+        "Copy python code to Shell (Open with :ConqueTermSplit python) with ,mp, change to code
+        "with ,np  
+        imap <silent> <leader>cs <Esc>Vy<C-w><C-w>p
+        nmap <silent> <leader>cs Vy<C-w><C-w>p
+        vmap <silent> <leader>cs y<C-w><C-w>p
+        imap <silent> <leader>cn <Esc><C-w><S-w>']0j
+        nmap <silent> <leader>cn <C-w><S-w>']0j
+
 
 "Filetypes
 "Python
         ""http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
+        map <f4> :w\|!python2 %
         map <f5> :w\|!python3 %
         au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
         set number "Turn on line numbers
@@ -382,3 +396,10 @@
         autocmd FileType mail set spell 
         "Xml
         autocmd FileType xml Code "Starte LaTex automisch in Prosa
+        "Arduino Ino
+        au BufRead,BufNewFile *.ino,*.pde :cd.. "One directory down to compile
+        map <leader>ac :<Esc>:w<CR>:!clear<CR>:!ino build --cxxflags=-I$PWD/src<CR>:!ino upload<CR>: <Ins> <CR>
+                "-> Compile and upload
+        map <leader>as :<Esc>:w<CR>:!clear<CR>:!ino serial -b 9600<CR> 
+                "-> Show Serial Monitor
+        

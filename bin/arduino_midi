@@ -1,0 +1,77 @@
+#!/bin/bash
+
+serial_device=`find /dev/ -name ttyACM\* 2>/dev/null` #Serial Device name arduino
+baudrate=115200
+midi_output=`aconnect -o | grep \'TiMidity\' | sed -e 's:Client ::g'| sed -e 's:\:.*::g'` #Default TiMidity
+tty_running=`pidof ttymidi` #Checks if tty_running
+
+if [ -z $1 ] ; then #No flag - connects defualt to timidity with baud 115200
+        if test $tty_running -gt 1 2>/dev/null ; then
+            echo "Ttymidi already running. Reconnecting.."
+            kill `pidof ttymidi`
+            sleep 1
+        fi
+
+        ttymidi -s $serial_device -b $baudrate &
+        midi_input=`aconnect -i | grep tty | sed -e 's:Client ::g'| sed -e 's:\:.*::g'`
+        aconnect $midi_input:0 $midi_output:0
+        echo "Connected ttymidi to TiMidity with baudrate ${baudrate}."
+
+elif [ -n $1 ] ; then #With flag(s)
+        while test $# -gt 0; do
+            case $1 in
+                "-h"|"--help")
+                    echo "-d, --disconnect "
+                    echo "        Disconnect from connection."
+                    echo "-c, --connect <name>"
+                    echo "        Connects to midi input with specified name."
+                    echo "-b, --baud <number>"
+                    echo "        Specify a baud number."
+                    exit
+                    ;;
+
+                "-d"|"--disconnect")
+                    #midi_input=`aconnect -i | grep tty | sed -e 's:Client ::g'| sed -e 's:\:.*::g'`
+                    midi_output=`aconnect -l | grep 'verbunden zu' | sed -e 's:.*verbunden zu\: ::g'`
+                    #aconnect -d $midi_input:0 $midi_output
+                    kill `pidof ttymidi`
+                    echo "Disconnect ttymidi from port ${midi_output}."
+                    exit
+                    ;;
+
+                "-b"|"--baud")
+                    shift
+                    if test $# -gt 0; then
+                        baudrate=$1
+                    else
+                        echo "  No baudrate specified."
+                        exit
+                    fi
+                    shift
+                    ;;
+
+                "-c"|"-connect")
+                    shift
+                    if test $# -gt 0; then
+                        x=$1
+                        midi_output=`aconnect -o | grep \'$x\' | sed -e 's:Client ::g'| sed -e 's:\:.*::g'`
+                    else
+                        echo "  No midi output specified."
+                        exit
+                    fi
+                    shift
+                    ;;
+            esac
+        done
+
+        if test $tty_running -gt 1 ; then
+            echo "Ttymidi already running. Reconnecting.."
+            kill `pidof ttymidi`
+            sleep 1
+        fi
+
+        ttymidi -s $serial_device -b $baudrate &
+        midi_input=`aconnect -i | grep tty | sed -e 's:Client ::g'| sed -e 's:\:.*::g'`
+        aconnect $midi_input:0 $midi_output:0
+        echo "Connected ttymidi to port $midi_output with baudrate ${baudrate}."
+fi
