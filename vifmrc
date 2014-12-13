@@ -2,7 +2,7 @@
 
 "Settings"
 
-" This is the actual command used to start vi.  The default is vim.
+" This ds the actual command used to start vi.  The default is vim.
         set vicmd=vim
 
 " The default is to move files that are deleted with dd or :d to " the trash directory.
@@ -36,7 +36,7 @@
 " Use KiB, MiB, ... instead of KB, MB, ...
         set noiec
 
-"Show Dot-Files on Startup
+" Show Dot-Files on Startup
         windo normal zo
 
 " Selected color scheme
@@ -71,18 +71,17 @@
         set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
 " Filters 
-filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|.dbus|.dosbox|.dropbox-dist|.eclipse|.fehbg|.fontconfig|.gconf|.gem|.gimp|git|.git-credential|.gstreamer|.icons|.java|.keychain|.lesshst|.log|.macromedia|.magick|.nicotine|.openttd|.puddletag|.ropeproject|.pki|.pspp_history|.python-eggs|.python_history|.sabnzbd|.scummvm|.solfege|.swt|.SyncID|.SyncIgnore|.SyncArchive|.texlive|.thumbnails|.tor|.ts3client|.urlview|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.pulse-cookie|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.stfolder|.*\.aux$|.*\.log$|.*\.out$)" 
+filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|.dbus|.dosbox|.eclipse|.fehbg|.fontconfig|.gconf|.gem|.gimp|git|.git-credential|.gstreamer|.icons|.java|.keychain|.lesshst|.log|.macromedia|.magick|.nicotine|.openttd|.puddletag|.ropeproject|.pki|.pspp_history|.python-eggs|.python_history|.sabnzbd|.scummvm|.solfege|.swt|.SyncID|.SyncIgnore|.SyncArchive|.texlive|.thumbnails|.tor|.ts3client|.urlview|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.pulse-cookie|__pycache__|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.stfolder|.*\.aux$|.*\.log$|.*\.out$)" 
 
 "Marks (mark /full/directory/path [filename])
         mark h ~/
-        mark b ~/Dropbox
         mark d ~/Downloads
         mark k ~/Dokumente
         mark s ~/Dokumente/Studium
         mark t /media/Daten/Torrents/
 
 "Mappings
-"Mappings für Verzeichnisse (mit Leader-Key)
+" Mappings für Verzeichnisse (mit Leader-Key)
         "/home
         nmap ,h :cd ~<cr>
         nmap ~ :cd ~<cr>
@@ -112,12 +111,6 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         nmap ,pd :cd ~/Dokumente/PDFs/<cr>
         "~/Downloads/
         nmap ,do :cd ~/Downloads/<cr>
-        "~/Dropbox/
-        nmap ,dr :cd ~/Dropbox/<cr>
-        "~/Dropbox/Markus
-        " nmap ,ma :cd ~/Dropbox/Markus/<cr>
-        "~/Dropbox/Markus/Calibre Library/
-        nmap ,ca :cd ~/Dropbox/Markus/Calibre\ Library/<cr>
         "~/samba/
         nmap ,sa :cd ~/samba/<cr>
         "~/samba/SABnzbd/
@@ -130,6 +123,8 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         nmap ,na :cd ~/Studium/Diverses/Nachhilfe/<cr>
         "~/Octopress/source/_posts/
         nmap ,oc :cd ~/Octopress/source/_posts/<cr>
+        "~/.tmsu-tags/queries/
+        nmap ,ta :cd ~/.tmsu-tags/queries<cr>
         "/media/
         nmap ,me :cd /media/<cr>
         "/media/MP3-Player/
@@ -158,8 +153,7 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         nmap ,mu :cd /media/Daten/Museion/<cr>
         "/media/Daten/Museion/Jazz/
         nmap ,ja :cd /media/Daten/Museion/Jazz/<cr>
-"Sample mappings
-        "nmap s :shell<cr>
+" Sample mappings
         nmap S :sort<cr>
         nmap w :view<cr>
         nmap o :!gvim --remote-tab-silent %f<cr>

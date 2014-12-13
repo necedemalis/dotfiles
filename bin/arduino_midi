@@ -5,9 +5,9 @@ baudrate=115200
 midi_output=`aconnect -o | grep \'TiMidity\' | sed -e 's:Client ::g'| sed -e 's:\:.*::g'` #Default TiMidity
 tty_running=`pidof ttymidi` #Checks if tty_running
 
-if [ -z $1 ] ; then #No flag - connects defualt to timidity with baud 115200
+if [ -z $1 ] ; then #No flag - connects default to timidity with baud 115200
         if test $tty_running -gt 1 2>/dev/null ; then
-            echo "Ttymidi already running. Reconnecting.."
+            echo "Ttymidi already running. Reconnecting..."
             kill `pidof ttymidi`
             sleep 1
         fi
@@ -21,12 +21,14 @@ elif [ -n $1 ] ; then #With flag(s)
         while test $# -gt 0; do
             case $1 in
                 "-h"|"--help")
-                    echo "-d, --disconnect "
-                    echo "        Disconnect from connection."
-                    echo "-c, --connect <name>"
-                    echo "        Connects to midi input with specified name."
-                    echo "-b, --baud <number>"
-                    echo "        Specify a baud number."
+                    echo "         -d, --disconnect "
+                    echo "              Disconnect from connection."
+                    echo "         -c, --connect <name>"
+                    echo "              Connects to midi input with specified name."
+                    echo "         -b, --baud <number>"
+                    echo "              Connect with specified baud number."
+                    echo "         -h, --help"
+                    echo "              Shows this help text."
                     exit
                     ;;
 

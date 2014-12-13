@@ -41,8 +41,8 @@
         set formatprg=par\ -w96        " Par für Umbruchformatierung mit Alt+q
         set autochdir                  " Change working directory to directory of current file
         set nolist
-        set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc " Suffixes that get lower priority when doing tab completion for filenames.
-        set wildignore=*.swp,*.bak,*.pyc,*.class "ignore some file extensions when completing names by pressing Tab,
+        set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc            " Suffixes that get lower priority when doing tab completion for filenames
+        set wildignore=*.swp,*.bak,*.pyc,*.class "ignore some file extensions by tab completion
         "Unnamed register to plus register (system clipboard)
         if has('unnamedplus') 
           set clipboard=unnamed,unnamedplus 
@@ -59,89 +59,48 @@
 
 " Custom Keymapping
         "Leader Keymapping
-        "Plugins
         "vr -> Toggle Vimroom
-        nmap <silent> <leader>vr :colorscheme iawriter\|:VimroomToggle<cr>
+        nmap <leader>vr :colorscheme iawriter\|:VimroomToggle<cr>   
         "fd -> FoldDigest()
-        nmap <silent> <leader>fd :silent! call FoldDigest ()<cr>
+        nmap <leader>fd :call FoldDigest ()<cr>
         "tl -> :TaskList
-        map <silent> <leader>tl :silent! TaskList<cr> 
+        map <leader>tl :TaskList<cr>
         "tb -> :Tagbar
-        map <silent> <leader>tb :silent! Tagbar<cr> 
+        map <leader>tb :Tagbar<cr> 
+        map "x"
         "nt -> :NerdTree
-        nmap <silent> <leader>nt :silent! NERDTree<cr>
-        "ct -> Command-T
-        nnoremap <silent> <Leader>ct :silent! CommandT<CR>
-        "Prose/Code
+        nmap <leader>nt :NERDTree<cr>
         "pr -> :Prose
         nmap <silent> <leader>pr :Prose<cr>
         "co -> :Code
         nmap <silent> <leader>co :Code<cr>
-        "Buffer commands
         "bs -> zeigt Buffer an
-        nmap <silent> <leader>bs :ls<cr>
+        nmap <leader>bs :ls<cr>
         "bb -> Zwischen Buffern wechseln
-        map <silent> <leader>bb :ls<CR>:b
+        map <leader>bb :ls<CR>:b
         "bn -> Zeige nächsten Buffer
-        nmap <silent> <leader>bn :b#<cr>
-        "bd -> Buffer schließen
-        nmap <silent> <leader>bd :bd<cr>
+        nmap <leader>bn :b#<cr>
+        "bd -> Buffer schlieÃen
+        nmap <leader>bd :bd<cr>
         "ev -> Edit .vimrc in neuem Tab
-        nmap <silent> <leader>ev :e $MYVIMRC<cr>
+        nmap <leader>ev :e $MYVIMRC<cr>
         "re -> :reg
-        nmap <silent> <leader>re :reg<cr>
+        nmap <leader>re :reg<cr>
         "sr -> search and replace pattern
-        noremap <silent> <leader>sr :%s:::g<Left><Left><Left>
+        noremap <leader>sr :%s:::g<Left><Left><Left>
         "ma -> :marks
-        nmap <silent> <leader>ma :marks<cr>
-        " ,/ um Highlight bei Suche zu löschen
-        nmap <silent> <leader>/ :nohlsearch<CR>
-        "F-Tasten
-        "F2 -> Toggle line numbers
-        nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
-        "F3 -> Umschalten zwischen Formatoptions automatic
-        function ToggleFoA()
-          if &fo =~ 'a'
-            set fo-=a    
-            set fo=t1 
-            echo "Auto Aus!"
-          else
-            set fo+=a
-            echo "Auto An!"
-          endif
-        endfunction
-
-        map <F3> :call ToggleFoA()<CR>
-        imap <F3> <Esc> :call ToggleFoA()<CR>i
-
-        command! Ja set fo+=a
-        command! Nein set fo=t1
-        "F4 -> Python2-Compiler
-        "F5 -> Python3-Compiler
-        "F6 -> Wörterbuch
-        map <F6> :setlocal spell! spelllang=de,en<CR>
-        "F7 -> Latex-Befehle automatisch einfüllen
-        "F9 -> Autocomplete für Biblatex bei \cite{}
-        "jj/jk fur Esc
-        inoremap jk <esc>
-        inoremap jj <esc>
-        " j und k fur gewrappte Zeilen
-        nnoremap gj j
-        nnoremap gk k
-        nnoremap j gj
-        nnoremap k gk
-       "Pfeiltasten für Fensternavigation
-       nnoremap <up> <C-w>k
-       nnoremap <down> <C-w>j
-       nnoremap <left> <C-w>h
-       nnoremap <right> <C-w>l
-        "Cut/Copy/Paste mit cvx in GVim -> Strg+xcv 
+        nmap <leader>ma :marks<cr>
+        "pp -> Compile Python
+        map <leader>pp :w\|!python3 %
+        " ,/ um Highlight bei Suche zu lÃ¶schen
+        nmap <silent> ,/ :nohlsearch<CR>
+        "ct -> Command-T
+        nnoremap <silent> <Leader>ct :CommandT<CR>
+        "Strg+xcv -> Cut/Copy/Paste mit cvx in GVim
         vmap <C-c> "+yi
         vmap <C-x> "+c
+        "vmap <C-v> c<ESC>"+p
         imap <C-v> <C-r><C-o>+
-        "Enter/Shift-Enter für neue Zeile ohne Insert
-        nmap <CR> o<Esc>
-        nmap <S-Enter> O<Esc>
         "zs -> Fold everything except were cursor is
         nnoremap zs zMzv
         "Use Q for formatting the current paragraph (or selection)
@@ -152,12 +111,33 @@
         "Use Alt+Q to format paragraph with par
         map <A-q> {v}!par -jw96<CR>
         vmap <A-q> !par -jw96<CR>
-                "Won't deselect visual selection when moving selected code blocks
-                vnoremap < <gv 
-                vnoremap > >gv
+        "Won't deselect visual selection when moving selected code blocks
+        vnoremap < <gv 
+        vnoremap > >gv
+        "jj/jk fur Esc
+        inoremap jk <esc>
+        inoremap jj <esc>
+        "Enter/Shift-Enter für neue Zeile ohne Insert
+        nmap <CR> o<Esc>
+        nmap <S-Enter> O<Esc>
+        " j und k fur gewrappte Zeilen
+        nnoremap gj j
+        nnoremap gk k
+        nnoremap j gj
+        nnoremap k gk
         "W ist w/ Q ist q
         "cmap W w
         cmap Q q
+        "Pfeiltasen deaktivieren
+       "inoremap <up> <nop>
+       "inoremap <down> <nop>
+       "inoremap <left> <nop>
+       "inoremap <right> <nop>
+       "Pfeiltasten für Fensternavigation
+       nnoremap <up> <C-w>k
+       nnoremap <down> <C-w>j
+       nnoremap <left> <C-w>h
+       nnoremap <right> <C-w>l
         "+ als *
         "nnoremap + *
         "Alt+j/k -> Jump to the next or previous line with same or lower indentation
@@ -202,6 +182,33 @@
         onoremap <silent> ]l :call NextIndent(0, 1, 0, 1)<CR>
         onoremap <silent> [L :call NextIndent(1, 0, 1, 1)<CR>
         onoremap <silent> ]L :call NextIndent(1, 1, 1, 1)<CR>
+        "F-Tasten
+        "F2 -> Toggle line numbers
+        nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+        "F3 -> Umschalten zwischen Formatoptions automatic
+        function ToggleFoA()
+          if &fo =~ 'a'
+            set fo-=a    
+            set fo=t1 
+            echo "Auto Aus!"
+          else
+            set fo+=a
+            echo "Auto An!"
+          endif
+        endfunction
+
+        map <F3> :call ToggleFoA()<CR>
+        imap <F3> <Esc> :call ToggleFoA()<CR>i
+
+        command! Ja set fo+=a
+        command! Nein set fo=t1
+        "F4 -> Python2-Compiler
+        "F5 -> Python3-Compiler
+        "F6 -> Wörterbuch
+        map <F6> :setlocal spell! spelllang=de,en<CR>
+        "F7 -> Latex-Befehle automatisch einfüllen
+        "F8 -> Arduino Compile
+        "F9 -> Autocomplete fÃ¼r Biblatex bei \cite{}
 
 " Custom Macros
         "@z: Für Kobo-Annotations
@@ -219,10 +226,13 @@
 "Custom Commands
         ":RemoveMultipleBlankLines
         command RemoveMultipleBlankLines %s/^\(\s*\n\)\+/\r
-        ":w!! -> um schreibgeschütze Datei mit sudo zu speichern
+        ":w!! um schreibgeschÃ¼tze Datei mit sudo zu speichern
         cmap w!! w !sudo tee % >/dev/null
         ":Pydir -> Change Directory ~/lib/python
         command Pydir cd ~/lib/python/ | :NERDTree
+        ":Dip/Dipdir -> Change Directory ~/lib/python
+        command Dipdir cd ~/Dropbox/Diplomarbeit/Diplomarbeit/ | :NERDTree
+        command Dip :e ~/Dropbox/Diplomarbeit/Diplomarbeit/Diplomarbeit.tex | cd ~/Dropbox/Diplomarbeit/
         " :Qwertz/:Neo2 remappings
         command Neo2 noremap s h  |
                         \ noremap n gj |
@@ -248,7 +258,7 @@
                         \ noremap r h |
                         " lookup
                         \ noremap t l |
-        ":Prose/:Code -> Umschalten Prosa und Code
+        "Umschalten Prosa und Code
         "command! Prose silent! colorscheme ChocolateLiquor |
         "\ inoremap <buffer> . .<C-G>u|
         "\ inoremap <buffer> ! !<C-G>u|
@@ -280,41 +290,48 @@
                     \ nnoremap j gj |
                     \ nnoremap k gk |
                     \ silent! autocmd! PROSE * <buffer>
+        "function ToggleJust()
+        "  if set formatprg? == 'par\ -w96'
+        "    set formatprg=par\ -w96j    
+        "    set fo=t1 
+        "    echo "Justify an!"
+        "  else
+        "    set formatprg=par\ -w96
+        "    echo "Justify aus!"
+        "  endif
+        "endfunction
+
+        "map <leader>pj  :call ToggleJust()<CR>
 
 "Plugin Settings
 "Pathogen
         silent! call pathogen#infect()
+"Comman-t
 "TaskList
-        let g:tlTokenList = ['TODO','todo', 'XXX', 'xxx', '???'] "Tastlist Suchbefehle
+        "Tastlist Suchbefehle
+        let g:tlTokenList = ['TODO','todo', 'XXX', 'xxx', '???']
 "Nerdtree
-        let NERDTreeQuitOnOpen = 1 "Close Nerdtree wenn man Datei öffnet
+        "Close Nerdtree wenn man Datei Ã¶ffnet
+        let NERDTreeQuitOnOpen = 1 
 "UltiSnips
-        let g:UltiSnipsEditSplit = "vertical"                             "Open edit Window vertically
-        let g:UltiSnipsSnippetsDir = "~/dotfiles/vim/ultisnips-snippets/" "UltiSnips Directory
+        "Open edit Window vertically
+        let g:UltiSnipsEditSplit = "vertical"
+        "UltiSnips Directory
+        let g:UltiSnipsSnippetsDir = "~/dotfiles/vim/ultisnips-snippets/"
         let g:UltiSnipsSnippetDirectories = ["ultisnips-snippets"]
-        let g:UltiSnipsExpandTrigger = '<C-y>'                            "Key for UltiSnips Trigger
-"Jedi Vim
-        let g:jedi#popup_on_dot = 1 "Autocompletion when typing .
-        let g:jedi#auto_initialization = 1 "Jedi-Vim is auto inizialized
-        let g:jedi#auto_vim_configuration = 1
-        let g:jedi#use_tabs_not_buffers = 0 "Use buffers
-        let g:jedi#completions_command = "<C-Space>" "Use Strg-Space to autocomplete
-        let g:jedi#documentation_command = "D" "Use D over definition to show doc
-        let g:jedi#goto_assignments_command = "<leader>g"
-        let g:jedi#goto_definitions_command = "<leader>d"
-        let g:jedi#usages_command = "<leader>n"
-        let g:jedi#rename_command = "<leader>r"
+        "Key for UltiSnips Trigger
+        let g:UltiSnipsExpandTrigger = '<C-y>'
 "Python-Mode
         let g:pymode_lint_checker = "pyflakes"
-        let g:pymode_lint_cwindow = 0           " Auto open cwindow if errors be finded
-        let g:pymode_rope_autocomplete_map = '' "Use jedi for autocompletion
-        let g:pymode_rope_show_doc_bind = '' "Use jedi for documentation
-        let g:pymode_rope_goto_definition_bind = '' "Use jedi to go to def.
+        let g:pymode_rope_autocomplete_map = '<C-c>'
+        let g:pymode_lint_cwindow = 0 " Auto open cwindow if errors be finded
 "Supertab
         let g:SuperTabDefaultCompletionType = "context"
         let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
 "FoldDigest
         let folddigest_size = 20
+"Vim-Arduino
+        let g:vim_arduino_serial_port = '/dev/ttyACM0'
 "Conqe-Shell
         "Copy python code to Shell (Open with :ConqueTermSplit python) with ,mp, change to code
         "with ,np  
@@ -324,17 +341,33 @@
         imap <silent> <leader>cn <Esc><C-w><S-w>']0j
         nmap <silent> <leader>cn <C-w><S-w>']0j
 
+
 "Filetypes
 "Python
         ""http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
         map <f4> :w\|!python2 %
         map <f5> :w\|!python3 %
-        autocmd FileType python Code "Starte Python automatisch in Code
-        au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 nolinebreak
-        autocmd FileType python highlight SpellBad term=underline gui=bold guisp=Orange guifg=red
-        autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,( "~/.vim/syntax
+        au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
         set number "Turn on line numbers
+        autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,( "~/.vim/syntax
+        "Code Omnicompletion
+        """autocmd FileType python set omnifunc=pythoncomplete#Complete
         let g:SuperTabDefaultCompletionType = "context"
+        "Jedi Vim
+        let g:jedi#popup_on_dot = 1
+        let g:jedi#auto_initialization = 1
+        let g:jedi#auto_vim_configuration = 1
+        let g:jedi#use_tabs_not_buffers = 0
+        "let g:jedi#pydoc = "D"
+        let g:jedi#documentation_command = "D"
+        "let g:jedi#autocompletion_command = "<C-Space>"
+        let g:jedi#completions_command = "<C-Space>"
+        "Starte Python automatisch in Code
+        autocmd FileType python Code
+        "Wie Errors markieren durch Pyflakes (gui=underline zum unterstreichen)
+        autocmd FileType python highlight SpellBad term=underline gui=bold guisp=Orange guifg=red
+        "Pydiction
+        """let g:pydiction_location = '/home/joecool/.vim/pydiction/pydiction-1.2/complete-dict'
 "Sage
         "To get Vim to use Python syntax highlighting, indentation, and so on for .sage files
         augroup filetypedetect
@@ -342,31 +375,32 @@
         augroup END
 "Latex/Vim-Latex
         let g:tex_flavor="latex"
+        au Filetype tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
         autocmd FileType tex Prose "Starte LaTex automisch in Prosa
-        au Filetype tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 linebreak
         let g:Tex_BIBINPUTS="$PWD/*.bib" "F9->Bibtex autocomplete
-        let g:Tex_ViewRule_dvi = "xdvi" "Open Dvi with xdvi
+        let g:Tex_ViewRule_dvi = "xdvi" "Open Dvi with Evince
         imap <C-g> <Plug>IMAP_JumpForward
         nmap <C-g> <Plug>IMAP_JumpForward       
         "Fold-Options verändert in dotfiles/vim/bundle/latex-suite/ftplugin/latex-suite/folding.vim, geschützt mit chattr +i
         ""let g:Tex_FoldedSections = 'section,%%fakesection,%%fakesubsection'
         ""let g:Tex_FoldedEnvironments = "abstract"
          " redef C-j to C-g
-"Markdown
+        
+        "Markdown
         autocmd FileType markdown Prose 
-"Shell-Script
+        "Shell-Script
         autocmd FileType sh Code 
-        au FileType tabstop=8 expandtab shiftwidth=4 softtabstop=4 nolinebreak
-"C
+        "C
         autocmd FileType c Code
-"Mail
+        "Mail
         autocmd FileType mail setlocal fo+=aw
         autocmd FileType mail set spell 
-"Xml
-        autocmd FileType xml Code 
-"Arduino Ino
+        "Xml
+        autocmd FileType xml Code "Starte LaTex automisch in Prosa
+        "Arduino Ino
         au BufRead,BufNewFile *.ino,*.pde :cd.. "One directory down to compile
-        "Compile and upload
         map <leader>ac :<Esc>:w<CR>:!clear<CR>:!ino build --cxxflags=-I$PWD/src<CR>:!ino upload<CR>: <Ins> <CR>
-        "Show Serial Monitor
+                "-> Compile and upload
         map <leader>as :<Esc>:w<CR>:!clear<CR>:!ino serial -b 9600<CR> 
+                "-> Show Serial Monitor
+        

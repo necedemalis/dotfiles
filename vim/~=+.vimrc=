@@ -1,0 +1,252 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+imap <buffer> <S-BS> <Plug>delimitMateS-BS
+imap <buffer> <BS> <Plug>delimitMateBS
+inoremap <buffer> <Plug>delimitMateJumpMany =delimitMate#JumpMany()
+vnoremap <buffer> <silent> [" :exe "normal! gv"|call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
+nnoremap <buffer> <silent> [" :call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
+vnoremap <buffer> <silent> [] m':exe "normal! gv"|call search('^\s*endf*\%[unction]\>', "bW")
+nnoremap <buffer> <silent> [] m':call search('^\s*endf*\%[unction]\>', "bW")
+vnoremap <buffer> <silent> [[ m':exe "normal! gv"|call search('^\s*fu\%[nction]\>', "bW")
+nnoremap <buffer> <silent> [[ m':call search('^\s*fu\%[nction]\>', "bW")
+vnoremap <buffer> <silent> ]" :exe "normal! gv"|call search('^\(\s*".*\n\)\@<!\(\s*"\)', "W")
+nnoremap <buffer> <silent> ]" :call search('^\(\s*".*\n\)\@<!\(\s*"\)', "W")
+vnoremap <buffer> <silent> ][ m':exe "normal! gv"|call search('^\s*endf*\%[unction]\>', "W")
+nnoremap <buffer> <silent> ][ m':call search('^\s*endf*\%[unction]\>', "W")
+vnoremap <buffer> <silent> ]] m':exe "normal! gv"|call search('^\s*fu\%[nction]\>', "W")
+nnoremap <buffer> <silent> ]] m':call search('^\s*fu\%[nction]\>', "W")
+imap <buffer> <silent> g <Plug>delimitMateJumpMany
+imap <buffer>  <Plug>delimitMateBS
+inoremap <buffer> ! !u
+imap <buffer> " <Plug>delimitMate"
+imap <buffer> ' <Plug>delimitMate'
+imap <buffer> ( <Plug>delimitMate(
+imap <buffer> ) <Plug>delimitMate)
+inoremap <buffer> . .u
+inoremap <buffer> ? ?u
+imap <buffer> [ <Plug>delimitMate[
+imap <buffer> ] <Plug>delimitMate]
+imap <buffer> ` <Plug>delimitMate`
+imap <buffer> { <Plug>delimitMate{
+imap <buffer> } <Plug>delimitMate}
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:\"\ -,mO:\"\ \ ,eO:\"\",:\"
+setlocal commentstring=\"%s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'vim'
+setlocal filetype=vim
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=t1
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetVimIndent()
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,=end,=else,=cat,=fina,=END,0\\
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,:,#
+setlocal keywordprg=
+setlocal linebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=8
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=de,en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'vim'
+setlocal syntax=vim
+endif
+setlocal tabstop=8
+setlocal tags=
+setlocal textwidth=80
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+5,7fold
+8,12fold
+13,45fold
+46,49fold
+50,52fold
+53,58fold
+3,58fold
+62,74fold
+75,79fold
+80,88fold
+61,98fold
+100,101fold
+102,118fold
+121,122fold
+99,124fold
+99,124fold
+125,127fold
+128,132fold
+133,137fold
+141,141fold
+138,141fold
+142,144fold
+145,146fold
+149,151fold
+147,151fold
+152,154fold
+155,157fold
+158,160fold
+161,162fold
+163,204fold
+60,204fold
+207,213fold
+214,217fold
+206,217fold
+220,221fold
+222,223fold
+224,225fold
+226,250fold
+251,282fold
+219,282fold
+285,286fold
+287,288fold
+289,290fold
+291,295fold
+296,306fold
+307,312fold
+313,315fold
+316,317fold
+318,325fold
+284,325fold
+328,337fold
+338,342fold
+343,354fold
+355,356fold
+357,359fold
+360,361fold
+362,364fold
+365,366fold
+367,372fold
+327,372fold
+3
+normal! zo
+3
+normal! zc
+60
+normal! zo
+61
+normal! zo
+61
+normal! zc
+99
+normal! zo
+99
+normal! zo
+99
+normal! zc
+99
+normal! zc
+138
+normal! zo
+138
+normal! zc
+147
+normal! zo
+147
+normal! zc
+60
+normal! zc
+206
+normal! zo
+206
+normal! zc
+219
+normal! zo
+219
+normal! zc
+284
+normal! zo
+284
+normal! zc
+327
+normal! zo
+let s:l = 355 - ((354 * winheight(0) + 15) / 31)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+355
+normal! 01|
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :

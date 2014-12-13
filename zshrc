@@ -54,22 +54,18 @@
         fi
 
 #Environmental Variables, PATH
-        [[ -z $XDG_CONFIG_HOME ]] && export XDG_CONFIG_HOME="$HOME/.config" && export XDG_DATA_HOME="$HOME/.local/share" && export XDG_CACHE_HOME="$HOME/.cache"
+        export PATH=${PATH}:"$HOME/bin"
+        export PATH=${PATH}:"$HOME/.local/bin"
         export DIFFPROG=$DIFFPROG:/usr/bin/meld
         export BROWSER=$BROWSER/usr/bin/firefox
-        export PATH=$PATH:/home/joecool/bin/
+        #Xdg user directories:
+        [[ -z $XDG_CONFIG_HOME ]] && export XDG_CONFIG_HOME="$HOME/.config" && export XDG_DATA_HOME="$HOME/.local/share" && export XDG_CACHE_HOME="$HOME/.cache" && XDG_DOWNLOAD_DIR="$HOME/Downloads" && XDG_DOCUMENTS_DIR="$HOME/Dokumente"
         #export PATH=$PATH:/home/joecool/bin/dbgl #DosBox Game Launcher
-        #if [ -z "$HOME/.rbenv" ] ; then
-                export PATH="$HOME/.rbenv/bin:$PATH"
-                export PATH="$HOME/.rbenv/shims:$PATH"
-                source "$HOME/.rbenv/completions/rbenv.zsh"
-        #fi
-        if [ -z "$HOME/.gem" ] ; then
-                export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
-        fi
 
 #Start Keychain for SSH-Agent & GPG-Agent
 eval $(keychain --eval)
+ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh' 
+
 
 #ALIASES
         #Pacman
@@ -118,7 +114,7 @@ eval $(keychain --eval)
 
 #Python
         alias p='python3'
-        PYTHONPATH=/home/joecool/lib/python:/opt/sage/local/lib/python/site-packages/
+        PYTHONPATH=/home/joecool/lib/python:/home/joecool/.local/lib/ #:/opt/sage/local/lib/python/site-packages/
         EDITOR=vim
         export PYTHONPATH EDITOR
 
