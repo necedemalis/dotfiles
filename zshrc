@@ -97,6 +97,7 @@ ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias 
         alias hibernate='sudo pm-hibernate'
         #alias windows='sudo extlinux --once "chain.c32 hd1 2" /boot/syslinux/'
         #Restart
+        alias shutdown='sudo shutdown -h 0'
         #Remind
         alias calendar='remind -c+4mb1 ~/Dokumente/Remind/.reminders'
         alias r-reminders='remind -t14g ~/Dokumente/Remind/.reminders'
