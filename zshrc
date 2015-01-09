@@ -63,12 +63,12 @@
         #export PATH=$PATH:/home/joecool/bin/dbgl #DosBox Game Launcher
 
 #Start Keychain for SSH-Agent & GPG-Agent
-if [[ -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]]; then
+if [[ -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]]; then #don't show on zsh start
         eval $(keychain --eval)
         ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh' 
 fi
-#export GPG_TTY=$(tty)
-#export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
+export GPG_TTY=$(tty)
+export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
 
 
 #ALIASES
