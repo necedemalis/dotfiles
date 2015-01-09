@@ -1,9 +1,8 @@
 " vim: filetype=vifm :
 
 "Settings"
-
-" This ds the actual command used to start vi.  The default is vim.
-        set vicmd=vim
+"This ds the actual command used to start vi.  The default is vim.
+        set vicmd=vim 
 
 " The default is to move files that are deleted with dd or :d to " the trash directory.
         set trash
@@ -70,7 +69,7 @@
 " Set custom status line look
         set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
-" Filters 
+"Filters 
 filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|.dbus|.dosbox|.eclipse|.fehbg|.fontconfig|.gconf|.gem|.gimp|git|.git-credential|.gstreamer|.icons|.java|.keychain|.lesshst|.log|.macromedia|.magick|.nicotine|.openttd|.puddletag|.ropeproject|.pki|.pspp_history|.python-eggs|.python_history|.sabnzbd|.scummvm|.solfege|.swt|.SyncID|.SyncIgnore|.SyncArchive|.texlive|.thumbnails|.tor|.ts3client|.urlview|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.pulse-cookie|__pycache__|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.stfolder|.*\.aux$|.*\.log$|.*\.out$)" 
 
 "Marks (mark /full/directory/path [filename])
@@ -264,7 +263,8 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         " program.
 
 " Pdf
-        filetype *.pdf evince %f &, zathura %f &
+        filetype *.pdf zathura %f &, evince %f &
+
 
 " Text
         filetype *.abw abiword %f &
@@ -275,8 +275,7 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         filextype *.dvi xdvi %f &
 
 " Djvu
-        filextype *.djvu evince %f &
-        filextype *.djvu zathura %f &
+        filextype *.djvu zathura %f &, evince %f &
 
 " Mathematica
         filetype *.nb /media/SSD/Installationen/Mathematica/Executables/Mathematica %f &

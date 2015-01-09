@@ -63,8 +63,12 @@
         #export PATH=$PATH:/home/joecool/bin/dbgl #DosBox Game Launcher
 
 #Start Keychain for SSH-Agent & GPG-Agent
-eval $(keychain --eval)
-ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh' 
+if [[ -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]]; then
+        eval $(keychain --eval)
+        ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh' 
+fi
+#export GPG_TTY=$(tty)
+#export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
 
 
 #ALIASES
@@ -97,6 +101,7 @@ ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias 
         alias hibernate='sudo pm-hibernate'
         #alias windows='sudo extlinux --once "chain.c32 hd1 2" /boot/syslinux/'
         #Restart
+        alias shutdown='sudo shutdown -h 0'
         #Remind
         alias calendar='remind -c+4mb1 ~/Dokumente/Remind/.reminders'
         alias r-reminders='remind -t14g ~/Dokumente/Remind/.reminders'
