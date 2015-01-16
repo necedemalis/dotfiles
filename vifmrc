@@ -70,7 +70,7 @@
         set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
 "Filters 
-filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|.dbus|.dosbox|.eclipse|.fehbg|.fontconfig|.gconf|.gem|.gimp|git|.git-credential|.gstreamer|.icons|.java|.keychain|.lesshst|.log|.macromedia|.magick|.nicotine|.openttd|.puddletag|.ropeproject|.pki|.pspp_history|.python-eggs|.python_history|.sabnzbd|.scummvm|.solfege|.swt|.SyncID|.SyncIgnore|.SyncArchive|.texlive|.thumbnails|.tor|.ts3client|.urlview|.urxvt|.VirtualBox|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.pulse-cookie|__pycache__|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.stfolder|.*\.aux$|.*\.log$|.*\.out$)" 
+filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|.dbus|.dosbox|.eclipse|.fehbg|.fontconfig|.freeciv|.gconf|.gem|.gimp|git|.git-credential|.gstreamer|.icons|.java|.kde|.keychain|.lesshst|.log|.macromedia|.magick|.nicotine|.openttd|.puddletag|.ropeproject|.pki|.pspp_history|.pulse|.python-eggs|.python_history|rosegarden|.sabnzbd|.sane|.scummvm|.solfege|.swt|.SyncID|.SyncIgnore|.SyncArchive|.texlive|.thumbnails|.tor|.ts3client|.urlview|.urxvt|.VirtualBox|.vkeybdrc|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.pulse-cookie|__pycache__|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.stfolder|.*\.aux$|.*\.log$|.*\.out$)" 
 
 "Marks (mark /full/directory/path [filename])
         mark h ~/
