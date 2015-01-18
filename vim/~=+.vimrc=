@@ -19,13 +19,10 @@ vnoremap <buffer> <silent> ]] m':exe "normal! gv"|call search('^\s*fu\%[nctio
 nnoremap <buffer> <silent> ]] m':call search('^\s*fu\%[nction]\>', "W")
 imap <buffer> <silent> g <Plug>delimitMateJumpMany
 imap <buffer>  <Plug>delimitMateBS
-inoremap <buffer> ! !u
 imap <buffer> " <Plug>delimitMate"
 imap <buffer> ' <Plug>delimitMate'
 imap <buffer> ( <Plug>delimitMate(
 imap <buffer> ) <Plug>delimitMate)
-inoremap <buffer> . .u
-inoremap <buffer> ? ?u
 imap <buffer> [ <Plug>delimitMate[
 imap <buffer> ] <Plug>delimitMate]
 imap <buffer> ` <Plug>delimitMate`
@@ -80,7 +77,7 @@ setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
-setlocal formatoptions=t1
+setlocal formatoptions=cqr1
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
 setlocal iminsert=0
@@ -92,10 +89,10 @@ setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,=end,=else,=cat,=fina,=END,0\\
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255,:,#
 setlocal keywordprg=
-setlocal linebreak
+setlocal nolinebreak
 setlocal nolisp
 setlocal lispwords=
-setlocal nolist
+setlocal list
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
 setlocal modeline
@@ -115,13 +112,13 @@ setlocal rightleftcmd=search
 setlocal noscrollbind
 setlocal shiftwidth=8
 setlocal noshortname
-setlocal nosmartindent
+setlocal smartindent
 setlocal softtabstop=0
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=de,en
-setlocal statusline=
+setlocal statusline=%!airline#statusline(1)
 setlocal suffixesadd=
 setlocal noswapfile
 setlocal synmaxcol=3000
@@ -130,7 +127,7 @@ setlocal syntax=vim
 endif
 setlocal tabstop=8
 setlocal tags=
-setlocal textwidth=80
+setlocal textwidth=96
 setlocal thesaurus=
 setlocal noundofile
 setlocal undolevels=-123456
@@ -148,57 +145,59 @@ silent! normal! zE
 3,58fold
 62,74fold
 75,79fold
-80,88fold
-61,98fold
-100,101fold
-102,118fold
-121,122fold
-99,124fold
-99,124fold
-125,127fold
-128,132fold
-133,137fold
-141,141fold
-138,141fold
-142,144fold
-145,146fold
-149,151fold
-147,151fold
-152,154fold
-155,157fold
-158,160fold
-161,162fold
-163,204fold
-60,204fold
-207,213fold
-214,217fold
-206,217fold
-220,221fold
-222,223fold
+80,92fold
+61,102fold
+104,105fold
+106,122fold
+125,126fold
+103,128fold
+103,128fold
+129,131fold
+132,136fold
+137,141fold
+145,145fold
+142,145fold
+146,148fold
+149,150fold
+153,155fold
+151,155fold
+156,158fold
+159,161fold
+162,164fold
+165,166fold
+167,208fold
+60,208fold
+211,217fold
+218,221fold
+210,221fold
 224,225fold
-226,250fold
-251,282fold
-219,282fold
-285,286fold
-287,288fold
+226,227fold
+228,229fold
+230,254fold
+255,286fold
+223,286fold
 289,290fold
-291,295fold
-296,306fold
-307,312fold
-313,315fold
-316,317fold
-318,325fold
-284,325fold
-328,337fold
-338,342fold
-343,354fold
-355,356fold
-357,359fold
-360,361fold
-362,364fold
-365,366fold
-367,372fold
-327,372fold
+291,292fold
+293,294fold
+295,299fold
+300,310fold
+311,317fold
+318,320fold
+321,322fold
+323,330fold
+331,344fold
+345,349fold
+288,349fold
+352,361fold
+362,366fold
+367,378fold
+379,380fold
+381,383fold
+384,385fold
+386,388fold
+389,390fold
+391,396fold
+351,396fold
 3
 normal! zo
 3
@@ -209,45 +208,45 @@ normal! zo
 normal! zo
 61
 normal! zc
-99
+103
 normal! zo
-99
+103
 normal! zo
-99
+103
 normal! zc
-99
+103
 normal! zc
-138
+142
 normal! zo
-138
+142
 normal! zc
-147
+151
 normal! zo
-147
+151
 normal! zc
 60
 normal! zc
-206
+210
 normal! zo
-206
+210
 normal! zc
-219
+223
 normal! zo
-219
+223
 normal! zc
-284
+288
 normal! zo
-284
+288
 normal! zc
-327
+351
 normal! zo
-327
+351
 normal! zc
-let s:l = 284 - ((283 * winheight(0) + 33) / 66)
+let s:l = 1 - ((0 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-284
+1
 normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

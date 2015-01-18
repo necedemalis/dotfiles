@@ -270,6 +270,7 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         filetype *.abw abiword %f &
         filetype *.odt,*.doc,*.docx libreoffice %f &
         filetype *.epub ebook-viewer %f &
+        filetype *.vim gvim -S %f &
 
 " PostScript
         filextype *.dvi xdvi %f &

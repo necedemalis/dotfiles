@@ -1,7 +1,7 @@
 ".vimrc
 
 "Basic Settings
-        let mapleader="," ", statt \ als leader key
+        let mapleader=","                                  ", statt \ als leader key
         "Background Theme 
         silent! colorscheme solarized "silent! colorscheme ChocolateLiquor
         set background=dark
@@ -10,7 +10,7 @@
         filetype plugin on
         filetype plugin indent on
         syntax on
-        "set 
+        "set
         set history=50                 " keep 50 lines of command line history
         set backspace=indent,eol,start " more powerful backspacing
         set nocompatible               " Use Vim defaults instead of 100% vi compatibility
@@ -28,8 +28,8 @@
         set autochdir                  " Change to same dir as file
         set visualbell                 " Visuelles Piepen
         set noerrorbells               " don't beep
-        set hidden                     " zwischen Buffern wechseln ohne speichern zu mÃ¼ssen
-        set autowrite                  " speichter Datei automatisch beim wechseln
+        set hidden                     " zwischen Buffern wechseln ohne speichern zu müssen
+        set autowrite                  " speichert Datei automatisch beim wechseln
         set spelllang=en,de            " Sprachen für Rechtschreibüberprüfung: Deutsch, English
         if has('gui_running')
                 set guioptions-=T      " Versteckt GUI-Toolbar
@@ -82,10 +82,14 @@
         nmap <silent> <leader>bs :ls<cr>
         "bb -> Zwischen Buffern wechseln
         map <silent> <leader>bb :ls<CR>:b
-        "bn -> Zeige nächsten Buffer
-        nmap <silent> <leader>bn :b#<cr>
+        "k -> Zeige nächsten Buffer
+        nmap <silent> <leader>j :bnext<cr>
+        "j -> Zeige vorherigen Buffer
+        nmap <silent> <leader>k :bprevious<cr>
+        "bn -> Neuen Buffer öffne
+        nmap <silent> <leader>bn :enew<cr>
         "bd -> Buffer schließen
-        nmap <silent> <leader>bd :bd<cr>
+        nmap <silent> <leader>bd :bd!<cr>
         "ev -> Edit .vimrc in neuem Tab
         nmap <silent> <leader>ev :e $MYVIMRC<cr>
         "re -> :reg
@@ -294,7 +298,7 @@
         let g:UltiSnipsSnippetDirectories = ["ultisnips-snippets"]
         let g:UltiSnipsExpandTrigger = '<C-y>'                            "Key for UltiSnips Trigger
 "Jedi Vim
-        let g:jedi#popup_on_dot = 1 "Autocompletion when typing .
+        let g:jedi#popup_on_dot = 1 "Autocompletion when typing
         let g:jedi#auto_initialization = 1 "Jedi-Vim is auto inizialized
         let g:jedi#auto_vim_configuration = 1
         let g:jedi#use_tabs_not_buffers = 0 "Use buffers
@@ -307,8 +311,9 @@
 "Python-Mode
         let g:pymode_lint_checker = "pyflakes"
         let g:pymode_lint_cwindow = 0           " Auto open cwindow if errors be finded
+        let g:pymode_rope = 1                   "Turn off rope plugin
         let g:pymode_rope_autocomplete_map = '' "Use jedi for autocompletion
-        let g:pymode_rope_show_doc_bind = '' "Use jedi for documentation
+        let g:pymode_rope_show_doc_bind = ''    "Use jedi for documentation
         let g:pymode_rope_goto_definition_bind = '' "Use jedi to go to def.
 "Supertab
         let g:SuperTabDefaultCompletionType = "context"
@@ -323,6 +328,25 @@
         vmap <silent> <leader>cs y<C-w><C-w>p
         imap <silent> <leader>cn <Esc><C-w><S-w>']0j
         nmap <silent> <leader>cn <C-w><S-w>']0j
+"Airline
+        let g:airline#extensions#tabline#enabled = 1          "Enable top list of buffers
+        let g:airline#extensions#tabline#fnamemod = ':t'      "Show just filename of buffers
+        let g:airline#extensions#tabline#buffer_idx_mode = 1  "Show buffer number
+        let g:airline#extensions#tabline#buffer_min_count = 2 "Open buffer list when 2 b exist
+                nmap <leader>1 <Plug>AirlineSelectTab1
+                nmap <leader>2 <Plug>AirlineSelectTab2
+                nmap <leader>3 <Plug>AirlineSelectTab3
+                nmap <leader>4 <Plug>AirlineSelectTab4
+                nmap <leader>5 <Plug>AirlineSelectTab5
+                nmap <leader>6 <Plug>AirlineSelectTab6
+                nmap <leader>7 <Plug>AirlineSelectTab7
+                nmap <leader>8 <Plug>AirlineSelectTab8
+                nmap <leader>9 <Plug>AirlineSelectTab9
+"Rainbow Parentheses
+        au VimEnter * RainbowParenthesesToggle
+        au Syntax * RainbowParenthesesLoadRound
+        au Syntax * RainbowParenthesesLoadSquare
+        au Syntax * RainbowParenthesesLoadBraces
 
 "Filetypes
 "Python
