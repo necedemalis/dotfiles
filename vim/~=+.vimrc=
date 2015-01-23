@@ -136,118 +136,70 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
+1,3fold
 5,7fold
 8,12fold
-13,45fold
-46,49fold
-50,52fold
-53,58fold
-3,58fold
-62,74fold
-75,79fold
-80,92fold
-61,102fold
-104,105fold
-106,122fold
-125,126fold
-103,128fold
-103,128fold
-129,131fold
-132,136fold
-137,141fold
-145,145fold
-142,145fold
-146,148fold
-149,150fold
-153,155fold
-151,155fold
-156,158fold
-159,161fold
-162,164fold
-165,166fold
-167,208fold
-60,208fold
-211,217fold
-218,221fold
-210,221fold
-224,225fold
-226,227fold
-228,229fold
-230,254fold
-255,286fold
-223,286fold
-289,290fold
-291,292fold
-293,294fold
-295,299fold
-300,310fold
-311,317fold
-318,320fold
-321,322fold
-323,330fold
-331,344fold
-345,349fold
-288,349fold
-352,361fold
-362,366fold
-367,378fold
-379,380fold
-381,383fold
-384,385fold
+62,64fold
+65,69fold
+45,70fold
+45,70fold
+45,70fold
+45,70fold
+13,70fold
+13,70fold
+13,70fold
+13,70fold
+1,70fold
+1,72fold
+73,77fold
+78,90fold
+91,101fold
+1,101fold
+103,104fold
+105,121fold
+124,125fold
+102,127fold
+128,130fold
+131,135fold
+136,140fold
+141,144fold
+145,147fold
+148,149fold
+150,154fold
+155,157fold
+158,160fold
+161,163fold
+164,165fold
+183,183fold
+166,207fold
+1,207fold
+210,216fold
+217,220fold
+209,220fold
+223,224fold
+225,226fold
+227,228fold
+229,253fold
+254,281fold
+222,281fold
+283,283fold
+366,376fold
+377,381fold
+382,385fold
 386,388fold
-389,390fold
-391,396fold
-351,396fold
-3
-normal! zo
-3
-normal! zc
-60
-normal! zo
-61
-normal! zo
-61
-normal! zc
-103
-normal! zo
-103
-normal! zo
-103
-normal! zc
-103
-normal! zc
-142
-normal! zo
-142
-normal! zc
-151
-normal! zo
-151
-normal! zc
-60
-normal! zc
-210
-normal! zo
-210
-normal! zc
-223
-normal! zo
-223
-normal! zc
-288
-normal! zo
-288
-normal! zc
-351
-normal! zo
-351
-normal! zc
-let s:l = 1 - ((0 * winheight(0) + 15) / 31)
+389,401fold
+402,404fold
+405,406fold
+407,408fold
+409,411fold
+412,417fold
+365,417fold
+let s:l = 304 - ((303 * winheight(0) + 32) / 65)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+304
+normal! 017|
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

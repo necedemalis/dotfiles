@@ -60,7 +60,10 @@
         export BROWSER=$BROWSER/usr/bin/firefox
         #Xdg user directories:
         [[ -z $XDG_CONFIG_HOME ]] && export XDG_CONFIG_HOME="$HOME/.config" && export XDG_DATA_HOME="$HOME/.local/share" && export XDG_CACHE_HOME="$HOME/.cache" && XDG_DOWNLOAD_DIR="$HOME/Downloads" && XDG_DOCUMENTS_DIR="$HOME/Dokumente"
-        #export PATH=$PATH:/home/joecool/bin/dbgl #DosBox Game Launcher
+        #Privoxy for Surf:
+        http_proxy=http://127.0.0.1:8118/
+        HTTP_PROXY=$http_proxy
+        export http_proxy HTTP_PROXY
 
 #Start Keychain for SSH-Agent & GPG-Agent
 if [[ -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]]; then #don't show on zsh start
@@ -69,7 +72,6 @@ if [[ -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]]; then #don't show on zsh
 fi
 export GPG_TTY=$(tty)
 export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
-
 
 #ALIASES
         #Pacman
@@ -87,21 +89,12 @@ export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
         #Ein/aushängen
         alias mntext='sudo mount -t ntfs-3g -o defaults UUID="A24A74BF4A749231" /media/Extern'
         alias umntext='sudo umount /media/Extern'
-        #untar
+        #untar tar.gz
         alias t='tar -xvzf'
-        #Backups
-        #System Backup
-        alias backup-system='sudo ~/scripts/backup.sh /media/Extern/aaa/Backups/Arch-Backup'
-        #Jazz Backup
-        alias backup-jazz='rsync -P -r -a --delete /media/Extern/aaa/Museion/Jazz/ /media/Daten/Backup/Jazz-Backup/'
-        #Dropbox Backup
-        alias backup-dropbox='rsync -P -r -a --delete ~/Dropbox/ /media/Daten/Backup/Dropbox-Backup/'
-        #suspend/hibernate
+        #suspend/hibernate/shutdown
         alias suspend='sudo systemctl suspend'
-        alias hibernate='sudo pm-hibernate'
-        #alias windows='sudo extlinux --once "chain.c32 hd1 2" /boot/syslinux/'
-        #Restart
         alias shutdown='sudo shutdown -h 0'
+        alias hibernate='sudo pm-hibernate'
         #Remind
         alias calendar='remind -c+4mb1 ~/Dokumente/Remind/.reminders'
         alias r-reminders='remind -t14g ~/Dokumente/Remind/.reminders'
@@ -110,6 +103,7 @@ export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
         alias neo2='setxkbmap lv && xmodmap ~/.Xmodmap/neo_de.xmodmap && xset -r 51'
         alias qwertz_custom='setxkbmap lv && xmodmap ~/.Xmodmap/neo_de_custom.xmodmap && xset -r 51' #qwertz mit Neo2-Ebene 3+
         alias qwertz='setxkbmap de && xset r 51'
+        #Diversers
         alias raspberrypi='ssh root@192.168.0.165 -l pi'
         alias resolution='xrandr -s 1680x1050'
         alias screenshot='import -window root screenshot.jpg'

@@ -113,17 +113,17 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         "~/samba/
         nmap ,sa :cd ~/samba/<cr>
         "~/samba/SABnzbd/
-        nmap ,sb :cd ~/samba/SABnzbd/<cr>
+        nmap ,sb :cd ~/samba/SABnzbd/Nzbs_Fertig/<cr>
         "~/Studium/
         nmap ,st :cd ~/Dokumente/Studium/<cr>
         "~/Dokumente/Studium/Mathematik/
         nmap ,ma :cd ~/Studium/Mathematik/<cr>
         "~/Dokumente/Studium/Diverses/Nachhilfe/
         nmap ,na :cd ~/Studium/Diverses/Nachhilfe/<cr>
-        "~/Octopress/source/_posts/
-        nmap ,oc :cd ~/Octopress/source/_posts/<cr>
-        "~/.tmsu-tags/queries/
+        "~/.tmsu-tags/queries
         nmap ,ta :cd ~/.tmsu-tags/queries<cr>
+        "~/virtualenvs/
+        nmap ,vi :cd ~/virtualenvs/<cr>
         "/media/
         nmap ,me :cd /media/<cr>
         "/media/MP3-Player/
@@ -146,9 +146,7 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         nmap ,se :cd /media/Multimedia/Serien/<cr>
         "/media/Multimedia/Spiele/Adventures
         nmap ,ad :cd /media/Multimedia/Spiele/Adventures/<cr>
-        "/media/Extern/aaa
-        nmap ,ex :cd /media/Extern/aaa<cr>
-        "/media/Extern/aaa/Museion/
+        "/media/Daten/Museion/
         nmap ,mu :cd /media/Daten/Museion/<cr>
         "/media/Daten/Museion/Jazz/
         nmap ,ja :cd /media/Daten/Museion/Jazz/<cr>
@@ -157,6 +155,7 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         nmap w :view<cr>
         nmap o :!gvim --remote-tab-silent %f<cr>
         nmap O :!gvim %f<cr>
+        nmap Z :!zathura %f &<cr>
 " Commands for Leader-Key
         ",ls: lsview
         nmap ,ls :set lsview!<cr>
@@ -213,13 +212,12 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         " %m run the command in a menu window
 
         command df df -h %m 2> /dev/null
-        command diff vim -d %f %F
-        command zip zip -r %f.zip %f
         command run !! ./%f
 
         command ln !ln -s %d/%f %D
         command move sudo mv -R %d/%f %D
         command copy sudo cp -R %d/%f %D
+        command zip zip -r %f.zip %f
 
         command mplayer mplayer -really-quiet ./%f
         command smplayer smplayer ./%f &<cr>l
@@ -232,8 +230,6 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         command tmsu ls /home/joecool/.tmsu-tags/queries/%a && cd /home/joecool/.tmsu-tags/queries/%a 
         command tag tmsu tag %f %a
         
-        " command make !!make
-        " command vgrep vim "+grep %a"
 
 "Filetypes
         "The file type is for the default programs to be used with
@@ -264,7 +260,6 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
 
 " Pdf
         filetype *.pdf zathura %f &, evince %f &
-
 
 " Text
         filetype *.abw abiword %f &
@@ -317,7 +312,7 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         filetype *.rar unrar e %f &
 
 " Untar
-        filetype *.tar.bz2,*.tbz2,*.tgz,*.tar.gz, *.tar tar -xvzf %f
+        filetype *.tar.gz tar -xvzf %f
 
 " Web
         filetype *.html,*.htm firefox %f %i &
@@ -347,11 +342,11 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         fileviewer *.zip,*.jar,*.war,*.ear zip -sf %c
 
 " ArchiveMount
-        filetype *.tar.bz2,*.tbz2,*.tgz,*.tar.gz
-               \ {Mount with archivemount}
-               \ FUSE_MOUNT|archivemount %SOURCE_FILE %DESTINATION_DIR,
-        fileviewer *.tgz,*.tar.gz tar -tzf %c
-        fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
+        "filetype *.tar.bz2,*.tbz2,*.tgz,*.tar.gz
+               "\ {Mount with archivemount}
+               "\ FUSE_MOUNT|archivemount %SOURCE_FILE %DESTINATION_DIR,
+        "fileviewer *.tgz,*.tar.gz tar -tzf %c
+        "fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
 
 " Rar2FsMount
         filetype *.rar

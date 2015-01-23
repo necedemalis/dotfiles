@@ -6,6 +6,7 @@
   unset imap_passive
   set mail_check = 60
   set sleep_time = 0
+  set record=""
 
 #Diverses
   set certificate_file=~/.mutt/.mutt-certs

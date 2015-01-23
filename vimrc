@@ -1,9 +1,9 @@
 ".vimrc
 
 "Basic Settings
-        let mapleader=","                                  ", statt \ als leader key
+        let mapleader=","              ", statt \ als leader key
         "Background Theme 
-        silent! colorscheme solarized "silent! colorscheme ChocolateLiquor
+        silent! colorscheme solarized  "silent! colorscheme ChocolateLiquor
         set background=dark
         "Detect file types
         filetype on
@@ -11,20 +11,20 @@
         filetype plugin indent on
         syntax on
         "set
+        set tw=96
         set history=50                 " keep 50 lines of command line history
         set backspace=indent,eol,start " more powerful backspacing
         set nocompatible               " Use Vim defaults instead of 100% vi compatibility
         set ruler                      " show
         set hls ic is                  " Search: Highlight, ignore case, show
-        set smartcase                  " ignore case if search pattern is all lowercase,
+        set smartcase                  " ignore case if search pattern is all lowercase
         set nocp                       " nocompatible
-        set tw=96
         set et                         " expandtab
         set smarttab                   " Insert tabs at the start of a line
         set breakindent                " Indent soft wrapped lines
+        set showbreak=>>
         set tabstop=4
         set shiftwidth=4
-        set showbreak=>>
         set autochdir                  " Change to same dir as file
         set visualbell                 " Visuelles Piepen
         set noerrorbells               " don't beep
@@ -41,11 +41,11 @@
         set formatprg=par\ -w96        " Par für Umbruchformatierung mit Alt+q
         set autochdir                  " Change working directory to directory of current file
         set nolist
-        set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc " Suffixes that get lower priority when doing tab completion for filenames.
+        set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc " Suffixes that get lower priority when doing tab completion for filenames
         set wildignore=*.swp,*.bak,*.pyc,*.class "ignore some file extensions when completing names by pressing Tab,
         "Unnamed register to plus register (system clipboard)
         if has('unnamedplus') 
-          set clipboard=unnamed,unnamedplus 
+          set clipboard=unnamed,unnamedplus
         endif
         "Save/Load manual made Folds
         au BufWinLeave * silent! mkview
@@ -60,18 +60,16 @@
 " Custom Keymapping
         "Leader Keymapping
         "Plugins
-        "vr -> Toggle Vimroom
-        nmap <silent> <leader>vr :colorscheme iawriter\|:VimroomToggle<cr>
-        "fd -> FoldDigest()
-        nmap <silent> <leader>fd :silent! call FoldDigest ()<cr>
-        "tl -> :TaskList
-        map <silent> <leader>tl :silent! TaskList<cr> 
-        "tb -> :Tagbar
-        map <silent> <leader>tb :silent! Tagbar<cr> 
-        "nt -> :NerdTree
-        nmap <silent> <leader>nt :silent! NERDTree<cr>
         "ct -> Command-T
         nnoremap <silent> <Leader>ct :silent! CommandT<CR>
+        "fd -> FoldDigest()
+        nmap <silent> <leader>fd :silent! call FoldDigest ()<cr>
+        "nt -> :NerdTree
+        nmap <silent> <leader>nt :silent! NERDTree<cr>
+        "tb -> :Tagbar
+        map <silent> <leader>tb :silent! Tagbar<cr> 
+        "tl -> :TaskList
+        map <silent> <leader>tl :silent! TaskList<cr> 
         "Prose/Code
         "pr -> :Prose
         nmap <silent> <leader>pr :Prose<cr>
@@ -90,6 +88,7 @@
         nmap <silent> <leader>bn :enew<cr>
         "bd -> Buffer schließen
         nmap <silent> <leader>bd :bd!<cr>
+        "Diverses
         "ev -> Edit .vimrc in neuem Tab
         nmap <silent> <leader>ev :e $MYVIMRC<cr>
         "re -> :reg
@@ -139,13 +138,13 @@
        nnoremap <down> <C-w>j
        nnoremap <left> <C-w>h
        nnoremap <right> <C-w>l
-        "Cut/Copy/Paste mit cvx in GVim -> Strg+xcv 
+        "Cut/Copy/Paste mit cvx in GVim -> Strg+xcv
         vmap <C-c> "+yi
         vmap <C-x> "+c
         imap <C-v> <C-r><C-o>+
         "Enter/Shift-Enter für neue Zeile ohne Insert
         nmap <CR> o<Esc>
-        nmap <S-Enter> O<Esc>
+        nmap <S-CR> O<Esc>
         "zs -> Fold everything except were cursor is
         nnoremap zs zMzv
         "Use Q for formatting the current paragraph (or selection)
@@ -156,9 +155,9 @@
         "Use Alt+Q to format paragraph with par
         map <A-q> {v}!par -jw96<CR>
         vmap <A-q> !par -jw96<CR>
-                "Won't deselect visual selection when moving selected code blocks
-                vnoremap < <gv 
-                vnoremap > >gv
+        "won't deselect visual selection when moving selected code blocks
+        vnoremap < <gv 
+        vnoremap > >gv
         "W ist w/ Q ist q
         "cmap W w
         cmap Q q
@@ -253,10 +252,6 @@
                         " lookup
                         \ noremap t l |
         ":Prose/:Code -> Umschalten Prosa und Code
-        "command! Prose silent! colorscheme ChocolateLiquor |
-        "\ inoremap <buffer> . .<C-G>u|
-        "\ inoremap <buffer> ! !<C-G>u|
-        "\ inoremap <buffer> ? ?<C-G>u|
         command! Prose silent! inoremap <buffer> . .<C-G>u|
                      \ silent! inoremap <buffer> ! !<C-G>u|
                      \ silent! inoremap <buffer> ? ?<C-G>u|
@@ -314,7 +309,7 @@
         let g:pymode_rope = 1                   "Turn off rope plugin
         let g:pymode_rope_autocomplete_map = '' "Use jedi for autocompletion
         let g:pymode_rope_show_doc_bind = ''    "Use jedi for documentation
-        let g:pymode_rope_goto_definition_bind = '' "Use jedi to go to def.
+        let g:pymode_rope_goto_definition_bind = '' "Use jedi to go to Def
 "Supertab
         let g:SuperTabDefaultCompletionType = "context"
         let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
@@ -342,11 +337,30 @@
                 nmap <leader>7 <Plug>AirlineSelectTab7
                 nmap <leader>8 <Plug>AirlineSelectTab8
                 nmap <leader>9 <Plug>AirlineSelectTab9
-"Rainbow Parentheses
-        au VimEnter * RainbowParenthesesToggle
-        au Syntax * RainbowParenthesesLoadRound
-        au Syntax * RainbowParenthesesLoadSquare
-        au Syntax * RainbowParenthesesLoadBraces
+"Rainbow
+        let g:rainbow_active = 0
+        let g:rainbow_conf = {
+        \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+        \   'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+        \   'operators': '_,_',
+        \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+        \   'separately': {
+        \       '*': {},
+        \       'tex': {
+        \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+        \       },
+        \       'lisp': {
+        \           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+        \       },
+        \       'vim': {
+        \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimfuncbody', 'start=/\[/ end=/\]/ containedin=vimfuncbody', 'start=/{/ end=/}/ fold containedin=vimfuncbody'],
+        \       },
+        \       'html': {
+        \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-za-z0-9]+)(\s+[-_:a-za-z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+        \       },
+        \       'css': 0,
+        \   }
+        \}
 
 "Filetypes
 "Python
@@ -354,6 +368,7 @@
         map <f4> :w\|!python2 %
         map <f5> :w\|!python3 %
         autocmd FileType python Code "Starte Python automatisch in Code
+        autocmd FileType python RainbowToggle "Starte mit Rainbow Parentheses
         au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4 nolinebreak
         autocmd FileType python highlight SpellBad term=underline gui=bold guisp=Orange guifg=red
         autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,( "~/.vim/syntax
@@ -364,30 +379,36 @@
         augroup filetypedetect
           au! BufRead,BufNewFile *.sage,*.spyx,*.pyx setfiletype python
         augroup END
+"Shell-Script
+        autocmd FileType sh Code
+        autocmd FileType sh RainbowToggle "Starte mit Rainbow Parentheses
+        au FileType tabstop=8 expandtab shiftwidth=4 softtabstop=4 nolinebreak
+"C
+        autocmd FileType c Code
+        autocmd FileType c RainbowToggle "Starte mit Rainbow Parentheses
 "Latex/Vim-Latex
         let g:tex_flavor="latex"
         autocmd FileType tex Prose "Starte LaTex automisch in Prosa
+        autocmd FileType tex RainbowToggle "Starte mit Rainbow Parentheses
         au Filetype tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 linebreak
         let g:Tex_BIBINPUTS="$PWD/*.bib" "F9->Bibtex autocomplete
         let g:Tex_ViewRule_dvi = "xdvi" "Open Dvi with xdvi
         imap <C-g> <Plug>IMAP_JumpForward
-        nmap <C-g> <Plug>IMAP_JumpForward       
+        nmap <C-g> <Plug>IMAP_JumpForward
         "Fold-Options verändert in dotfiles/vim/bundle/latex-suite/ftplugin/latex-suite/folding.vim, geschützt mit chattr +i
         ""let g:Tex_FoldedSections = 'section,%%fakesection,%%fakesubsection'
         ""let g:Tex_FoldedEnvironments = "abstract"
          " redef C-j to C-g
+"Html
+        autocmd FileType html Code
+        autocmd FileType html RainbowToggle "Starte mit Rainbow Parentheses
 "Markdown
-        autocmd FileType markdown Prose 
-"Shell-Script
-        autocmd FileType sh Code 
-        au FileType tabstop=8 expandtab shiftwidth=4 softtabstop=4 nolinebreak
-"C
-        autocmd FileType c Code
+        autocmd FileType markdown Prose
+"Xml
+        autocmd FileType xml Code
 "Mail
         autocmd FileType mail setlocal fo+=aw
-        autocmd FileType mail set spell 
-"Xml
-        autocmd FileType xml Code 
+        autocmd FileType mail set spell
 "Arduino Ino
         au BufRead,BufNewFile *.ino,*.pde :cd.. "One directory down to compile
         "Compile and upload
