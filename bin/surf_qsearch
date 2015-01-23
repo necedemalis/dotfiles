@@ -50,6 +50,7 @@ case $e in
         xprop -id $1 -f _SURF_GO 8s -set _SURF_GO "https://en.wiktionary.org/w/index.php?search=${s}&go=Go"
         ;;
     *)
-        exit 1
-        ;;
+        xprop -id $1 -f _SURF_GO 8s -set _SURF_GO "https://startpage.com/do/search?q=${s}"
+        #exit 1
+        #;;
 esac

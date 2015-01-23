@@ -99,6 +99,7 @@ openttd-opensfx
 pacgraph
 pacmatic
 par
+pass
 pavucontrol
 pkgcacheclean
 playonlinux
@@ -218,6 +219,8 @@ mplayer
 rts5229-dkms
 pm-utils
 python
+surf
+tabbed
 unzip
 xf86-input-keyboard
 xf86-input-synaptics
