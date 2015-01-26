@@ -194,12 +194,80 @@ silent! normal! zE
 409,411fold
 412,417fold
 365,417fold
-let s:l = 304 - ((303 * winheight(0) + 32) / 65)
+1
+normal! zo
+1
+normal! zo
+1
+normal! zo
+1
+normal! zo
+13
+normal! zo
+13
+normal! zo
+13
+normal! zo
+13
+normal! zo
+45
+normal! zo
+45
+normal! zo
+45
+normal! zo
+45
+normal! zo
+45
+normal! zc
+45
+normal! zc
+45
+normal! zc
+45
+normal! zc
+13
+normal! zc
+13
+normal! zc
+13
+normal! zc
+13
+normal! zc
+1
+normal! zc
+1
+normal! zc
+1
+normal! zc
+102
+normal! zo
+102
+normal! zc
+166
+normal! zo
+166
+normal! zc
+1
+normal! zc
+209
+normal! zo
+209
+normal! zc
+222
+normal! zo
+222
+normal! zc
+365
+normal! zo
+365
+normal! zc
+let s:l = 294 - ((293 * winheight(0) + 32) / 65)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-304
-normal! 017|
+294
+normal! 044|
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

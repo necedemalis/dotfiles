@@ -291,7 +291,7 @@
         let g:UltiSnipsEditSplit = "vertical"                             "Open edit Window vertically
         let g:UltiSnipsSnippetsDir = "~/dotfiles/vim/ultisnips-snippets/" "UltiSnips Directory
         let g:UltiSnipsSnippetDirectories = ["ultisnips-snippets"]
-        let g:UltiSnipsExpandTrigger = '<C-y>'                            "Key for UltiSnips Trigger
+        let g:UltiSnipsExpandTrigger = '<C-u>'                            "Key for UltiSnips Trigger
 "Jedi Vim
         let g:jedi#popup_on_dot = 1 "Autocompletion when typing
         let g:jedi#auto_initialization = 1 "Jedi-Vim is auto inizialized
