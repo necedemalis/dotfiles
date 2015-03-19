@@ -155,7 +155,8 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         nmap w :view<cr>
         nmap o :!gvim --remote-tab-silent %f<cr>
         nmap O :!gvim %f<cr>
-        nmap Z :!zathura %f &<cr>
+        nmap . :cd . .<cr>
+        nmap s :cd . %d/%c<cr>
 " Commands for Leader-Key
         ",ls: lsview
         nmap ,ls :set lsview!<cr>
@@ -163,7 +164,7 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         nmap ,re :di<cr>
         ",ma: show marks
         nmap ,ma :marks<cr>
-        ",co: copy
+        ",cp: copy
         map ,cp :copy<cr>
         ",mv: move
         map ,mv :move<cr>
@@ -217,6 +218,8 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         command ln !ln -s %d/%f %D
         command move sudo mv -R %d/%f %D
         command copy sudo cp -R %d/%f %D
+
+        command tar tar -czf %f.tar.gz %f 
         command zip zip -r %f.zip %f
 
         command mplayer mplayer -really-quiet ./%f
@@ -258,6 +261,7 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         " You can also add %CLEAR if you want to clear screen before running FUSE
         " program.
 
+"Texte
 " Pdf
         filetype *.pdf zathura %f &, evince %f &
 
@@ -273,15 +277,12 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
 " Djvu
         filextype *.djvu zathura %f &, evince %f &
 
-" Mathematica
-        filetype *.nb /media/SSD/Installationen/Mathematica/Executables/Mathematica %f &
-
+"Multimedia
 " Audio
         filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a
                \ {Play using MPlayer}
                \ mplayer %f,
         filetype *.mid timidity %f
-        "fileviewer *.mp3 mp3info
 
 " Video
         filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mpg,*.vob,*.flv,*.mov
@@ -298,6 +299,11 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
                 \ {View in ristretto}
                 \ ristretto %c &,
         fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm convert -identify %f -verbose /dev/null
+
+" Mathematica
+        filetype *.nb /media/SSD/Installationen/Mathematica/Executables/Mathematica %f &
+
+
 
 " Bin
         filetype *.bin,*.bin.x86 ./%f

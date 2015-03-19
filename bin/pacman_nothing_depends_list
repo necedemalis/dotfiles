@@ -64,9 +64,7 @@ lib32-alsa-plugins
 lib32-curl
 lib32-libpulse
 lib32-sdl_mixer
-libreoffice-still-calc
-libreoffice-still-impress
-libreoffice-still-writer
+libreoffice-still-de
 linuxband
 linux-custom
 linux-custom-headers
@@ -80,6 +78,7 @@ mingus
 mit-scheme
 mono
 mp3info
+mpc
 mpd
 mpdscribble
 msmtp
@@ -104,6 +103,7 @@ pavucontrol
 picocom
 pkgcacheclean
 playonlinux
+privoxy
 profile-sync-daemon
 pspp
 puddletag
