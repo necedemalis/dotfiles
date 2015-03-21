@@ -4,8 +4,9 @@ source! /home/joecool/.vimperatorrc.local
 
 " vim: set ft=vimperator:
 
-map J gt
-map K gT
+map <C-j> gt
+map <C-k> gT
+map <C-d> d
 map O t
 "inoremap jk <esc>
 "inoremap jj <esc>
