@@ -310,6 +310,8 @@
         let g:pymode_rope_autocomplete_map = '' "Use jedi for autocompletion
         let g:pymode_rope_show_doc_bind = ''    "Use jedi for documentation
         let g:pymode_rope_goto_definition_bind = '' "Use jedi to go to Def
+"C-Vim
+        let g:C_MapLeader = "," "leader key for c-vim is , (instead of \)"
 "Supertab
         let g:SuperTabDefaultCompletionType = "context"
         let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
@@ -393,6 +395,7 @@
         au Filetype tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 linebreak
         let g:Tex_BIBINPUTS="$PWD/*.bib" "F9->Bibtex autocomplete
         let g:Tex_ViewRule_dvi = "xdvi" "Open Dvi with xdvi
+        let g:Tex_BibTeXFlavor = "biber" "biber as backend for biblatex
         imap <C-g> <Plug>IMAP_JumpForward
         nmap <C-g> <Plug>IMAP_JumpForward
         "Fold-Options verändert in dotfiles/vim/bundle/latex-suite/ftplugin/latex-suite/folding.vim, geschützt mit chattr +i

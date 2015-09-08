@@ -70,7 +70,7 @@
         set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
 "Filters 
-filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|.dbus|.dosbox|.eclipse|.fehbg|.fontconfig|.freeciv|.gconf|.gem|.gimp|git|.git-credential|.gstreamer|.icons|.java|.kde|.keychain|.lesshst|.log|.macromedia|.magick|.nicotine|.openttd|.puddletag|.ropeproject|.pki|.pspp_history|.pulse|.python-eggs|.python_history|rosegarden|.sabnzbd|.sane|.scummvm|.solfege|.swt|.SyncID|.SyncIgnore|.SyncArchive|.texlive|.thumbnails|.tor|.ts3client|.urlview|.urxvt|.VirtualBox|.vkeybdrc|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.pulse-cookie|__pycache__|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.stfolder|.*\.aux$|.*\.log$|.*\.out$)" 
+filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|.dbus|.dosbox|.eclipse|.fehbg|.fontconfig|.freeciv|.gconf|.gem|.gimp|git|.git-credential|.gstreamer|.icons|.java|.kde|.keychain|.lesshst|.log|.macromedia|.magick|.nicotine|.openttd|.puddletag|.ropeproject|.pki|.pspp_history|.pulse|.python-eggs|.python_history|rosegarden|.sabnzbd|.sane|.scummvm|.solfege|.swt|.SyncID|.SyncIgnore|.SyncArchive|.texlive|.thumbnails|.tor|.ts3client|.urlview|.urxvt|.VirtualBox|.vkeybdrc|.wicd|.esd_auth|.gtk-bookmarks|.ICEauthority|.mysql_history|.NERDTreeBookmarks|.pulse-cookie|__pycache__|.recently-used|.viminfo|.Xauthority|.xdvirc|.zcompdump|.zsh_histfile|.stfolder|.*\.aux$|.*\.bbl$|.*\.blg$|.*\.run.xml$|.*\.toc$|.*\.log$|.*\.out$)" 
 
 "Marks (mark /full/directory/path [filename])
         mark h ~/
@@ -134,6 +134,10 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         nmap ,da :cd /media/Daten/<cr>
         "/media/Daten/Torrents
         nmap ,to :cd /media/Daten/Torrents/<cr>
+        "/media/Daten/Torrents/Serien/
+        nmap ,se :cd /media/Daten/Torrents/Serien/<cr>
+        "/media/Daten/Torrents/Filme/
+        nmap ,fi :cd /media/Daten/Torrents/Filme/<cr>
         "/media/Daten/Installationen/
         nmap ,in :cd /media/Daten/Installationen/<cr>
         "/media/Daten/Installationen/Spiele/
@@ -142,8 +146,6 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         nmap ,so :cd /media/Daten/Museion/Soulseek/<cr>
         "/media/Multimedia/
         nmap ,mm :cd /media/Multimedia/<cr>
-        "/media/Multimedia/Serien/
-        nmap ,se :cd /media/Multimedia/Serien/<cr>
         "/media/Multimedia/Spiele/Adventures
         nmap ,ad :cd /media/Multimedia/Spiele/Adventures/<cr>
         "/media/Daten/Museion/
@@ -216,8 +218,8 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         command run !! ./%f
 
         command ln !ln -s %d/%f %D
-        command move sudo mv -R %d/%f %D
-        command copy sudo cp -R %d/%f %D
+        " command move sudo mv -R %d/%f %D
+        " command copy sudo cp -R %d/%f %D
 
         command tar tar -czf %f.tar.gz %f 
         command zip zip -r %f.zip %f
@@ -226,6 +228,7 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
         command smplayer smplayer ./%f &<cr>l
         command vlc vlc ./%f &<cr>l
         command pdf !pdflatex %f
+        command biber !biber %f
 
         command umount sudo umount %f 
         command mount sudo mount -a
@@ -276,6 +279,9 @@ filter "^(.AbiSuite|.adobe|.audacity|.bitcoin|.cache|.cmake|.cpan|.cups|Desktop|
 
 " Djvu
         filextype *.djvu zathura %f &, evince %f &
+
+"CBR
+        filextype *.cbr evince %f &
 
 "Multimedia
 " Audio

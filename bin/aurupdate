@@ -4,7 +4,8 @@ if test -z `cower -u` 2>/dev/null ; then
         echo " All AUR packages are up to date."
 
 else
-        cower -u | sed -e 's:[0-9]\-[0-9]::g' | sed -e 's:\ \-::g' | sed -e 's:[0-9]::g' | sed -e 's:\:::g' | sed -e 's:\.::g' | sed -e 's:>::g' | sed -e 's:\ ::g' > ~/builds/Tmp.txt
+        #cower -u | sed -e 's:[0-9]\-[0-9]::g' | sed -e 's:\ \-::g' | sed -e 's:[0-9]::g' | sed -e 's:\:::g' | sed -e 's:\.::g' | sed -e 's:>::g' | sed -e 's:\ ::g' > ~/builds/Tmp.txt
+        cower -u | sed -e 's:\:\:\ ::g' | sed -e 's:\ .*$::g' > ~/builds/Tmp.txt
         for i in `cat ~/builds/Tmp.txt` ; do
                 builddir="$i"
                 read -p "Do you want to upgrade '$i'?  [y/n] " yn

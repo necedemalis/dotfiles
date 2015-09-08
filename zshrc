@@ -10,6 +10,8 @@
         bindkey -v
         zstyle :compinstall filename '/home/joecool/.zshrc'
         autoload -U compinit && compinit #Autocomplete
+        setopt inc_append_history share_history hist_ignore_dups hist_ignore_space #Share History
+
 
 #History Search
         [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
@@ -109,7 +111,8 @@ export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
         alias screenshot='import -window root screenshot.jpg'
         alias pdfjoin_norotate='pdfjoin --rotateoversize false'
         alias audio_restart='pulseaudio --kill && jack_control stop && jack_control start && pulseaudio --start'
-        alias ksp='cd / && LC_ALL=C ni ./media/Daten/Installationen/Spiele/KSP/KSP.x86_64' #Kerbal
+        alias ksp='cd / && LC_ALL=C ni ./media/Daten/Installationen/Spiele/KSP-1.0.2/KSP_linux/KSP.x86_64' #Kerbal
+        alias tropico5='R600_DEBUG=notiling R600_DEBUG=llvm:notiling MESA_GL_VERSION_OVERRIDE=4.0 MESA_GLSL_VERSION_OVERRIDE=400 ni ./Tropico5'
 
 #Python
         alias p='python3'
