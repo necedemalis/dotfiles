@@ -66,6 +66,7 @@ setlocal expandtab
 if &filetype != 'vim'
 setlocal filetype=vim
 endif
+setlocal fixendofline
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
@@ -126,6 +127,7 @@ if &syntax != 'vim'
 setlocal syntax=vim
 endif
 setlocal tabstop=8
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=96
 setlocal thesaurus=
@@ -262,7 +264,7 @@ normal! zc
 normal! zo
 391
 normal! zo
-let s:l = 398 - ((38 * winheight(0) + 15) / 30)
+let s:l = 398 - ((30 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt

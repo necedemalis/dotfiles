@@ -184,8 +184,8 @@ def_key "~"
 def_key "l"
   next_column
 
-def_key "l"
-  press_enter
+#def_key "l"
+#  press_enter
 #
 def_key "d"
   delete_playlist_items

@@ -81,9 +81,9 @@ bind editor        <Tab> complete-query
 
 #Macros
   #Urlview (Urlscan) mit Strg+b
-  #macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
-  #macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
-  macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+  macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+  macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+  #macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
   #Account wechsel
   macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/pi<enter><change-folder>!<enter>'
   macro index,pager 'gp' '<sync-mailbox><enter-command>source ~/.mutt/pi<enter><change-folder>!<enter>'

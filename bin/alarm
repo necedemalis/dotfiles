@@ -1,0 +1,26 @@
+#!/usr/bin/env python2
+
+import time
+import pygame
+pygame.mixer.init()
+pygame.mixer.music.load("/home/joecool/wecker.mp3")
+
+hour_input = input("Hour: ")
+minute_input = input("Minute: ")
+
+#not_executed = 1
+while(True):
+    dt = list(time.localtime())
+    hour = dt[3]
+    minute = dt[4]
+    if hour == hour_input and minute == minute_input:
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy() == True:
+            continue
+
+        minute_input+=5
+        if minute_input>=60:
+            minute_input=minute_input%60
+            hour_input+=1
+        if hour_input>24:
+            hour_input=hour_input%24
