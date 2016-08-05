@@ -1,4 +1,4 @@
-﻿\ProvidesFile{polish.lbx}
+\ProvidesFile{polish.lbx}
 [\abx@lbxid]
 
 \DeclareRedundantLanguages{polish}{polish}
@@ -7,6 +7,7 @@
   \protected\def\bibrangedash{\textendash\penalty\hyphenpenalty}%
   \protected\def\bibdatedash{\addnbthinspace\textendash\addhpthinspace}%
   \let\finalandcomma=\empty
+  \let\finalandsemicolon=\empty
   \protected\def\mkbibordinal#1{\stripzeros{#1}}%
   \protected\def\mkbibmascord{\mkbibordinal}%
   \protected\def\mkbibfemord{\mkbibordinal}%
@@ -34,8 +35,8 @@
       {}
       {\mkdatezeros{\thefield{#2}}%
        \iffieldundef{#1}
-	 {}
-	 {\iffieldundef{#3}{/}{\adddot\thinspace}}}%
+         {}
+         {\iffieldundef{#3}{/}{\adddot\thinspace}}}%
     \iffieldbibstring{#1}
       {\bibstring{\thefield{#1}}}
       {\mkdatezeros{\thefield{#1}}}}%
@@ -313,7 +314,7 @@
   issue            = {{wydanie}{wyd\adddot}},% FIXME: unsure,
   newseries        = {{nowa serja}{now\adddotspace ser\adddot}},
   oldseries        = {{stara serja}{star\adddotspace ser\adddot}},
-  edition          = {{wydruk}{wydr\adddot}},% FIXME: unsure
+  edition          = {{wydruk}{wyd\adddot}},
   reprint          = {{przedruk}{przedr\adddot}},
   reprintof        = {{przedruk}{przedr\adddot}},
   reprintas        = {{przedrukowano jako}{przedr\adddotspace jako}},
@@ -425,8 +426,10 @@
   langitalian      = {{w\l oski}{w\l oski}},
   langlatin        = {{\l acina}{\l acina}},
   langnorwegian    = {{norweski}{norweski}},
+% langpolish       = {{}{}},% FIXME: missing
   langportuguese   = {{portugalski}{portugalski}},
   langrussian      = {{rosyjski}{rosyjski}},
+% langslovene      = {{}{}},% FIXME: missing
   langspanish      = {{hiszpa\'{n}ski}{hiszpa\'{n}ski}},
   langswedish      = {{szwedzki}{szwedzki}},
   fromamerican     = {{z ameryka\'{n}skiego}{z amer\adddot}},
@@ -444,8 +447,10 @@
   fromitalian      = {{z w\l oskiego}{z w\l os\adddot}},
   fromlatin        = {{z \l aciny}{z \l at\adddot}},
   fromnorwegian    = {{z norweskiego}{z norw\adddot}},
+% frompolish       = {{}{}},% FIXME: missing
   fromportuguese   = {{z portugalskiego}{z port\adddot}},
   fromrussian      = {{z rosyjskiego}{z ros\adddot}},
+% fromslovene      = {{}{}},% FIXME: missing
   fromspanish      = {{z hiszpa\'{n}skiego}{z hiszp\adddot}},
   fromswedish      = {{ze szwedskiego}{ze szw\adddot}},
   countryde        = {{Niemcy}{DE}},

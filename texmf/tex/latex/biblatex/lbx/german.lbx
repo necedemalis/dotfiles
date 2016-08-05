@@ -9,6 +9,7 @@
     \textendash\penalty\hyphenpenalty}% breakable dash
   \protected\def\bibdatedash{\bibrangedash}%
   \let\finalandcomma=\empty
+  \let\finalandsemicolon=\empty
   \protected\def\mkbibordinal#1{\stripzeros{#1}\adddot}%
   \protected\def\mkbibmascord{\mkbibordinal}%
   \protected\def\mkbibfemord{\mkbibordinal}%
@@ -363,7 +364,7 @@
   forthcoming      = {{im Erscheinen}{im Erscheinen}},
   inpress          = {{im Druck}{im Druck}},
   prepublished     = {{Vorver\"offentlichung}{Vorver\"offentlichung}},
-  citedas          = {{im folgenden zitiert als}{im folgenden zit\adddotspace als}},
+  citedas          = {{im Folgenden zitiert als}{im Folgenden zit\adddotspace als}},
   thiscite         = {{hier}{hier}},
   seenote          = {{siehe Anmerkung}{s\adddotspace Anm\adddot}},
   quotedin         = {{zitiert nach}{zit\adddotspace nach}},
@@ -413,8 +414,10 @@
   langitalian      = {{Italienisch}{Italienisch}},
   langlatin        = {{Lateinisch}{Lateinisch}},
   langnorwegian    = {{Norwegisch}{Norwegisch}},
+% langpolish       = {{}{}},% FIXME: missing
   langportuguese   = {{Portugiesisch}{Portugiesisch}},
   langrussian      = {{Russisch}{Russisch}},
+% langslovene      = {{}{}},% FIXME: missing
   langspanish      = {{Spanisch}{Spanisch}},
   langswedish      = {{Schwedisch}{Schwedisch}},
   fromamerican     = {{aus dem Amerikanischen}{aus dem Amerikanischen}},
@@ -432,8 +435,10 @@
   fromitalian      = {{aus dem Italienischen}{aus dem Italienischen}},
   fromlatin        = {{aus dem Lateinischen}{aus dem Lateinischen}},
   fromnorwegian    = {{aus dem Norwegischen}{aus dem Norwegischen}},
+% frompolish       = {{}{}},% FIXME: missing
   fromportuguese   = {{aus dem Portugiesischen}{aus dem Portugiesischen}},
   fromrussian      = {{aus dem Russischen}{aus dem Russischen}},
+% fromslovene      = {{}{}},% FIXME: missing
   fromspanish      = {{aus dem Spanischen}{aus dem Spanischen}},
   fromswedish      = {{aus dem Schwedischen}{aus dem Schwedischen}},
   countryde        = {{Deutschland}{DE}},

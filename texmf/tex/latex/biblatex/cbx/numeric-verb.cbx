@@ -2,13 +2,17 @@
 [\abx@cbxid]
 
 \ExecuteBibliographyOptions{labelnumber,autocite=inline}
+
 \renewcommand*{\multicitedelim}{\addcomma\space}
+\renewcommand*{\iffinalcitedelim}{\iflastcitekey}
+
 \providebool{bbx:subentry}
+
 \DeclareFieldFormat{entrysetcount}{\mknumalph{#1}}
 
 \newbibmacro*{cite}{%
   \printtext[bibhyperref]{%
-    \printfield{prefixnumber}%
+    \printfield{labelprefix}%
     \printfield{labelnumber}%
     \ifbool{bbx:subentry}
       {\printfield{entrysetcount}}
@@ -18,7 +22,7 @@
   \ifnameundef{labelname}
     {\printfield[citetitle]{labeltitle}}
     {\printnames{labelname}}%
-  \addspace\bibopenbracket
+  \printdelim{namelabeldelim}\bibopenbracket
   \ifnumequal{\value{citecount}}{1}
     {\usebibmacro{prenote}}
     {}%
@@ -67,8 +71,12 @@
 \DeclareCiteCommand{\textcite}
   {}
   {\usebibmacro{citeindex}%
+   \iffirstcitekey
+     {\setcounter{textcitetotal}{1}}
+     {\stepcounter{textcitetotal}%
+      \textcitedelim}%
    \usebibmacro{textcite}}
-  {\bibclosebracket\multicitedelim}
+  {\bibclosebracket}
   {\usebibmacro{postnote}%
    \bibclosebracket}
 
@@ -85,6 +93,8 @@
   {}
 
 \DeclareMultiCiteCommand{\parencites}[\mkbibbrackets]{\parencite}{\multicitedelim}
-\DeclareMultiCiteCommand{\smartcites}[\iffootnote\mkbibbrackets\mkbibfootnote]{\smartcite}{\multicitedelim}
+\DeclareMultiCiteCommand{\smartcites}[\iffootnote\mkbibbrackets\mkbibfootnote]
+  {\smartcite}{\multicitedelim}
+\DeclareMultiCiteCommand{\textcites}{\textcite}{}
 
 \endinput

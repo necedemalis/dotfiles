@@ -27,10 +27,10 @@
   #source "~/.mutt/hotmail"
   folder-hook $folder 'source ~/.mutt/hotmail'
 #Account Pi
-  source "~/.mutt/pi"
+  #source "~/.mutt/pi"
   folder-hook $folder 'source ~/.mutt/pi'
 #Account uni
-  #source "~/.mutt/uni"
+  source "~/.mutt/uni"
   folder-hook $folder 'source ~/.mutt/uni'
 
 #Aussehen

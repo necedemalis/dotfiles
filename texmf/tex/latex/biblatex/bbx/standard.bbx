@@ -7,15 +7,15 @@
 \newtoggle{bbx:eprint}
 \newtoggle{bbx:related}
 
-\DeclareBibliographyOption{isbn}[true]{%
+\DeclareBibliographyOption[boolean]{isbn}[true]{%
   \settoggle{bbx:isbn}{#1}}
-\DeclareBibliographyOption{url}[true]{%
+\DeclareBibliographyOption[boolean]{url}[true]{%
   \settoggle{bbx:url}{#1}}
-\DeclareBibliographyOption{doi}[true]{%
+\DeclareBibliographyOption[boolean]{doi}[true]{%
   \settoggle{bbx:doi}{#1}}
-\DeclareBibliographyOption{eprint}[true]{%
+\DeclareBibliographyOption[boolean]{eprint}[true]{%
   \settoggle{bbx:eprint}{#1}}
-\DeclareBibliographyOption{related}[true]{%
+\DeclareBibliographyOption[boolean]{related}[true]{%
   \settoggle{bbx:related}{#1}}
 
 \ExecuteBibliographyOptions{isbn,url,doi,eprint,related}
@@ -27,7 +27,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/translator+others}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{title}%
   \newunit
   \printlist{language}%
@@ -65,7 +65,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/editor+others/translator+others}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{maintitle+title}%
   \newunit
   \printlist{language}%
@@ -113,7 +113,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/editor+others/translator+others}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{title}%
   \newunit
   \printlist{language}%
@@ -150,7 +150,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{editor+others}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{maintitle+title}%
   \newunit
   \printlist{language}%
@@ -196,7 +196,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/translator+others}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{title}%
   \newunit
   \printlist{language}%
@@ -247,7 +247,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/translator+others}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{title}%
   \newunit
   \printlist{language}%
@@ -296,7 +296,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/translator+others}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{title}%
   \newunit
   \printlist{language}%
@@ -347,7 +347,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/editor}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{title}%
   \newunit
   \printlist{language}%
@@ -394,7 +394,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/editor+others/translator+others}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{title}%
   \newunit
   \printlist{language}%
@@ -429,7 +429,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/editor+others/translator+others}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{title}%
   \newunit
   \printlist{language}%
@@ -466,7 +466,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{title}%
   \newunit
   \printlist{language}%
@@ -504,7 +504,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{editor}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{title+issuetitle}%
   \newunit
   \printlist{language}%
@@ -533,7 +533,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{editor+others}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{maintitle+title}%
   \newunit
   \printlist{language}%
@@ -581,7 +581,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{title}%
   \newunit
   \printlist{language}%
@@ -622,7 +622,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{title}%
   \newunit
   \printlist{language}%
@@ -659,7 +659,7 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author}%
-  \setunit{\labelnamepunct}\newblock
+  \setunit{\printdelim{nametitledelim}}\newblock
   \usebibmacro{title}%
   \newunit
   \printlist{language}%
@@ -686,7 +686,7 @@
     {}%
   \usebibmacro{finentry}}
 
-\DeclareBibliographyDriver{shorthands}{%
+\DeclareBibliographyDriver{shorthand}{%
   \usedriver
     {\DeclareNameAlias{sortname}{default}}
     {\thefield{entrytype}}%
@@ -793,6 +793,8 @@
 
 \newbibmacro*{event+venue+date}{%
   \printfield{eventtitle}%
+  \newunit
+  \printfield{eventtitleaddon}%
   \ifboolexpr{
     test {\iffieldundef{venue}}
     and
@@ -886,6 +888,8 @@
 
 \newbibmacro*{begrelated}{}
 \newbibmacro*{endrelated}{}
+\newbibmacro*{begrelatedloop}{}
+\newbibmacro*{endrelatedloop}{}
 
 \def\ifrelatedloop{%
   \ifboolexpr{ test {\xifinlistcs{\strfield{entrykey}}{bbx:relatedloop}}
@@ -894,7 +898,8 @@
 \newbibmacro*{related}{%
   \ifboolexpr{ test {\iffieldundef{related}} or test {\ifrelatedloop} }
     {}
-    {\def\bbx@tempa{}%
+    {\usebibmacro{begrelated}%
+     \def\bbx@tempa{}%
      \setcounter{bbx:relatedtotal}{0}%
      \def\do##1{%
        \entrydata{##1}{%
@@ -925,7 +930,7 @@
           {\def\bbx@tempb{relatedstring:default}}
           {\def\bbx@tempb{relatedstring:\strfield{relatedtype}}}%
         \printtext[\bbx@tempa]{%
-          \usebibmacro{begrelated}%
+          \usebibmacro{begrelatedloop}%
           \iffieldundef{relatedstring}
             {\ifboolexpr{
                test {\ifnumgreater{\value{bbx:relatedtotal}}{1}}
@@ -943,7 +948,8 @@
                   \bibstring[\mkrelatedstring]{\thefield{relatedstring}}}}
                {\printfield[\bbx@tempb]{relatedstring}}}%
           \docsvfield{related}%
-          \usebibmacro{endrelated}}}%
-       {}}}
+          \usebibmacro{endrelatedloop}}}%
+       {}%
+     \usebibmacro{endrelated}}}
 
 \endinput

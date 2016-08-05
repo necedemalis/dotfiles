@@ -6,7 +6,7 @@
 
 \providebool{bbx:subentry}
 
-\DeclareBibliographyOption{subentry}[true]{%
+\DeclareBibliographyOption[boolean]{subentry}[true]{%
   \setbool{bbx:subentry}{#1}}
 
 \DeclareNameAlias{author}{default}
@@ -20,7 +20,7 @@
 \defbibenvironment{bibliography}
   {\list
      {\printtext[labelnumberwidth]{%
-	\printfield{prefixnumber}%
+	\printfield{labelprefix}%
 	\printfield{labelnumber}}}
      {\setlength{\labelwidth}{\labelnumberwidth}%
       \setlength{\leftmargin}{\labelwidth}%
@@ -32,7 +32,7 @@
   {\endlist}
   {\item}
 
-\defbibenvironment{shorthands}
+\defbibenvironment{shorthand}
   {\list
      {\printfield[shorthandwidth]{shorthand}}
      {\setlength{\labelwidth}{\shorthandwidth}%

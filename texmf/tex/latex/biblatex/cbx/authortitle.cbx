@@ -2,6 +2,9 @@
 [\abx@cbxid]
 
 \ExecuteBibliographyOptions{uniquename,uniquelist,autocite=footnote}
+
+\renewcommand*{\iffinalcitedelim}{\iflastcitekey}
+
 \newbool{cbx:parens}
 
 \newbibmacro*{cite}{%
@@ -9,7 +12,7 @@
     {\ifnameundef{labelname}
        {}
        {\printnames{labelname}%
-        \setunit{\nametitledelim}}%
+        \setunit{\printdelim{nametitledelim}}}%
      \usebibmacro{cite:title}}%
     {\usebibmacro{cite:shorthand}}}
 
@@ -24,7 +27,7 @@
     {\printnames{labelname}%
      \setunit{%
        \global\booltrue{cbx:parens}%
-       \addspace\bibopenparen}}%
+       \printdelim{nametitledelim}\bibopenparen}}%
   \ifnumequal{\value{citecount}}{1}
     {\usebibmacro{prenote}}
     {}%
@@ -46,7 +49,7 @@
        {}}
     {\ifbool{cbx:parens}
        {\postnotedelim}
-       {\addspace\bibopenparen}%
+       {\extpostnotedelim\bibopenparen}%
      \printfield{postnote}\bibcloseparen}}
 
 \DeclareCiteCommand{\cite}
@@ -101,11 +104,16 @@
 \DeclareCiteCommand{\textcite}
   {\boolfalse{cbx:parens}}
   {\usebibmacro{citeindex}%
+   \iffirstcitekey
+     {\setcounter{textcitetotal}{1}}
+     {\stepcounter{textcitetotal}%
+      \textcitedelim}%
    \usebibmacro{textcite}}
   {\ifbool{cbx:parens}
      {\bibcloseparen\global\boolfalse{cbx:parens}}
-     {}%
-   \multicitedelim}
+     {}}
   {\usebibmacro{textcite:postnote}}
+
+\DeclareMultiCiteCommand{\textcites}{\textcite}{}
 
 \endinput

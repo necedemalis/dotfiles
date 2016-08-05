@@ -11,6 +11,7 @@
   \protected\def\bibrangedash{\textendash\penalty\hyphenpenalty}%
   \protected\def\bibdatedash{\addnbthinspace\textendash\addhpthinspace}%
   \let\finalandcomma=\empty
+  \let\finalandsemicolon=\empty
   \protected\def\mkbibordinal#1{\stripzeros{#1}\adddot}%
   \protected\def\mkbibmascord{\mkbibordinal}%
   \protected\def\mkbibfemord{\mkbibordinal}%
@@ -28,17 +29,19 @@
        \iffieldundef{#1}{}{\space}}%
     \iffieldbibstring{#1}
       {\bibstring{\thefield{#1}}}
-      {\mkbibordinal{\thefield{#1}}}}%
+      {\stripzeros{\thefield{#1}}}}%
   \protected\def\mkbibdateshort#1#2#3{%
     \iffieldundef{#3}
       {}
-      {\mkbibordinal{\thefield{#3}}}%
+      {\mkbibordinal{\thefield{#3}}%
+       \iffieldundef{#2}{}{\addnbthinspace}}%
     \iffieldundef{#2}
       {}
-      {\mkbibordinal{\thefield{#2}}}%
+      {\mkbibordinal{\thefield{#2}}%
+       \iffieldundef{#1}{}{\addnbthinspace}}%
     \iffieldbibstring{#1}
       {\bibstring{\thefield{#1}}}
-      {\mkbibordinal{\thefield{#1}}}}%
+      {\stripzeros{\thefield{#1}}}}%
   \savecommand\mkbibordedition
   \savecommand\mkbibordseries
   \def\mkbibordedition{\mkbibordinal}%
@@ -437,8 +440,10 @@
   langitalian      = {{talijanski}{talijanski}},
   langlatin        = {{latinski}{latinski}},
   langnorwegian    = {{norve\v{s}ki}{norve\v{s}ki}},
+% langpolish       = {{}{}},% FIXME: missing
   langportuguese   = {{portugalski}{portugalski}},
 % langrussian      = {{}{}},% FIXME: missing
+% langslovene      = {{}{}},% FIXME: missing
   langspanish      = {{\v{s}panjolski}{\v{s}panjolski}},
   langswedish      = {{\v{s}vedski}{\v{s}vedski}},
   fromamerican     = {{s engleskog}{s engleskog}},
@@ -456,8 +461,10 @@
   fromitalian      = {{s talijanskog}{s talijanskog}},
   fromlatin        = {{s latinskog}{s latinskog}},
   fromnorwegian    = {{s norve\v{s}kog}{s norve\v{s}kog}},
+% frompolish       = {{}{}},% FIXME: missing
   fromportuguese   = {{s portugalskog}{s portugalskog}},
 % fromrussian      = {{}{}},% FIXME: missing
+% fromslovene      = {{}{}},% FIXME: missing
   fromspanish      = {{sa \v{s}panjolskog}{sa \v{s}panjolskog}},
   fromswedish      = {{sa \v{s}vedskog}{sa \v{s}vedskog}},
   countryde        = {{Njema\v{c}ka}{DE}},

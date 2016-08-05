@@ -10,6 +10,7 @@
     \textendash\penalty\hyphenpenalty}% breakable dash
   \protected\def\bibdatedash{\bibrangedash}%
   \let\finalandcomma=\empty
+  \let\finalandsemicolon=\empty
   \def\mkbibordinal{\mkbibmascord}%
   \protected\def\mkbibmascord{\lbx@fr@ordinal{er}}%
   \protected\def\mkbibfemord{\lbx@fr@ordinal{re}}%
@@ -19,8 +20,8 @@
       {}
       {\stripzeros{\thefield{#3}}%
        \ifnumequal{\thefield{#3}}{1}
-	 {\textsuperscript{er}}
-	 {}%
+         {\textsuperscript{er}}
+         {}%
        \iffieldundef{#2}{}{\nobreakspace}}%
     \iffieldundef{#2}
       {}
@@ -53,12 +54,12 @@
     \FDP@thinspace\abx@puncthook{?}}%
   \savecommand\lbx@initnamehook
   \savecommand\lbx@inittitlehook
-  \savecommand\mkbibnamelast
+  \savecommand\mkbibnamefamily
   \savecommand\mkbibordedition
   \savecommand\mkbibordseries
   \let\lbx@initnamehook=\lbx@fr@smartof
   \let\lbx@inittitlehook=\lbx@fr@smartof
-  \protected\def\mkbibnamelast#1{%
+  \protected\def\mkbibnamefamily#1{%
     \textsc{\textnohyphenation{#1}}}%
   \def\mkbibordedition{\mkbibfemord}%
   \def\mkbibordseries{\mkbibfemord}%
@@ -67,7 +68,7 @@
 \UndeclareBibliographyExtras{%
   \restorecommand\lbx@initnamehook
   \restorecommand\lbx@inittitlehook
-  \restorecommand\mkbibnamelast
+  \restorecommand\mkbibnamefamily
   \restorecommand\mkbibordedition
   \restorecommand\mkbibordseries
 }
@@ -336,13 +337,13 @@
   oldseries        = {{ancienne s\'erie}{anc\adddotspace s\'er\adddot}},
   edition          = {{\'edition}{\'ed\adddot}},
   reprint          = {{r\'eimpression}{r\'eimpr\adddot}},
-  reprintof        = {{r\'eimpression \smartof}{r\'eimpr\adddotspace\smartof}},
+  reprintof        = {{r\'eimpression de}{r\'eimpr\adddotspace de}},
   reprintas        = {{r\'eimpression sous le titre}{r\'eimpr\adddotspace sous le titre}},
   reprintfrom      = {{r\'eimpression \`a partir \smartof}{r\'eimpr\adddotspace \`a part\adddotspace\smartof}},
-  translationof    = {{traduction \smartof}{trad\adddotspace\smartof}},
+  translationof    = {{traduction de}{trad\adddotspace de}},
   translationas    = {{traduit sous le titre}{trad\adddotspace sous le titre}},
-  translationfrom  = {{traduit \smartof}{trad\adddotspace\smartof}},
-  reviewof         = {{critique \smartof}{crit.\adddotspace\smartof}},
+  translationfrom  = {{traduit de}{trad\adddotspace de}},
+  reviewof         = {{critique de}{crit.\adddotspace de}},
   origpubas        = {{publi\'e \`a l'origine sous le titre}{pub\adddotspace \`a l'orig\adddotspace sous le titre}},
   origpubin        = {{publi\'e \`a l'origine en}{pub\adddotspace \`a l'orig\adddotspace en}},
   astitle          = {{sous le titre}{sous le titre}},
@@ -381,7 +382,7 @@
   submitted        = {{soumis}{soumis}},
   forthcoming      = {{\`a para\^{\i}tre}{\`a para\adddot}},
   inpress          = {{sous presse}{sous presse}},
-  prepublished     = {{pr\'epublié}{pr\'epubl\adddot}},
+  prepublished     = {{pr\'epubli\'e}{pr\'epubl\adddot}},
   citedas          = {{d\'esign\'e ci-apr\`es par}{ci-apr\`es}},
   thiscite         = {{sp\'ecialement}{sp\'ec\adddot}},
   seenote          = {{voir note}{cf\adddotspace note}},
@@ -419,9 +420,9 @@
   december         = {{d\'ecembre}{d\'ec\adddot}},
   langamerican     = {{am\'ericain}{am\'ericain}},
   langbrazilian    = {{br\'esilien}{br\'esilien}},
-% langcatalan      = {{}{}},% FIXME: missing
+  langcatalan      = {{catalan}{catalan}},
   langcroatian     = {{croate}{croate}},
-% langczech        = {{}{}},% FIXME: missing
+  langczech        = {{tch\`eque}{tch\`eque}},
   langdanish       = {{danois}{danois}},
   langdutch        = {{n\'eerlandais}{n\'eerlandais}},
   langenglish      = {{anglais}{anglais}},
@@ -432,15 +433,17 @@
   langitalian      = {{italien}{italien}},
   langlatin        = {{latin}{latin}},
   langnorwegian    = {{norv\'egien}{norv\'egien}},
+  langpolish       = {{polonais}{polonais}},
   langportuguese   = {{portugais}{portugais}},
   langrussian      = {{russe}{russe}},
+  langslovene      = {{slov\`ene}{slov\`ene}},
   langspanish      = {{espagnol}{espagnol}},
   langswedish      = {{su\'edois}{su\'edois}},
   fromamerican     = {{de l'am\'ericain}{de l'am\'ericain}},
   frombrazilian    = {{du br\'esilien}{du br\'esilien}},
-% fromcatalan      = {{}{}},% FIXME: missing
+  fromcatalan      = {{du catalan}{du catalan}},
   fromcroatian     = {{du croate}{du croate}},
-% fromczech        = {{}{}},% FIXME: missing
+  fromczech        = {{du tch\`eque}{du tch\`eque}},
   fromdanish       = {{du danois}{du danois}},
   fromdutch        = {{du n\'eerlandais}{du n\'eerlandais}},
   fromenglish      = {{de l'anglais}{de l'anglais}},
@@ -451,8 +454,10 @@
   fromitalian      = {{de l'italien}{de l'italien}},
   fromlatin        = {{du latin}{du latin}},
   fromnorwegian    = {{du norv\'egien}{du norv\'egien}},
+  frompolish       = {{du polonais}{du polonais}},
   fromportuguese   = {{du portugais}{du portugais}},
   fromrussian      = {{du russe}{du russe}},
+  fromslovene      = {{du slov\`ene}{du slov\`ene}},
   fromspanish      = {{de l'espagnol}{de l'espagnol}},
   fromswedish      = {{du su\'edois}{du su\'edois}},
   countryde        = {{Allemagne}{DE}},
@@ -504,7 +509,7 @@
   \begingroup
   \def\forceD##1{a\relax}%
   \def\forceDE##1{x\relax}%
-  \def\do##1{\let##1\@empty}%
+  \def\do##1{\let##1\@firstofone}%
   \abx@dosingleaccents
   \abx@dodoubleaccents
   \def\i{i}\def\j{j}%
@@ -521,7 +526,7 @@
     \let~\@empty
   \fi
   \let\protect\noexpand
-  \lowercase{\edef\lbx@tempa{#1}}%
+  \edef\lbx@tempa{#1}%
   \expandafter\futurelet
   \expandafter\lbx@tempa
   \expandafter\lbx@fr@smartof@ii
@@ -532,23 +537,31 @@
     \def\lbx@tempa##1{\futurelet\lbx@tempa\lbx@fr@smartof@ii##1}%
   \else\ifcat\noexpand~\noexpand\lbx@tempa
     \def\lbx@tempa##1{\futurelet\lbx@tempa\lbx@fr@smartof@ii}%
-  \else\if a\noexpand\lbx@tempa
+  \else
+    \ifnum 0%
+      \if a\noexpand\lbx@tempa 1\fi
+      \if e\noexpand\lbx@tempa 1\fi
+      \if i\noexpand\lbx@tempa 1\fi
+      \if o\noexpand\lbx@tempa 1\fi
+      \if u\noexpand\lbx@tempa 1\fi
+      \if y\noexpand\lbx@tempa 1\fi
+      \if A\noexpand\lbx@tempa 1\fi
+      \if E\noexpand\lbx@tempa 1\fi
+      \if I\noexpand\lbx@tempa 1\fi
+      \if O\noexpand\lbx@tempa 1\fi
+      \if U\noexpand\lbx@tempa 1\fi
+      \if Y\noexpand\lbx@tempa 1\fi
+      >0 %
     \let\lbx@tempa\lbx@fr@smartof@d
-  \else\if e\noexpand\lbx@tempa
-    \let\lbx@tempa\lbx@fr@smartof@d
-  \else\if i\noexpand\lbx@tempa
-    \let\lbx@tempa\lbx@fr@smartof@d
-  \else\if o\noexpand\lbx@tempa
-    \let\lbx@tempa\lbx@fr@smartof@d
-  \else\if u\noexpand\lbx@tempa
-    \let\lbx@tempa\lbx@fr@smartof@d
-  \else\if y\noexpand\lbx@tempa
-    \let\lbx@tempa\lbx@fr@smartof@d
-  \else\if h\noexpand\lbx@tempa
+  \else
+    \ifnum 0%
+      \if h\noexpand\lbx@tempa 1\fi
+      \if H\noexpand\lbx@tempa 1\fi
+      >0 %
     \def\lbx@tempa##1{\futurelet\lbx@tempa\lbx@fr@smartof@ii}%
   \else
     \let\lbx@tempa\lbx@fr@smartof@de
-  \fi\fi\fi\fi\fi\fi\fi\fi\fi
+  \fi\fi\fi\fi
   \lbx@tempa}
 
 \gdef\lbx@fr@smartof@d#1&{\endgroup d'}

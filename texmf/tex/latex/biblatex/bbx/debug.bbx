@@ -19,7 +19,7 @@
   {\endlist}
   {\item}
 
-\defbibenvironment{shorthands}
+\defbibenvironment{shorthand}
   {\list
      {\printfield[shorthandwidth]{shorthand}}
      {\setlength{\labelwidth}{8em}%
@@ -35,22 +35,37 @@
   {\endlist}
   {\item}
 
-\DeclareNameFormat{debug}{%
-  \bbx@mklabel{\currentname}%
-  \ifblank{#3}{}{\detokenize{#3}\space}%
-  \ifblank{#5}{}{\detokenize{#5}\ifpunctmark{'}{}{\space}}%
-  \detokenize{#1}%
-  \ifblank{#7}{}{\space\detokenize{#7}}%
-  \ifblank{#3}{}{\bbx@mksublabel{first}\detokenize{#3}}%
-  \ifblank{#1}{}{\bbx@mksublabel{last}\detokenize{#1}}%
-  \ifblank{#5}{}{\bbx@mksublabel{prefix}\detokenize{#5}}%
-  \ifblank{#7}{}{\bbx@mksublabel{affix}\detokenize{#7}}%
-  \bbx@mksublabel{inits}%
-  \ifblank{#4}{}{\detokenize{#4}\space}%
-  \ifblank{#6}{}{\detokenize{#6}\ifpunctmark{'}{}{\space}}%
-  \detokenize{#2}%
-  \ifblank{#8}{}{\space\detokenize{#8}}%
-}
+\@ifpackageloaded{biblatex_legacy}
+  {\DeclareNameFormat{debug}{%
+     \bbx@mklabel{\currentname}%
+     \ifblank{#3}{}{\detokenize{#3}\space}%
+     \ifblank{#5}{}{\detokenize{#5}\ifpunctmark{'}{}{\space}}%
+     \detokenize{#1}%
+     \ifblank{#7}{}{\space\detokenize{#7}}%
+     \ifblank{#3}{}{\bbx@mksublabel{given}\detokenize{#3}}%
+     \ifblank{#1}{}{\bbx@mksublabel{family}\detokenize{#1}}%
+     \ifblank{#5}{}{\bbx@mksublabel{prefix}\detokenize{#5}}%
+     \ifblank{#7}{}{\bbx@mksublabel{affix}\detokenize{#7}}%
+     \bbx@mksublabel{inits}%
+     \ifblank{#4}{}{\detokenize{#4}\space}%
+     \ifblank{#6}{}{\detokenize{#6}\ifpunctmark{'}{}{\space}}%
+     \detokenize{#2}%
+     \ifblank{#8}{}{\space\detokenize{#8}}}}
+  {\DeclareNameFormat{debug}{%
+     \bbx@mklabel{\currentname}%
+     \ifdefvoid{\namepartgiven}{}{\expandafter\detokenize\expandafter{\namepartgiven}\space}%
+     \ifdefvoid{\namepartprefix}{}{\expandafter\detokenize\expandafter{\namepartprefix}\ifpunctmark{'}{}{\space}}%
+     \expandafter\detokenize\expandafter{\namepartfamily}%
+     \ifdefvoid{\namepartsuffix}{}{\expandafter\space\expandafter\detokenize\expandafter{\namepartsuffix}}%
+     \ifdefvoid{\namepartgiven}{}{\bbx@mksublabel{given}\expandafter\detokenize\expandafter{\namepartgiven}}%
+     \ifdefvoid{\namepartfamily}{}{\bbx@mksublabel{family}\expandafter\detokenize\expandafter{\namepartfamily}}%
+     \ifdefvoid{\namepartprefix}{}{\bbx@mksublabel{prefix}\expandafter\detokenize\expandafter{\namepartprefix}}%
+     \ifdefvoid{\namepartsuffix}{}{\bbx@mksublabel{suffix}\expandafter\detokenize\expandafter{\namepartsuffix}}%
+     \bbx@mksublabel{inits}%
+     \ifdefvoid{\namepartgiveni}{}{\expandafter\detokenize\expandafter{\namepartgiveni}\space}%
+     \ifdefvoid{\namepartprefixi}{}{\expandafter\detokenize\expandafter{\namepartprefixi}\ifpunctmark{'}{}{\space}}%
+     \expandafter\detokenize\expandafter{\namepartfamilyi}%
+     \ifdefvoid{\namepartsuffixi}{}{\expandafter\space\expandafter\detokenize\expandafter{\namepartsuffixi}}}}
 
 \DeclareListFormat{debug}{%
   \bbx@mklabel{\currentlist}%
@@ -87,10 +102,10 @@
   \clearpage}
 
 \def\do#1{\DeclareBibliographyAlias{#1}{debug}}
-\abx@dotypes
+\abx@doentrytypes
 \do{*}
 
-\DeclareBibliographyDriver{shorthands}{%
+\DeclareBibliographyDriver{shorthand}{%
   \texttt{\printfield{entrykey}}}
 
 \endinput

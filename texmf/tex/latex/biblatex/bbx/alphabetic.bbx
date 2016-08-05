@@ -14,7 +14,7 @@
 \defbibenvironment{bibliography}
   {\list
      {\printtext[labelalphawidth]{%
-        \printfield{prefixnumber}%
+        \printfield{labelprefix}%
 	\printfield{labelalpha}%
         \printfield{extraalpha}}}
      {\setlength{\labelwidth}{\labelalphawidth}%
@@ -27,7 +27,7 @@
   {\endlist}
   {\item}
 
-\defbibenvironment{shorthands}
+\defbibenvironment{shorthand}
   {\list
      {\printfield[shorthandwidth]{shorthand}}
      {\setlength{\labelwidth}{\shorthandwidth}%

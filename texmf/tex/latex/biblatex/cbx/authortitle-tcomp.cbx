@@ -4,6 +4,9 @@
 \RequireCitationStyle{authortitle-comp}
 \ExecuteBibliographyOptions{singletitle,uniquename,uniquelist,autocite=inline}
 
+\renewcommand*{\iffinalcitedelim}{%
+  \ifnumequal{\value{textcitecount}}{\value{textcitetotal}-1}}
+
 \renewbibmacro*{cite}{%
   \iffieldundef{shorthand}
     {\iffieldequals{namehash}{\cbx@lasthash}
@@ -14,7 +17,7 @@
           {\ifsingletitle
              {\printtext[bibhyperref]{\printnames{labelname}}}
              {\printnames{labelname}%
-	      \setunit{\nametitledelim}%
+	      \setunit{\printdelim{nametitledelim}}%
 	      \usebibmacro{cite:title}}}%
         \savefield{namehash}{\cbx@lasthash}}}
     {\usebibmacro{cite:shorthand}%
@@ -50,26 +53,27 @@
           {\printnames{labelname}
            \setunit{%
 	     \global\booltrue{cbx:parens}%
-	     \addspace\bibopenparen}%
+	     \printdelim{nametitledelim}\bibopenparen}%
 	   \ifnumequal{\value{citecount}}{1}
 	     {\usebibmacro{prenote}}
 	     {}%
 	   \iffieldundef{shorthand}
 	     {\usebibmacro{cite:title}}%
 	     {\usebibmacro{cite:shorthand}}}}%
+     \stepcounter{textcitecount}%
      \savefield{namehash}{\cbx@lasthash}}%
   \setunit{%
     \ifbool{cbx:parens}
       {\bibcloseparen\global\boolfalse{cbx:parens}}
       {}%
-    \multicitedelim}}
+    \textcitedelim}}
 
 \renewbibmacro*{textcite:postnote}{%
   \ifbool{cbx:parens}
     {\setunit{\postnotedelim}}
     {\setunit{%
        \global\booltrue{cbx:parens}%
-       \addspace\bibopenparen}}%
+       \extpostnotedelim\bibopenparen}}%
   \printfield{postnote}%
   \ifthenelse{\value{multicitecount}=\value{multicitetotal}}
     {\setunit{}%
@@ -81,6 +85,6 @@
        \ifbool{cbx:parens}
 	 {\bibcloseparen\global\boolfalse{cbx:parens}}
 	 {}%
-       \multicitedelim}}}
+       \textcitedelim}}}
 
 \endinput

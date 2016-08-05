@@ -9,12 +9,28 @@
 
 \DeclareRedundantLanguages{finnish}{finnish}
 
+\NewBibliographyString{%
+  basicjanuary,
+  basicfebruary,
+  basicmarch,
+  basicapril,
+  basicmay,
+  basicjune,
+  basicjuly,
+  basicaugust,
+  basicseptember,
+  basicoctober,
+  basicnovember,
+  basicdecember%
+}
+
 \DeclareBibliographyExtras{%
   % dashes: may be either \textendash or \textemdash
   \protected\def\bibrangedash{%
     \textendash\penalty\hyphenpenalty}% breakable dash
   \protected\def\bibdatedash{\bibrangedash}%
   \let\finalandcomma=\empty
+  \let\finalandsemicolon=\empty
   \protected\def\mkbibordinal#1{\stripzeros{#1}\adddot}%
   \protected\def\mkbibmascord{\mkbibordinal}%
   \protected\def\mkbibfemord{\mkbibordinal}%
@@ -26,8 +42,11 @@
        \iffieldundef{#2}{}{\nobreakspace}}%
     \iffieldundef{#2}
       {}
-      {\mkbibmonth{\thefield{#2}}%
-       \iffieldundef{#1}{}{\space}}%
+      {\iffieldundef{#3}
+        {\lbx@fi@mkbibmonthbasic{\thefield{#2}}%
+         \iffieldundef{#1}{}{\space}}%
+        {\mkbibmonth{\thefield{#2}}%
+         \iffieldundef{#1}{}{\space}}}%
     \iffieldbibstring{#1}{\bibstring{\thefield{#1}}}{\stripzeros{\thefield{#1}}}}%
   \protected\def\mkbibdateshort#1#2#3{%
     \iffieldundef{#3}
@@ -55,7 +74,7 @@
   \renewbibmacro{in:}{%
     \iffieldequalstr{entrytype}{article}
       {}
-      {\bibstring{in}\setunit{\intitlepunct}}}%
+      {\printtext{\bibstring{in}\intitlepunct}}}%
 }
 
 \UndeclareBibliographyExtras{%
@@ -74,14 +93,14 @@
   compilers        = {{koontaneet}{koontaneet}},% FIXME: unsure
   redactor         = {{toimittanut}{toim\adddot}},% FIXME: unsure
   redactors        = {{toimittaneet}{toim\adddot}},% FIXME: unsure
-% reviser          = {{}{}},% FIXME: missing
-% revisers         = {{}{}},% FIXME: missing
-% founder          = {{}{}},% FIXME: missing
-% founders         = {{}{}},% FIXME: missing
-% continuator      = {{}{}},% FIXME: missing
-% continuators     = {{}{}},% FIXME: missing
-% collaborator     = {{}{}},% FIXME: missing
-% collaborators    = {{}{}},% FIXME: missing
+  reviser          = {{toimittanut}{toim\adddot}},% FIXME: unsure
+  revisers         = {{toimittaneet}{toim\adddot}},% FIXME: unsure
+  founder          = {{perustaja}{perustaja}},
+  founders         = {{perustajat}{perustajat}},
+  continuator      = {{jatkaja}{jatkaja}},% FIXME: unsure
+  continuators     = {{jatkajat}{jatkajat}},% FIXME: unsure
+  collaborator     = {{avustaja}{avustaja}},% FIXME: unsure
+  collaborators    = {{avustajat}{avustajat}},% FIXME: unsure
   translator       = {{k\"a\"ant\"anyt}{k\"a\"ant\adddot}},
   translators      = {{k\"a\"ant\"anyt}{k\"a\"ant\adddot}},
   commentator      = {{kommentaarin kirjoittanut}{kommentaarin kirjoittanut}},
@@ -103,7 +122,7 @@
                       {toimittaneet ja kommentaarin kirjoittaneet}},
   editoran         = {{toimittanut ja selityksin varustanut}% FIXME: unsure
                       {toimittanut ja selityksin varustanut}},
-  editorsan        = {{toimittaneet ja selityksin varustaneet,% FIXME: unsure
+  editorsan        = {{toimittaneet ja selityksin varustaneet}% FIXME: unsure
                       {toimittaneet ja selityksin varustaneet}},
   editorin         = {{toimittanut ja johdannon kirjoittanut}%
                       {toimittanut ja johdannon kirjoittanut}},
@@ -233,11 +252,11 @@
   byeditor         = {{toimittanut}{toim\adddot}},
   bycompiler       = {{koontanut}{koontanut}},
   byredactor       = {{toimittanut}{toim\adddot}},% FIXME: unsure
-% byreviser        = {{}{}},% FIXME: missing
-% byreviewer       = {{}{}},% FIXME: missing
-% byfounder        = {{}{}},% FIXME: missing
-% bycontinuator    = {{}{}},% FIXME: missing
-% bycollaborator   = {{}{}},% FIXME: missing
+  byreviser        = {{toimittanut}{toim\adddot}},% FIXME: unsure
+  byreviewer       = {{toimittanut}{toim\adddot}},% FIXME: unsure
+  byfounder        = {{perustanut}{perustanut}},% FIXME: unsure
+  bycontinuator    = {{jatkanut}{jatkanut}},% FIXME: unsure
+  bycollaborator   = {{yhteisty\"oss\"a}{yhteisty\"oss\"a}},% FIXME: Bad translation. Impossible to translate with one word.
   bytranslator     = {{\lbx@lfromlang k\"a\"ant\"anyt}{\lbx@sfromlang k\"a\"ant\adddot}},
   bycommentator    = {{kommentaarin kirjoittanut}{kommentaarin kirjoittanut}},% FIXME: unsure
   byannotator      = {{selityksin varustanut}{selityksin varustanut}},% FIXME: unsure
@@ -317,36 +336,36 @@
   and              = {{ja}{ja}},
   andothers        = {{et\addabbrvspace al\adddot}{et\addabbrvspace al\adddot}},
   andmore          = {{et\addabbrvspace al\adddot}{et\addabbrvspace al\adddot}},
-  volume           = {{volyymi}{vol\adddot}},
-  volumes          = {{volyymit}{vol\adddot}},
-  involumes        = {{tilavuusosaan}{tilavuusosaan}},% FIXME: unsure
+  volume           = {{volyymi}{vol\adddot}},% FIXME: Is {{osa}{osa}} a better translation?
+  volumes          = {{volyymit}{vol\adddot}},% Incorrect. Correct translation of "volumes" depends on context.
+% involumes        = {{}{}},% FIXME: missing. Finnish translation of "in 5 volumes" is "5 osassa".
   jourvol          = {{volyymi}{vol\adddot}},
   jourser          = {{sarja}{sarja}},
-% book             = {{}{}},% FIXME: missing
-% part             = {{}{}},% FIXME: missing
-% issue            = {{}{}},% FIXME: missing
+  book             = {{kirja}{kirja}},% FIXME: Literal translation of "book". Correct translation depends on context.
+  part             = {{osa}{osa}},% FIXME: unsure
+  issue            = {{numero}{numero}},% FIXME: unsure
   newseries        = {{uusi sarja}{uusi sarja}},
   oldseries        = {{vanha sarja}{vanha sarja}},
   edition          = {{painos}{painos}},
   reprint          = {{j\"alkipainos}{j\"alkipainos}},
   reprintof        = {{julkaistu aiemmin nimell\"a}{julkaistu aiemmin nimell\"a}},
   reprintas        = {{julkaistu uudelleen nimell\"a}{julkaistu uudelleen nimell\"a}},
-% reprintfrom      = {{}{}},% FIXME: missing
-% translationof    = {{}{}},% FIXME: missing
-% translationas    = {{}{}},% FIXME: missing
-% translationfrom  = {{}{}},% FIXME: missing
-% reviewof         = {{}{}},% FIXME: missing
-% origpubas        = {{}{}},% FIXME: missing
-% origpubin        = {{}{}},% FIXME: missing
-% astitle          = {{}{}},% FIXME: missing
-% bypublisher      = {{}{}},% FIXME: missing
+  reprintfrom      = {{julkaistu aiemmin nimell\"a}{julkaistu aiemmin nimell\"a}},% FIXME: unsure
+  translationof    = {{k\"a\"ann\"os teoksesta}{k\"a\"ann\"os teoksesta}},% FIXME: unsure
+  translationas    = {{k\"a\"annetty nimell\"a}{k\"a\"annetty nimell\"a}},% FIXME: unsure
+  translationfrom  = {{k\"a\"annetty kielest\"a}{k\"a\"annetty kielest\"a}},% Result is very bad Finnish.
+  reviewof         = {{arvostelu teoksesta}{arvostelu teoksesta}},% FIXME: unsure. Bad Finnish.
+  origpubas        = {{julkaistu ensi kerran nimell\"a}{julkaistu ensi kerran nimell\"a}},
+  origpubin        = {{julkaistu ensi kerran vuonna}{julkaistu ensi kerran vuonna}},
+  astitle          = {{nimell\"a}{nimell\"a}},% FIXME: unsure
+  bypublisher      = {{julkaissut}{julkaissut}},% FIXME: unsure
   page             = {{sivu}{s\adddot}},
   pages            = {{sivut}{s\adddot}},
   column           = {{palsta}{palsta}},% Here "sarake" is wrong!
   columns          = {{palstat}{palstat}},% Here "sarakkeet" is wrong!
   line             = {{rivi}{rivi}},
   lines            = {{rivit}{rivit}},
-  nodate           = {{n\adddot d\adddot}{n\adddot d\adddot}},%FIXME
+  nodate           = {{ei julkaisup\"aiv\"a\"a}{ei julkaisup\"aiv\"a\"a}},% FIXME: unsure
   verse            = {{s\"ae}{s\"ae}},
   verses           = {{s\"akeet}{s\"akeet}},
   section          = {{kohta}{kohta}},% Bad translation, but "pyk\"al\"a" is no better.
@@ -360,7 +379,7 @@
   chapter          = {{luku}{luku}},
   mathesis         = {{tutkielma}{tutkielma}},% FIXME: unsure
   phdthesis        = {{tohtorinv\"ait\"oskirja}{tohtorinv\"ait\"oskirja}},
-  candthesis       = {{kandidat}{kandidat}},% FIXME: unsure
+  candthesis       = {{kanditaatintutkielma}{kanditaatintutkielma}},% Literal translation of "Candidate thesis".
   resreport        = {{tutkimusraportti}{tutkimusraportti}},
   techreport       = {{tekninen raportti}{tekninen raportti}},
   software         = {{ohjelmisto}{ohjelmisto}},
@@ -368,15 +387,15 @@
   audiocd          = {{\"a\"ani-CD}{\"a\"ani-CD}},
   version          = {{versio}{versio}},
   url              = {{url}{url}},
-% urlfrom          = {{}{}},% FIXME: missing
+  urlfrom          = {{saatavilla osoitteesta}{saatavilla osoitteesta}},% FIXME: unsure
   urlseen          = {{viitattu}{viitattu}},
-% inpreparation    = {{}{}},% FIXME: missing
-% submitted        = {{}{}},% FIXME: missing
-% forthcoming      = {{}{}},% FIXME: missing
-% inpress          = {{}{}},% FIXME: missing
-% prepublished     = {{}{}},% FIXME: missing
+  inpreparation    = {{valmisteilla}{valmisteilla}},% FIXME: unsure
+  submitted        = {{l\"ahetetty}{l\"ahetetty}},% FIXME: unsure
+  forthcoming      = {{hyv\"aksytty julkaistavaksi}{hyv\"aksytty julkaistavaksi}},% FIXME: unsure
+  inpress          = {{painossa}{painossa}},% FIXME: unsure
+  prepublished     = {{esijulkaistu}{esijulkaistu}},% FIXME: unsure
   citedas          = {{jatkossa}{jatkossa}}, 
-% thiscite         = {{}{}},% FIXME: missing
+  thiscite         = {{t\"am\"a lainaus}{t\"am\"a lainaus}},% FIXME: unsure
   seenote          = {{katso viite}{katso viite}},
   quotedin         = {{lainattu teoksessa}{lainattu teoksessa}},
   idem             = {{idem}{id\adddot}},% It its not necessary to translate Latin phrases.
@@ -410,42 +429,58 @@
   october          = {{lokakuuta}{lokakuuta}},
   november         = {{marraskuuta}{marraskuuta}},
   december         = {{joulukuuta}{joulukuuta}},
+  basicjanuary     = {{tammikuu}{tammikuu}},
+  basicfebruary    = {{helmikuu}{helmikuu}},
+  basicmarch       = {{maaliskuu}{maaliskuu}},
+  basicapril       = {{huhtikuu}{huhtikuu}},
+  basicmay         = {{toukokuu}{toukokuu}},
+  basicjune        = {{kes\"akuu}{kes\"akuu}},
+  basicjuly        = {{hein\"akuu}{hein\"akuu}},
+  basicaugust      = {{elokuu}{elokuu}},
+  basicseptember   = {{syyskuu}{syyskuu}},
+  basicoctober     = {{lokakuu}{lokakuu}},
+  basicnovember    = {{marraskuu}{marraskuu}},
+  basicdecember    = {{joulukuu}{joulukuu}},
   langamerican     = {{amerikanenglanti}{amerikanenglanti}},
   langbrazilian    = {{brasilianportugali}{brasilianportugali}},
-% langcatalan      = {{}{}},% FIXME: missing
-% langcroatian     = {{}{}},% FIXME: missing
-% langczech        = {{}{}},% FIXME: missing
+  langcatalan      = {{katalonia}{katalonia}},
+  langcroatian     = {{kroataia}{kroatia}},
+  langczech        = {{t\v{s}ekki}{t\v{s}ekki}},
   langdanish       = {{tanska}{tanska}},
   langdutch        = {{hollanti}{hollanti}},
   langenglish      = {{englanti}{englanti}},
-% langfinnish      = {{}{}},% FIXME: missing
+  langfinnish      = {{suomi}{suomi}},
   langfrench       = {{ranska}{ranska}},
   langgerman       = {{saksa}{saksa}},
   langgreek        = {{kreikka}{kreikka}},
   langitalian      = {{italia}{italia}},
   langlatin        = {{latina}{latina}},
   langnorwegian    = {{norja}{norja}},
+  langpolish       = {{puola}{puola}},
   langportuguese   = {{portugali}{portugali}},
-% langrussian      = {{}{}},% FIXME: missing
+  langrussian      = {{ven\"aj\"a}{ven\"aj\"a}},
+% langslovene      = {{}{}},% FIXME: missing
   langspanish      = {{espanja}{espanja}},
   langswedish      = {{ruotsi}{ruotsi}},
   fromamerican     = {{englannin kielest\"a}{englannin kielest\"a}},
   frombrazilian    = {{portugalin kielest\"a}{portugalin kielest\"a}},
-% fromcatalan      = {{}{}},% FIXME: missing
-% fromcroatian     = {{}{}},% FIXME: missing
-% fromczech        = {{}{}},% FIXME: missing
+  fromcatalan      = {{katalonian kielest\"a}{katalonian kielest\"a}},
+  fromcroatian     = {{kroatian kielest\"a}{kroatian kielest\"a}},
+  fromczech        = {{t\v{s}ekin kielest\"a}{t\v{s}ekin kielest\"a}},
   fromdanish       = {{tanskan kielest\"a}{tanskan kielest\"a}},
   fromdutch        = {{hollannin kielest\"a}{hollannin kielest\"a}},
   fromenglish      = {{englannin kielest\"a}{englannin kielest\"a}},
-% fromfinnish      = {{}{}},% FIXME: missing
+  fromfinnish      = {{suomen kielest\"a}{suomen kielest\"a}},
   fromfrench       = {{ranskan kielest\"a}{ranskan kielest\"a}},
   fromgerman       = {{saksan kielest\"a}{saksan kielest\"a}},
   fromgreek        = {{kreikan kielest\"a}{kreikan kielest\"a}},
   fromitalian      = {{italian kielest\"a}{italian kielest\"a}},
   fromlatin        = {{latinan kielest\"a}{latinan kielest\"a}},
   fromnorwegian    = {{norjan kielest\"a}{norjan kielest\"a}},
+  frompolish       = {{puolan kielest\"a}{puolan kielest\"a}},
   fromportuguese   = {{portugalin kielest\"a}{portugalin kielest\"a}},
-% fromrussian      = {{}{}},% FIXME: missing
+  fromrussian      = {{ven\"aj\"an kielest\"a}{ven\"aj\"an kielest\"a}},
+% fromslovene      = {{}{}},% FIXME: missing
   fromspanish      = {{espanjan kielest\"a}{espanjan kielest\"a}},
   fromswedish      = {{ruotsin kielest\"a}{ruotsin kielest\"a}},
   countryde        = {{Saksa}{DE}},
@@ -471,5 +506,24 @@
   abstract         = {{tiivistelm\"a}{tiivistelm\"a}},
   annotation       = {{selitykset}{selitykset}},% FIXME: unsure
 }
+
+\protected\gdef\lbx@fi@mkbibmonthbasic#1{%
+  \ifcase0#1\relax
+    #1\BibliographyWarning{Month out of range}%
+  \or\abx@bibmonth{basicjanuary}%
+  \or\abx@bibmonth{basicfebruary}%
+  \or\abx@bibmonth{basicmarch}%
+  \or\abx@bibmonth{basicapril}%
+  \or\abx@bibmonth{basicmay}%
+  \or\abx@bibmonth{basicjune}%
+  \or\abx@bibmonth{basicjuly}%
+  \or\abx@bibmonth{basicaugust}%
+  \or\abx@bibmonth{basicseptember}%
+  \or\abx@bibmonth{basicoctober}%
+  \or\abx@bibmonth{basicnovember}%
+  \or\abx@bibmonth{basicdecember}%
+  \else
+    #1\BibliographyWarning{Month out of range}%
+  \fi}%
 
 \endinput
